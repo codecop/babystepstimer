@@ -1,8 +1,9 @@
 package net.davidtanzer.babysteps;
 
 import org.approvaltests.Approvals;
-import org.junit.Ignore;
 import org.junit.Test;
+
+import javax.swing.*;
 
 public class BabystepsTimerTest {
 
@@ -15,8 +16,16 @@ public class BabystepsTimerTest {
      - time passed
 
      */
-    @Test @Ignore
-    public void testName() throws Exception {
-        Approvals.verify("");
+    @Test
+    public void approveInitialFrame() throws InterruptedException {
+        BabystepsTimer babystepsTimer = new BabystepsTimer();
+        babystepsTimer.main(new String[0]);
+        JFrame timerFrame = BabystepsTimer.timerFrame;
+        Thread.sleep(3000);
+
+        Approvals.verify(BabystepsTimer.timerPane);
+
+        timerFrame.setVisible(false);
+        timerFrame.dispose();
     }
 }

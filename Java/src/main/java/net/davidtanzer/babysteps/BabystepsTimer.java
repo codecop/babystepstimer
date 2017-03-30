@@ -13,17 +13,15 @@
 
 package net.davidtanzer.babysteps;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.text.DecimalFormat;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.JFrame;
-import javax.swing.JTextPane;
+import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.text.DecimalFormat;
 
 public class BabystepsTimer {
 	private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
@@ -32,8 +30,8 @@ public class BabystepsTimer {
 
 	private static final long SECONDS_IN_CYCLE = 120;
 
-	private static JFrame timerFrame;
-	private static JTextPane timerPane;
+	static JFrame timerFrame;
+	static JTextPane timerPane;
 	private static boolean timerRunning;
 	private static long currentCycleStartTime;
 	private static String lastRemainingTime;
