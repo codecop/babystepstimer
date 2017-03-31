@@ -1,4 +1,4 @@
-package net.davidtanzer.babysteps;
+package org.approvaltests.writers;
 
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.JunitReporter;

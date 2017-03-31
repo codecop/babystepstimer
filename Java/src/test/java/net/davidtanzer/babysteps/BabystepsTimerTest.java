@@ -3,6 +3,7 @@ package net.davidtanzer.babysteps;
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.*;
 import org.approvaltests.reporters.macosx.KDiff3Reporter;
+import org.approvaltests.writers.JavaBeanApprovalWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;

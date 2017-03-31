@@ -1,6 +1,4 @@
-package net.davidtanzer.babysteps;
-
-import org.approvaltests.writers.ApprovalTextWriter;
+package org.approvaltests.writers;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
