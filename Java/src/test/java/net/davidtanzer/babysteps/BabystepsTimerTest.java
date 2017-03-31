@@ -96,9 +96,15 @@ public class BabystepsTimerTest {
         startTimer();
 
         send("command://reset");
+        Thread.sleep(5800);
 
-        Thread.sleep(6000);
+        stopTime();
         Approvals.verify(BabystepsTimer.timerPane);
+    }
+
+    private void stopTime() {
+        long t = BabystepsTimer.time.get();
+        BabystepsTimer.time = () -> t;
     }
 
     @Test
@@ -118,8 +124,9 @@ public class BabystepsTimerTest {
         startTimer();
 
         BabystepsTimer.time = () -> System.currentTimeMillis() + (60 + 58) * 1000;
-        Thread.sleep(3000);
+        Thread.sleep(3500);
 
+        stopTime();
         Approvals.verify(BabystepsTimer.timerPane);
     }
 
