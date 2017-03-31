@@ -8,3 +8,6 @@ CSharp/BabyStepTimer/obj
 CSharp/.vs/
 .idea
 *.iml
+Java/Java.ipr
+Java/Java.iws
+Java/target/
