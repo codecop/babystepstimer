@@ -1,10 +1,7 @@
 package net.davidtanzer.babysteps;
 
 import org.approvaltests.Approvals;
-import org.approvaltests.reporters.ImageWebReporter;
-import org.approvaltests.reporters.JunitReporter;
-import org.approvaltests.reporters.QuietReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.approvaltests.reporters.*;
 import org.approvaltests.reporters.macosx.KDiff3Reporter;
 import org.junit.Test;
 
@@ -38,7 +35,7 @@ public class BabystepsTimerTest {
     }
 
     @Test
-    @UseReporter({KDiff3Reporter.class, JunitReporter.class, QuietReporter.class})
+    @UseReporter({KDiff3Reporter.class, ClipboardReporter.class, JunitReporter.class, QuietReporter.class})
     public void approveInitialFrameAsString() throws InterruptedException, IllegalAccessException, IntrospectionException, InvocationTargetException {
         BabystepsTimer babystepsTimer = new BabystepsTimer();
         babystepsTimer.main(new String[0]);
