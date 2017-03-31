@@ -22,6 +22,7 @@ import javax.swing.event.HyperlinkListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.text.DecimalFormat;
+import java.util.function.Supplier;
 
 public class BabystepsTimer {
 	private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
@@ -85,7 +86,7 @@ public class BabystepsTimer {
 						timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
 						timerFrame.repaint();
 					} else  if("command://reset".equals(e.getDescription())) {
-						currentCycleStartTime = System.currentTimeMillis();
+						currentCycleStartTime = time.get();
 						bodyBackgroundColor=BACKGROUND_COLOR_PASSED;
 					} else  if("command://quit".equals(e.getDescription())) {
 						System.exit(0);
@@ -139,18 +140,20 @@ public class BabystepsTimer {
 		}).start();
 	}
 
+	static Supplier<Long> time = System::currentTimeMillis;
+
 	private static final class TimerThread extends Thread {
 		@Override
 		public void run() {
 			timerRunning = true;
-			currentCycleStartTime = System.currentTimeMillis();
+			currentCycleStartTime = time.get();
 			
 			while(timerRunning) {
-				long elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+				long elapsedTime = time.get() - currentCycleStartTime;
 				
 				if(elapsedTime >= SECONDS_IN_CYCLE*1000+980) {
-					currentCycleStartTime = System.currentTimeMillis();
-					elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+					currentCycleStartTime = time.get();
+					elapsedTime = time.get() - currentCycleStartTime;
 				}
 				if(elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
 					bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;

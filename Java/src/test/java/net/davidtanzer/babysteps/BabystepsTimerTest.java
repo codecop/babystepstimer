@@ -101,6 +101,17 @@ public class BabystepsTimerTest {
     }
 
     @Test
+    @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
+    public void approveTimerGetsRedWhenRuningOut() throws InterruptedException, MalformedURLException {
+        startTimer();
+
+        BabystepsTimer.time = () -> System.currentTimeMillis() + (60+58) * 1000;
+        Thread.sleep(1000);
+
+        Approvals.verify(BabystepsTimer.timerPane);
+    }
+
+    @Test
     @Ignore("Graphics changes when run several time in same JVM, can not fix the component tree.")
     @UseReporter({KDiff3Reporter.class, ClipboardReporter.class, JunitReporter.class, QuietReporter.class})
     public void approveInitialFrameAsString() throws InterruptedException, IllegalAccessException, IntrospectionException, InvocationTargetException {
