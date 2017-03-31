@@ -41,13 +41,16 @@ public class BabystepsTimerTest {
     }
 
     private void send(String desc) {
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, desc));
+        SwingUtilities.invokeLater(() -> {
+            BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, desc));
+        });
     }
 
     @After
     public void closeTimer() throws InterruptedException {
         timerFrame.setVisible(false);
         timerFrame.dispose();
+        BabystepsTimer.time = System::currentTimeMillis;
         Thread.sleep(1500);
     }
 
@@ -75,7 +78,6 @@ public class BabystepsTimerTest {
         Thread.sleep(1500);
         Approvals.verify(BabystepsTimer.timerPane);
     }
-
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
@@ -105,8 +107,19 @@ public class BabystepsTimerTest {
     public void approveTimerGetsRedWhenRuningOut() throws InterruptedException, MalformedURLException {
         startTimer();
 
-        BabystepsTimer.time = () -> System.currentTimeMillis() + (60+58) * 1000;
+        BabystepsTimer.time = () -> System.currentTimeMillis() + (60 + 58) * 1000;
         Thread.sleep(1000);
+
+        Approvals.verify(BabystepsTimer.timerPane);
+    }
+
+    @Test
+    @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
+    public void approveTimerRunsOver() throws InterruptedException, MalformedURLException {
+        startTimer();
+
+        BabystepsTimer.time = () -> System.currentTimeMillis() + (60 + 58) * 1000;
+        Thread.sleep(3000);
 
         Approvals.verify(BabystepsTimer.timerPane);
     }
