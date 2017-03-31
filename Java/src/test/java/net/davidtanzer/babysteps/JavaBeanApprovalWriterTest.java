@@ -27,4 +27,9 @@ public class JavaBeanApprovalWriterTest {
         Approvals.verifyAll("primitive", Arrays.<Object>asList(3, "3", 1.0), this::extractNoExceptions);
     }
 
+    @Test
+    public void should_report_arrays() throws Exception {
+        Approvals.verify(this.extractNoExceptions(new String[]{"xax", "xbx"}));
+    }
+
 }

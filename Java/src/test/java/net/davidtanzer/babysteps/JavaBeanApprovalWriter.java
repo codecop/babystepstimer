@@ -32,17 +32,34 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         StringBuilder data = new StringBuilder();
         data.append("{");
         data.append(c.getClass().getName());
-        data.append(" : ");
-        data.append(c.toString());
+
+
+
+        if (c.getClass().isArray()) {
+            Object[] ca = (Object[]) c;
+            for (int i = 0; i < ca.length; i++) {
+                data.append(i);
+                data.append(" : ");
+                Object invoke = ca[i];
+                data.append(extractData(invoke));
+                data.append("\n");
+            }
+        }
+        else {
+            data.append(" : ");
+            data.append(c.toString());
+        }
         data.append("\n");
 
         // cycles and non java core classes
-        if (visited.contains(c) || !c.getClass().getName().startsWith("java")) {
+        if (visited.contains(c)) {
             //data.append(System.identityHashCode(c));
             data.append("}");
             return data.toString();
         }
         visited.add(c);
+
+        // || !c.getClass().getName().startsWith("java")
 
         for (PropertyDescriptor p : propertyDescriptors) {
             if (Arrays.asList("class", "bytes").contains(p.getName())) {
