@@ -28,6 +28,9 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         if (c.getClass().isPrimitive()) {
             return c.toString();
         }
+        if (c.getClass() == Class.class) {
+            return c.toString();
+        }
 
         BeanInfo beanInfo = Introspector.getBeanInfo(c.getClass());
         PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
@@ -56,15 +59,14 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
                 }
             }
             // ignore primitive arrays
-        }
-        else {
+        } else {
             data.append(" : ");
-            data.append(c.toString());
+            data.append(c.toString().replaceAll("@[\\da-f]+$",""));
         }
         data.append("\n");
 
         // cycles and non java core classes
-        if (visited.contains(c) || !c.getClass().getName().startsWith("java") ) {
+        if (visited.contains(c) || !c.getClass().getName().startsWith("java")) {
             //data.append(System.identityHashCode(c));
             data.append("}");
             return data.toString();

@@ -1,0 +1,4408 @@
+{javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+JMenuBar : null
+accessibleContext : {javax.swing.JFrame$AccessibleJFrame : javax.swing.JFrame$AccessibleJFrame
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 1
+}
+accessibleComponent : {javax.swing.JFrame$AccessibleJFrame : javax.swing.JFrame$AccessibleJFrame
+}
+accessibleDescription : null
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : -1
+}
+accessibleName : {java.lang.String : Babysteps Timer
+empty : {java.lang.Boolean : false
+}
+}
+accessibleParent : null
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : frame
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing,active,resizable
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=23,width=250,height=120]
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=23,width=250,height=120]
+}
+bounds2D : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=23,width=250,height=120]
+}
+centerX : {java.lang.Double : 125.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+centerY : {java.lang.Double : 83.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+empty : {java.lang.Boolean : false
+}
+frame : {java.awt.geom.Rectangle2D$Double : java.awt.geom.Rectangle2D$Double[x=0.0,y=23.0,w=250.0,h=120.0]
+}
+height : {java.lang.Double : 120.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=23]
+location : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+x : {java.lang.Double : 0.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+y : {java.lang.Double : 23.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+}
+maxX : {java.lang.Double : 250.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+maxY : {java.lang.Double : 143.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+minX : {java.lang.Double : 0.0
+}
+minY : {java.lang.Double : 23.0
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+height : {java.lang.Double : 120.0
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+width : {java.lang.Double : 250.0
+}
+}
+width : {java.lang.Double : 250.0
+}
+x : {java.lang.Double : 0.0
+}
+y : {java.lang.Double : 23.0
+}
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+name : {java.lang.String : Default Cursor
+empty : {java.lang.Boolean : false
+}
+}
+type : {java.lang.Integer : 0
+}
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+PSName : {java.lang.String : LucidaGrande
+empty : {java.lang.Boolean : false
+}
+}
+attributes : {sun.font.AttributeMap : map of {family="Lucida Grande", weight=1.0*, width=1.0*, posture=0.0*, size=13.0, transform=null*, superscript=0*, tracking=0.0*[btx=null, ctx=null]}
+}
+availableAttributes : {[Ljava.text.AttributedCharacterIterator$Attribute;0 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(family)
+}
+1 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(weight)
+}
+2 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(width)
+}
+3 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(posture)
+}
+4 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(size)
+}
+5 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(transform)
+}
+6 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(superscript)
+}
+7 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(char_replacement)
+}
+8 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(foreground)
+}
+9 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(background)
+}
+10 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(underline)
+}
+11 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(strikethrough)
+}
+12 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(run_direction)
+}
+13 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(bidi_embedding)
+}
+14 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(justification)
+}
+15 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(input method highlight)
+}
+16 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(input method underline)
+}
+17 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(swap_colors)
+}
+18 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(numeric_shaping)
+}
+19 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(kerning)
+}
+20 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(ligatures)
+}
+21 : {java.awt.font.TextAttribute : java.awt.font.TextAttribute(tracking)
+}
+
+}
+bold : {java.lang.Boolean : false
+}
+family : {java.lang.String : Lucida Grande
+empty : {java.lang.Boolean : false
+}
+}
+fontName : {java.lang.String : LucidaGrande
+}
+italic : {java.lang.Boolean : false
+}
+italicAngle : {java.lang.Float : 0.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+missingGlyphCode : {java.lang.Integer : 0
+}
+name : {java.lang.String : Lucida Grande
+}
+numGlyphs : {java.lang.Integer : 2826
+}
+peer : {sun.lwawt.macosx.LWCToolkit$OSXPlatformFont : sun.lwawt.macosx.LWCToolkit$OSXPlatformFont
+}
+plain : {java.lang.Boolean : true
+}
+size : {java.lang.Integer : 13
+}
+size2D : {java.lang.Float : 13.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+style : {java.lang.Integer : 0
+}
+transform : {java.awt.geom.AffineTransform : AffineTransform[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
+determinant : {java.lang.Double : 1.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+identity : {java.lang.Boolean : true
+}
+scaleX : {java.lang.Double : 1.0
+}
+scaleY : {java.lang.Double : 1.0
+}
+shearX : {java.lang.Double : 0.0
+}
+shearY : {java.lang.Double : 0.0
+}
+translateX : {java.lang.Double : 0.0
+}
+translateY : {java.lang.Double : 0.0
+}
+type : {java.lang.Integer : 0
+}
+}
+transformed : {java.lang.Boolean : false
+}
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+RGB : {java.lang.Integer : -16777216
+}
+alpha : {java.lang.Integer : 255
+}
+blue : {java.lang.Integer : 0
+}
+colorSpace : {java.awt.color.ICC_ColorSpace : java.awt.color.ICC_ColorSpace
+CS_sRGB : {java.lang.Boolean : true
+}
+numComponents : {java.lang.Integer : 3
+}
+profile : {java.awt.color.ICC_ProfileRGB : java.awt.color.ICC_ProfileRGB
+PCSType : {java.lang.Integer : 0
+}
+colorSpaceType : {java.lang.Integer : 5
+}
+data : {[B
+}
+majorVersion : {java.lang.Integer : 2
+}
+matrix : {[[F0 : {[F
+}
+1 : {[F
+}
+2 : {[F
+}
+
+}
+mediaWhitePoint : {[F
+}
+minorVersion : {java.lang.Integer : 16
+}
+numComponents : {java.lang.Integer : 3
+}
+profileClass : {java.lang.Integer : 1
+}
+}
+type : {java.lang.Integer : 5
+}
+}
+green : {java.lang.Integer : 0
+}
+red : {java.lang.Integer : 0
+}
+transparency : {java.lang.Integer : 1
+}
+}
+locale : {java.util.Locale : en_US
+ISO3Country : {java.lang.String : USA
+empty : {java.lang.Boolean : false
+}
+}
+ISO3Language : {java.lang.String : eng
+empty : {java.lang.Boolean : false
+}
+}
+country : {java.lang.String : US
+empty : {java.lang.Boolean : false
+}
+}
+displayCountry : {java.lang.String : United States
+empty : {java.lang.Boolean : false
+}
+}
+displayLanguage : {java.lang.String : English
+empty : {java.lang.Boolean : false
+}
+}
+displayName : {java.lang.String : English (United States)
+empty : {java.lang.Boolean : false
+}
+}
+displayScript : {java.lang.String : 
+empty : {java.lang.Boolean : true
+}
+}
+displayVariant : {java.lang.String : 
+}
+extensionKeys : {java.util.Collections$EmptySet : []
+empty : {java.lang.Boolean : true
+}
+}
+language : {java.lang.String : en
+empty : {java.lang.Boolean : false
+}
+}
+script : {java.lang.String : 
+}
+unicodeLocaleAttributes : {java.util.Collections$EmptySet : []
+}
+unicodeLocaleKeys : {java.util.Collections$EmptySet : []
+}
+variant : {java.lang.String : 
+}
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+visible : {java.lang.Boolean : true
+}
+}
+active : {java.lang.Boolean : true
+}
+alignmentX : {java.lang.Float : 0.5
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+alignmentY : {java.lang.Float : 0.5
+}
+alwaysOnTop : {java.lang.Boolean : false
+}
+alwaysOnTopSupported : {java.lang.Boolean : true
+}
+autoRequestFocus : {java.lang.Boolean : true
+}
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bufferStrategy : null
+componentCount : {java.lang.Integer : 1
+}
+components : {[Ljava.awt.Component;0 : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+JMenuBar : null
+UI : {com.apple.laf.AquaRootPaneUI : com.apple.laf.AquaRootPaneUI
+}
+UIClassID : {java.lang.String : RootPaneUI
+empty : {java.lang.Boolean : false
+}
+}
+accessibleContext : {javax.swing.JRootPane$AccessibleJRootPane : javax.swing.JRootPane$AccessibleJRootPane
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 2
+}
+accessibleComponent : {javax.swing.JRootPane$AccessibleJRootPane : javax.swing.JRootPane$AccessibleJRootPane
+}
+accessibleDescription : null
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 0
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : root pane
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing,opaque
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+bounds2D : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+centerX : {java.lang.Double : 125.0
+}
+centerY : {java.lang.Double : 60.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+empty : {java.lang.Boolean : false
+}
+frame : {java.awt.geom.Rectangle2D$Double : java.awt.geom.Rectangle2D$Double[x=0.0,y=0.0,w=250.0,h=120.0]
+}
+height : {java.lang.Double : 120.0
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+x : {java.lang.Double : 0.0
+}
+y : {java.lang.Double : 0.0
+}
+}
+maxX : {java.lang.Double : 250.0
+}
+maxY : {java.lang.Double : 120.0
+}
+minX : {java.lang.Double : 0.0
+}
+minY : {java.lang.Double : 0.0
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+width : {java.lang.Double : 250.0
+}
+x : {java.lang.Double : 0.0
+}
+y : {java.lang.Double : 0.0
+}
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : true
+}
+}
+actionMap : {javax.swing.ActionMap : javax.swing.ActionMap
+parent : {javax.swing.plaf.basic.LazyActionMap : javax.swing.plaf.basic.LazyActionMap
+parent : null
+}
+}
+alignmentX : {java.lang.Float : 0.0
+}
+alignmentY : {java.lang.Float : 0.0
+}
+ancestorListeners : {[Ljavax.swing.event.AncestorListener;0 : {com.apple.laf.AquaRootPaneUI : com.apple.laf.AquaRootPaneUI
+}
+
+}
+autoscrolls : {java.lang.Boolean : false
+}
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+baselineResizeBehavior : {java.awt.Component$BaselineResizeBehavior : OTHER
+declaringClass : class java.awt.Component$BaselineResizeBehavior
+}
+border : null
+componentCount : {java.lang.Integer : 2
+}
+componentPopupMenu : null
+components : {[Ljava.awt.Component;0 : {javax.swing.JPanel : javax.swing.JPanel[null.glassPane,0,0,250x120,hidden,layout=java.awt.FlowLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777217,maximumSize=,minimumSize=,preferredSize=]
+UI : {com.apple.laf.AquaPanelUI : com.apple.laf.AquaPanelUI
+}
+UIClassID : {java.lang.String : PanelUI
+empty : {java.lang.Boolean : false
+}
+}
+accessibleContext : {javax.swing.JPanel$AccessibleJPanel : javax.swing.JPanel$AccessibleJPanel
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 0
+}
+accessibleComponent : {javax.swing.JPanel$AccessibleJPanel : javax.swing.JPanel$AccessibleJPanel
+}
+accessibleDescription : null
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 0
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : panel
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : null
+showing : {java.lang.Boolean : false
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : false
+}
+}
+actionMap : {javax.swing.ActionMap : javax.swing.ActionMap
+parent : null
+}
+alignmentX : {java.lang.Float : 0.5
+}
+alignmentY : {java.lang.Float : 0.5
+}
+ancestorListeners : {[Ljavax.swing.event.AncestorListener;
+}
+autoscrolls : {java.lang.Boolean : false
+}
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+baselineResizeBehavior : {java.awt.Component$BaselineResizeBehavior : OTHER
+}
+border : null
+componentCount : {java.lang.Integer : 0
+}
+componentPopupMenu : null
+components : {[Ljava.awt.Component;
+}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+debugGraphicsOptions : {java.lang.Integer : 0
+}
+doubleBuffered : {java.lang.Boolean : true
+}
+enabled : {java.lang.Boolean : true
+}
+focusCycleRoot : {java.lang.Boolean : false
+}
+focusTraversalPolicy : null
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : false
+}
+focusable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+height : {java.lang.Integer : 120
+}
+inheritsPopupMenu : {java.lang.Boolean : false
+}
+inputVerifier : null
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+layout : {java.awt.FlowLayout : java.awt.FlowLayout[hgap=5,vgap=5,align=center]
+alignOnBaseline : {java.lang.Boolean : false
+}
+alignment : {java.lang.Integer : 1
+}
+hgap : {java.lang.Integer : 5
+}
+vgap : {java.lang.Integer : 5
+}
+}
+managingFocus : {java.lang.Boolean : false
+}
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=32767,height=32767]
+height : {java.lang.Double : 32767.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=32767,height=32767]
+}
+width : {java.lang.Double : 32767.0
+}
+}
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=10,height=10]
+height : {java.lang.Double : 10.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=10,height=10]
+}
+width : {java.lang.Double : 10.0
+}
+}
+name : {java.lang.String : null.glassPane
+empty : {java.lang.Boolean : false
+}
+}
+nextFocusableComponent : null
+opaque : {java.lang.Boolean : false
+}
+optimizedDrawingEnabled : {java.lang.Boolean : true
+}
+paintingForPrint : {java.lang.Boolean : false
+}
+paintingTile : {java.lang.Boolean : false
+}
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=10,height=10]
+}
+registeredKeyStrokes : {[Ljavax.swing.KeyStroke;
+}
+requestFocusEnabled : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+toolTipText : null
+topLevelAncestor : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+transferHandler : null
+validateRoot : {java.lang.Boolean : false
+}
+verifyInputWhenFocusTarget : {java.lang.Boolean : true
+}
+vetoableChangeListeners : {[Ljava.beans.VetoableChangeListener;
+}
+visible : {java.lang.Boolean : false
+}
+visibleRect : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+width : {java.lang.Integer : 250
+}
+x : {java.lang.Integer : 0
+}
+y : {java.lang.Integer : 0
+}
+}
+1 : {javax.swing.JLayeredPane : javax.swing.JLayeredPane[null.layeredPane,0,0,250x120,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=,optimizedDrawingPossible=true]
+UIClassID : {java.lang.String : ComponentUI
+empty : {java.lang.Boolean : false
+}
+}
+accessibleContext : {javax.swing.JLayeredPane$AccessibleJLayeredPane : javax.swing.JLayeredPane$AccessibleJLayeredPane
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 1
+}
+accessibleComponent : {javax.swing.JLayeredPane$AccessibleJLayeredPane : javax.swing.JLayeredPane$AccessibleJLayeredPane
+}
+accessibleDescription : null
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 1
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : layered pane
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : true
+}
+}
+actionMap : {javax.swing.ActionMap : javax.swing.ActionMap
+parent : null
+}
+alignmentX : {java.lang.Float : 0.5
+}
+alignmentY : {java.lang.Float : 0.5
+}
+ancestorListeners : {[Ljavax.swing.event.AncestorListener;
+}
+autoscrolls : {java.lang.Boolean : false
+}
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+baselineResizeBehavior : {java.awt.Component$BaselineResizeBehavior : OTHER
+}
+border : null
+componentCount : {java.lang.Integer : 1
+}
+componentPopupMenu : null
+components : {[Ljava.awt.Component;0 : {javax.swing.JPanel : javax.swing.JPanel[null.contentPane,0,0,250x120,layout=javax.swing.JRootPane$1,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+UI : {com.apple.laf.AquaPanelUI : com.apple.laf.AquaPanelUI
+}
+UIClassID : {java.lang.String : PanelUI
+}
+accessibleContext : {javax.swing.JPanel$AccessibleJPanel : javax.swing.JPanel$AccessibleJPanel
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 1
+}
+accessibleComponent : {javax.swing.JPanel$AccessibleJPanel : javax.swing.JPanel$AccessibleJPanel
+}
+accessibleDescription : null
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 0
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JLayeredPane : javax.swing.JLayeredPane[null.layeredPane,0,0,250x120,alignmentX=0.0,alignmentY=0.0,border=,flags=256,maximumSize=,minimumSize=,preferredSize=,optimizedDrawingPossible=true]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : panel
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing,opaque
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : true
+}
+}
+actionMap : {javax.swing.ActionMap : javax.swing.ActionMap
+parent : null
+}
+alignmentX : {java.lang.Float : 0.5
+}
+alignmentY : {java.lang.Float : 0.5
+}
+ancestorListeners : {[Ljavax.swing.event.AncestorListener;
+}
+autoscrolls : {java.lang.Boolean : false
+}
+background : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=238,g=238,b=238]
+}
+baselineResizeBehavior : {java.awt.Component$BaselineResizeBehavior : OTHER
+}
+border : null
+componentCount : {java.lang.Integer : 1
+}
+componentPopupMenu : null
+components : {[Ljava.awt.Component;0 : {javax.swing.JTextPane : javax.swing.JTextPane[,0,0,250x120,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@5a1c0542,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=false,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],kit=javax.swing.text.html.HTMLEditorKit@56aac163,typeHandlers={text/html=javax.swing.text.html.HTMLEditorKit@56aac163, text/plain=javax.swing.text.StyledEditorKit@1f7030a6}]
+UI : {com.apple.laf.AquaTextPaneUI : com.apple.laf.AquaTextPaneUI
+}
+UIClassID : {java.lang.String : TextPaneUI
+empty : {java.lang.Boolean : false
+}
+}
+accessibleContext : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+accessibleAction : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+}
+accessibleActionCount : {java.lang.Integer : 85
+}
+accessibleChildrenCount : {java.lang.Integer : 7
+}
+accessibleComponent : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+}
+accessibleDescription : {java.lang.String : text/html
+empty : {java.lang.Boolean : false
+}
+}
+accessibleEditableText : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+}
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 0
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JPanel : javax.swing.JPanel[null.contentPane,0,0,250x120,layout=javax.swing.JRootPane$1,alignmentX=0.0,alignmentY=0.0,border=,flags=265,maximumSize=,minimumSize=,preferredSize=]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : text
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing,focused,opaque,multiple line
+}
+accessibleTable : null
+accessibleText : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+accessibleAction : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+accessibleActionCount : {java.lang.Integer : 85
+}
+accessibleChildrenCount : {java.lang.Integer : 0
+}
+accessibleComponent : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+accessibleDescription : {java.lang.String : text/html
+}
+accessibleEditableText : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : 0
+}
+accessibleKeyBinding : null
+accessibleName : null
+accessibleParent : {javax.swing.JPanel : javax.swing.JPanel[null.contentPane,0,0,250x120,layout=javax.swing.JRootPane$1,alignmentX=0.0,alignmentY=0.0,border=,flags=265,maximumSize=,minimumSize=,preferredSize=]
+}
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : text
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,focusable,visible,showing,focused,opaque,multiple line
+}
+accessibleTable : null
+accessibleText : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+accessibleValue : null
+background : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=255,g=255,b=255]
+RGB : {java.lang.Integer : -1
+}
+alpha : {java.lang.Integer : 255
+}
+blue : {java.lang.Integer : 255
+}
+colorSpace : {java.awt.color.ICC_ColorSpace : java.awt.color.ICC_ColorSpace
+}
+green : {java.lang.Integer : 255
+}
+red : {java.lang.Integer : 255
+}
+transparency : {java.lang.Integer : 1
+}
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+caretPosition : {java.lang.Integer : 0
+}
+charCount : {java.lang.Integer : 17
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+linkCount : {java.lang.Integer : 2
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+selectedText : null
+selectionEnd : {java.lang.Integer : 0
+}
+selectionStart : {java.lang.Integer : 0
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : true
+}
+}
+accessibleValue : null
+background : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=255,g=255,b=255]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+caretPosition : {java.lang.Integer : 0
+}
+charCount : {java.lang.Integer : 17
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+selectedText : null
+selectionEnd : {java.lang.Integer : 0
+}
+selectionStart : {java.lang.Integer : 0
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+titledBorderText : null
+toolTipText : null
+visible : {java.lang.Boolean : true
+}
+}
+actionMap : {javax.swing.ActionMap : javax.swing.ActionMap
+parent : {javax.swing.text.JTextComponent$KeymapActionMap : javax.swing.text.JTextComponent$KeymapActionMap
+parent : {javax.swing.plaf.ActionMapUIResource : javax.swing.plaf.ActionMapUIResource
+parent : null
+}
+}
+}
+actions : {[Ljavax.swing.Action;0 : {javax.swing.text.DefaultEditorKit$ReadOnlyAction : javax.swing.text.DefaultEditorKit$ReadOnlyAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+empty : {java.lang.Boolean : false
+}
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+1 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+2 : {javax.swing.text.DefaultEditorKit$BeginLineAction : javax.swing.text.DefaultEditorKit$BeginLineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+3 : {javax.swing.text.html.HTMLEditorKit$ActivateLinkAction : javax.swing.text.html.HTMLEditorKit$ActivateLinkAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+4 : {javax.swing.text.html.HTMLEditorKit$NavigateLinkAction : javax.swing.text.html.HTMLEditorKit$NavigateLinkAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+5 : {javax.swing.text.DefaultEditorKit$DeleteWordAction : javax.swing.text.DefaultEditorKit$DeleteWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+6 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+7 : {javax.swing.text.DefaultEditorKit$SelectWordAction : javax.swing.text.DefaultEditorKit$SelectWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+8 : {javax.swing.text.DefaultEditorKit$PageAction : javax.swing.text.DefaultEditorKit$PageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+9 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+10 : {javax.swing.text.DefaultEditorKit$SelectAllAction : javax.swing.text.DefaultEditorKit$SelectAllAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+11 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+12 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+13 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+14 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+15 : {javax.swing.text.DefaultEditorKit$InsertContentAction : javax.swing.text.DefaultEditorKit$InsertContentAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+16 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+17 : {javax.swing.text.DefaultEditorKit$PreviousWordAction : javax.swing.text.DefaultEditorKit$PreviousWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+18 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+19 : {javax.swing.text.DefaultEditorKit$ToggleComponentOrientationAction : javax.swing.text.DefaultEditorKit$ToggleComponentOrientationAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+20 : {javax.swing.text.DefaultEditorKit$EndWordAction : javax.swing.text.DefaultEditorKit$EndWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+21 : {javax.swing.text.StyledEditorKit$StyledInsertBreakAction : javax.swing.text.StyledEditorKit$StyledInsertBreakAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+22 : {javax.swing.text.DefaultEditorKit$EndWordAction : javax.swing.text.DefaultEditorKit$EndWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+23 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+24 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+25 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+26 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+27 : {javax.swing.text.DefaultEditorKit$BeepAction : javax.swing.text.DefaultEditorKit$BeepAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+28 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+29 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+30 : {javax.swing.text.DefaultEditorKit$PageAction : javax.swing.text.DefaultEditorKit$PageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+31 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+32 : {javax.swing.text.DefaultEditorKit$BeginWordAction : javax.swing.text.DefaultEditorKit$BeginWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+33 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+34 : {javax.swing.text.DefaultEditorKit$DeletePrevCharAction : javax.swing.text.DefaultEditorKit$DeletePrevCharAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+35 : {javax.swing.text.DefaultEditorKit$BeginLineAction : javax.swing.text.DefaultEditorKit$BeginLineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+36 : {javax.swing.text.StyledEditorKit$UnderlineAction : javax.swing.text.StyledEditorKit$UnderlineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+37 : {javax.swing.text.html.HTMLEditorKit$InsertHRAction : javax.swing.text.html.HTMLEditorKit$InsertHRAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+38 : {javax.swing.text.DefaultEditorKit$DeleteWordAction : javax.swing.text.DefaultEditorKit$DeleteWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+39 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+40 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+41 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+42 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+43 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+44 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+45 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+46 : {javax.swing.text.StyledEditorKit$BoldAction : javax.swing.text.StyledEditorKit$BoldAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+47 : {javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction : javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+48 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+49 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+50 : {javax.swing.text.DefaultEditorKit$CutAction : javax.swing.text.DefaultEditorKit$CutAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+51 : {javax.swing.text.DefaultEditorKit$SelectLineAction : javax.swing.text.DefaultEditorKit$SelectLineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+52 : {javax.swing.text.html.HTMLEditorKit$NavigateLinkAction : javax.swing.text.html.HTMLEditorKit$NavigateLinkAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+53 : {javax.swing.text.DefaultEditorKit$EndParagraphAction : javax.swing.text.DefaultEditorKit$EndParagraphAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+54 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+55 : {javax.swing.text.html.HTMLEditorKit$BeginAction : javax.swing.text.html.HTMLEditorKit$BeginAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+56 : {javax.swing.text.DefaultEditorKit$CopyAction : javax.swing.text.DefaultEditorKit$CopyAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+57 : {javax.swing.text.DefaultEditorKit$SelectParagraphAction : javax.swing.text.DefaultEditorKit$SelectParagraphAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+58 : {javax.swing.text.StyledEditorKit$ItalicAction : javax.swing.text.StyledEditorKit$ItalicAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+59 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+60 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+61 : {javax.swing.text.DefaultEditorKit$EndAction : javax.swing.text.DefaultEditorKit$EndAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+62 : {javax.swing.text.DefaultEditorKit$NextWordAction : javax.swing.text.DefaultEditorKit$NextWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+63 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+64 : {javax.swing.text.DefaultEditorKit$NextWordAction : javax.swing.text.DefaultEditorKit$NextWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+65 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+66 : {javax.swing.text.DefaultEditorKit$DeleteNextCharAction : javax.swing.text.DefaultEditorKit$DeleteNextCharAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+67 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+68 : {javax.swing.text.DefaultEditorKit$EndLineAction : javax.swing.text.DefaultEditorKit$EndLineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+69 : {javax.swing.text.DefaultEditorKit$BeginParagraphAction : javax.swing.text.DefaultEditorKit$BeginParagraphAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+70 : {javax.swing.text.DefaultEditorKit$WritableAction : javax.swing.text.DefaultEditorKit$WritableAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+71 : {javax.swing.text.html.HTMLEditorKit$BeginAction : javax.swing.text.html.HTMLEditorKit$BeginAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+72 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+73 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+74 : {javax.swing.text.DefaultEditorKit$EndAction : javax.swing.text.DefaultEditorKit$EndAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+75 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+76 : {javax.swing.text.DefaultEditorKit$EndLineAction : javax.swing.text.DefaultEditorKit$EndLineAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+77 : {javax.swing.text.DefaultEditorKit$UnselectAction : javax.swing.text.DefaultEditorKit$UnselectAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+78 : {javax.swing.text.DefaultEditorKit$PasteAction : javax.swing.text.DefaultEditorKit$PasteAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+79 : {javax.swing.text.DefaultEditorKit$InsertTabAction : javax.swing.text.DefaultEditorKit$InsertTabAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+80 : {javax.swing.text.DefaultEditorKit$DumpModelAction : javax.swing.text.DefaultEditorKit$DumpModelAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+81 : {javax.swing.text.DefaultEditorKit$EndParagraphAction : javax.swing.text.DefaultEditorKit$EndParagraphAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+82 : {javax.swing.text.DefaultEditorKit$BeginParagraphAction : javax.swing.text.DefaultEditorKit$BeginParagraphAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+83 : {javax.swing.text.DefaultEditorKit$BeginWordAction : javax.swing.text.DefaultEditorKit$BeginWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+84 : {javax.swing.text.DefaultEditorKit$PreviousWordAction : javax.swing.text.DefaultEditorKit$PreviousWordAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+
+}
+alignmentX : {java.lang.Float : 0.5
+}
+alignmentY : {java.lang.Float : 0.5
+}
+ancestorListeners : {[Ljavax.swing.event.AncestorListener;
+}
+autoscrolls : {java.lang.Boolean : true
+}
+background : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=255,g=255,b=255]
+}
+baselineResizeBehavior : {java.awt.Component$BaselineResizeBehavior : OTHER
+}
+border : {javax.swing.plaf.basic.BasicBorders$MarginBorder : javax.swing.plaf.basic.BasicBorders$MarginBorder
+borderOpaque : {java.lang.Boolean : false
+}
+}
+caret : {com.apple.laf.AquaCaret : Dot=(0, Forward) Mark=(0, Forward)
+}
+caretColor : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+caretListeners : {[Ljavax.swing.event.CaretListener;0 : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+1 : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+}
+2 : {javax.swing.text.StyledEditorKit$AttributeTracker : javax.swing.text.StyledEditorKit$AttributeTracker
+}
+3 : {javax.swing.text.html.HTMLEditorKit$NavigateLinkAction : javax.swing.text.html.HTMLEditorKit$NavigateLinkAction
+}
+
+}
+caretPosition : {java.lang.Integer : 0
+}
+characterAttributes : {javax.swing.text.html.HTMLDocument$RunElement : LeafElement(content) 0,1
+
+allowsChildren : {java.lang.Boolean : false
+}
+attributeCount : {java.lang.Integer : 2
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$RunElement : LeafElement(content) 0,1
+
+}
+childCount : {java.lang.Integer : 0
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+asynchronousLoadPriority : {java.lang.Integer : 4
+}
+base : null
+bidiRootElement : {javax.swing.text.AbstractDocument$BidiRootElement : BranchElement(bidi root) 0,18
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 0
+}
+attributeNames : {java.util.Collections$EmptyEnumeration : java.util.Collections$EmptyEnumeration
+}
+attributes : {javax.swing.text.AbstractDocument$BidiRootElement : BranchElement(bidi root) 0,18
+
+}
+childCount : {java.lang.Integer : 1
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 1
+}
+endOffset : {java.lang.Integer : 18
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : bidi root
+empty : {java.lang.Boolean : false
+}
+}
+parent : null
+parentElement : null
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+defaultRootElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+childCount : {java.lang.Integer : 2
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 2
+}
+endOffset : {java.lang.Integer : 18
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : html
+empty : {java.lang.Boolean : false
+}
+}
+parent : null
+parentElement : null
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+documentFilter : null
+documentListeners : {[Ljavax.swing.event.DocumentListener;0 : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$1 : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$1
+}
+1 : {javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport : javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport
+}
+2 : {javax.swing.JEditorPane$AccessibleJEditorPaneHTML : javax.swing.JEditorPane$AccessibleJEditorPaneHTML
+}
+3 : {javax.swing.plaf.basic.BasicTextUI$UpdateHandler : javax.swing.plaf.basic.BasicTextUI$UpdateHandler
+}
+4 : {javax.swing.text.DefaultCaret$Handler : javax.swing.text.DefaultCaret$Handler
+}
+
+}
+documentProperties : {java.util.Hashtable : {token threshold=100, __EndOfLine__=
+, i18n=false, java.awt.font.TextAttribute(run_direction)=false, load priority=4}
+empty : {java.lang.Boolean : false
+}
+}
+endPosition : {javax.swing.text.GapContent$StickyPosition : 18
+offset : {java.lang.Integer : 18
+}
+}
+length : {java.lang.Integer : 17
+}
+parser : {javax.swing.text.html.parser.ParserDelegator : javax.swing.text.html.parser.ParserDelegator
+}
+preservesUnknownTags : {java.lang.Boolean : true
+}
+rootElements : {[Ljavax.swing.text.Element;0 : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+1 : {javax.swing.text.AbstractDocument$BidiRootElement : BranchElement(bidi root) 0,18
+
+}
+
+}
+startPosition : {javax.swing.text.GapContent$StickyPosition : 0
+offset : {java.lang.Integer : 0
+}
+}
+styleNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+styleSheet : {javax.swing.text.html.StyleSheet : {text-align=center,name=div,}
+{name=content,a=AttributeSet,color=#555555,}
+{name=default,font-family=Lucida Grande,font-size=4,font-weight=normal,}
+{name=default,}
+{name=p-implied,}
+{text-align=center,font-size=30px,color=#333333,name=h1,}
+{margin-top=0,}
+{color=#555555,}
+{text-align=center,font-size=30px,color=#333333,}
+{name=p,margin-top=0,}
+{name=body,}
+{name=p,margin-top=0,resolver=AttributeSet,}
+{name=default,font-family=Lucida Grande,font-size=4,font-weight=normal,font-style=,FONT_ATTRIBUTE_KEY=com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],}
+{color=#555555,}
+{name=content,a=AttributeSet,color=#555555,}
+{name=default,font-family=Lucida Grande,}
+{CR=true,name=content,}
+{name=default,font-family=Lucida Grande,font-size=4,font-weight=normal,font-style=,}
+{text-align=center,}
+{name=html,}
+{name=head,}
+{name=default,font-family=Lucida Grande,font-size=4,}
+{default=AttributeSet,}
+{name=content,}
+{bidiLevel=0,}
+{}
+
+base : null
+changeListeners : {[Ljavax.swing.event.ChangeListener;0 : {javax.swing.text.DefaultStyledDocument$StyleContextChangeHandler : javax.swing.text.DefaultStyledDocument$StyleContextChangeHandler
+}
+
+}
+emptySet : {javax.swing.text.SimpleAttributeSet$EmptyAttributeSet : javax.swing.text.SimpleAttributeSet$EmptyAttributeSet
+attributeCount : {java.lang.Integer : 0
+}
+attributeNames : {java.util.Collections$EmptyEnumeration : java.util.Collections$EmptyEnumeration
+}
+resolveParent : null
+}
+styleNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+styleSheets : {[Ljavax.swing.text.html.StyleSheet;0 : {javax.swing.text.html.StyleSheet : {name=menu,margin-left-ltr=40,margin-right-rtl=40,margin-top=10,margin-bottom=10,}
+{name=ul li ul,}
+{name=dd p,}
+{name=u,text-decoration=underline,}
+{name=pre,}
+{name=ul li menu,list-style-type=circle,margin-left-ltr=25,margin-right-rtl=25,}
+{name=address,}
+{name=ul li ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=ol li,}
+{name=dd,margin-left-ltr=40,margin-right-rtl=40,margin-top=0,margin-bottom=0,}
+{name=dt,margin-top=0,margin-bottom=0,}
+{name=h3,font-size=medium,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=dir,margin-left-ltr=40,margin-right-rtl=40,margin-top=10,margin-bottom=10,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,}
+{name=b,font-weight=bold,}
+{name=ul li ul li,}
+{name=tr,text-align=left,}
+{name=strike,text-decoration=line-through,}
+{name=dir li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=dir,}
+{name=a,color=blue,text-decoration=underline,}
+{name=strong,font-weight=bold,}
+{name=sup,}
+{name=var,}
+{name=sub,}
+{name=content,}
+{name=center,text-align=center,}
+{name=ul li ul li ul,}
+{name=blockquote,margin-top=5,margin-bottom=5,margin-left=35,margin-right=35,}
+{name=em,font-style=italic,}
+{name=ul,margin-top=10,margin-bottom=10,margin-left-ltr=50,margin-right-rtl=50,list-style-type=disc,}
+{name=kbd,font-size=small,font-family=Monospaced,}
+{name=big,font-size=x-large,}
+{name=strong,}
+{name=li p,}
+{name=pre p,margin-top=0,}
+{name=menu li p,}
+{name=default,}
+{name=samp,font-size=small,font-family=Monospaced,}
+{name=table,border-top-style=outset,border-right-style=outset,border-bottom-style=outset,border-left-style=outset,border-top-width=0,border-right-width=0,border-bottom-width=0,border-left-width=0,}
+{name=menu li p,margin-top=0,margin-bottom=0,}
+{name=code,}
+{name=pre p,}
+{name=tt,font-family=Monospaced,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,}
+{name=caption,caption-side=top,text-align=center,}
+{name=dir li p,}
+{name=menu li,}
+{name=samp,}
+{name=ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=sup,vertical-align=sup,}
+{name=ul li,}
+{name=td p,}
+{name=ul li ul li ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{default=AttributeSet,}
+{name=th,}
+{name=td,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,h5=AttributeSet,}
+{name=tr,}
+{name=h1,font-size=x-large,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=body,}
+{name=nobr,white-space=nowrap,}
+{name=i,font-style=italic,}
+{name=dfn,}
+{name=em,}
+{name=h6,font-size=xx-small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=p,}
+{name=pre,margin-top=5,margin-bottom=5,font-family=Monospaced,}
+{name=tt,}
+{name=s,}
+{name=u,}
+{name=var,font-weight=bold,font-style=italic,}
+{name=i,}
+{name=caption,}
+{name=blockquote,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,h5=AttributeSet,h6=AttributeSet,}
+{name=menu li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=a,}
+{name=address,color=blue,font-style=italic,}
+{name=b,}
+{name=ul,}
+{name=ol li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=ul li p,margin-top=0,margin-bottom=0,}
+{name=nobr,}
+{name=dl,}
+{name=strike,}
+{name=dd,}
+{name=td p,margin-top=0,}
+{name=dir li,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,}
+{name=ul li ul li ul li,}
+{name=ol,margin-top=10,margin-bottom=10,margin-left-ltr=50,margin-right-rtl=50,list-style-type=decimal,}
+{default=AttributeSet,body=AttributeSet,}
+{name=s,text-decoration=line-through,}
+{name=h2,font-size=large,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=dt,}
+{name=li p,margin-top=0,margin-bottom=0,}
+{name=small,}
+{name=big,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,}
+{name=sub,vertical-align=sub,}
+{name=h4,font-size=small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=ul li p,}
+{name=cite,}
+{name=ul li menu,}
+{name=dfn,font-style=italic,}
+{name=code,font-size=small,font-family=Monospaced,}
+{name=table,}
+{name=h5,font-size=x-small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=menu,}
+{name=h2,}
+{name=ul li ul,list-style-type=circle,margin-left-ltr=25,margin-right-rtl=25,}
+{name=ul li ul li ul,list-style-type=square,margin-left-ltr=25,margin-right-rtl=25,}
+{name=h3,}
+{name=h1,}
+{name=h6,}
+{name=ol,}
+{name=h4,}
+{name=h5,}
+{name=p,margin-top=15,}
+{name=dir li p,margin-top=0,margin-bottom=0,}
+{name=center,}
+{name=kbd,}
+{name=dl,margin-left=0,margin-top=10,margin-bottom=10,}
+{name=ol li p,margin-top=0,margin-bottom=0,}
+{name=dd p,margin-left=0,margin-top=0,margin-bottom=0,}
+{name=small,font-size=x-small,}
+{name=ol li p,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,}
+{name=body,font-size=14pt,font-family=Serif,font-weight=normal,margin-left=0,margin-right=0,color=black,}
+{name=cite,font-style=italic,}
+{}
+
+base : null
+changeListeners : {[Ljavax.swing.event.ChangeListener;
+}
+emptySet : {javax.swing.text.SimpleAttributeSet$EmptyAttributeSet : javax.swing.text.SimpleAttributeSet$EmptyAttributeSet
+}
+styleNames : {java.util.Collections$3 : java.util.Collections$3
+}
+styleSheets : null
+}
+
+}
+}
+tokenThreshold : {java.lang.Integer : 100
+}
+undoableEditListeners : {[Ljavax.swing.event.UndoableEditListener;
+}
+}
+elementCount : {java.lang.Integer : 0
+}
+endOffset : {java.lang.Integer : 1
+}
+leaf : {java.lang.Boolean : true
+}
+name : {java.lang.String : content
+empty : {java.lang.Boolean : false
+}
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p-implied) 0,1
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p-implied) 0,1
+
+}
+childCount : {java.lang.Integer : 1
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 1
+}
+endOffset : {java.lang.Integer : 1
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : p-implied
+empty : {java.lang.Boolean : false
+}
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(head) 0,1
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(head) 0,1
+
+}
+childCount : {java.lang.Integer : 1
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 1
+}
+endOffset : {java.lang.Integer : 1
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : head
+empty : {java.lang.Boolean : false
+}
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(head) 0,1
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p-implied) 0,1
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+componentCount : {java.lang.Integer : 0
+}
+componentPopupMenu : null
+components : {[Ljava.awt.Component;<already visited>}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+contentType : {java.lang.String : text/html
+}
+debugGraphicsOptions : {java.lang.Integer : 0
+}
+disabledTextColor : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=128,g=128,b=128]
+RGB : {java.lang.Integer : -8355712
+}
+alpha : {java.lang.Integer : 255
+}
+blue : {java.lang.Integer : 128
+}
+colorSpace : {java.awt.color.ICC_ColorSpace : java.awt.color.ICC_ColorSpace
+}
+green : {java.lang.Integer : 128
+}
+red : {java.lang.Integer : 128
+}
+transparency : {java.lang.Integer : 1
+}
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+doubleBuffered : {java.lang.Boolean : false
+}
+dragEnabled : {java.lang.Boolean : true
+}
+dropLocation : null
+dropMode : {javax.swing.DropMode : USE_SELECTION
+declaringClass : class javax.swing.DropMode
+}
+editable : {java.lang.Boolean : false
+}
+editorKit : {javax.swing.text.html.HTMLEditorKit : javax.swing.text.html.HTMLEditorKit
+accessibleContext : {javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext : javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext
+accessibleAction : null
+accessibleChildrenCount : {java.lang.Integer : 7
+}
+accessibleComponent : {javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext : javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext
+}
+accessibleContext : {javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext : javax.swing.text.html.AccessibleHTML$RootHTMLAccessibleContext
+}
+accessibleDescription : {java.lang.String : text/html
+}
+accessibleEditableText : null
+accessibleIcon : null
+accessibleIndexInParent : {java.lang.Integer : -1
+}
+accessibleName : null
+accessibleParent : null
+accessibleRelationSet : {javax.accessibility.AccessibleRelationSet : 
+}
+accessibleRole : {javax.accessibility.AccessibleRole : text
+}
+accessibleSelection : null
+accessibleStateSet : {javax.accessibility.AccessibleStateSet : enabled,visible,showing
+}
+accessibleTable : null
+accessibleText : null
+accessibleValue : null
+background : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=255,g=255,b=255]
+}
+bounds : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+cursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+enabled : {java.lang.Boolean : true
+}
+focusTraversable : {java.lang.Boolean : false
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+locale : {java.util.Locale : en_US
+}
+location : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+locationOnScreen : {java.awt.Point : java.awt.Point[x=0,y=23]
+}
+showing : {java.lang.Boolean : true
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=250,height=120]
+}
+visible : {java.lang.Boolean : true
+}
+}
+actions : {[Ljavax.swing.Action;0 : {javax.swing.text.DefaultEditorKit$ReadOnlyAction : javax.swing.text.DefaultEditorKit$ReadOnlyAction
+}
+1 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+2 : {javax.swing.text.DefaultEditorKit$BeginLineAction : javax.swing.text.DefaultEditorKit$BeginLineAction
+}
+3 : {javax.swing.text.html.HTMLEditorKit$ActivateLinkAction : javax.swing.text.html.HTMLEditorKit$ActivateLinkAction
+}
+4 : {javax.swing.text.html.HTMLEditorKit$NavigateLinkAction : javax.swing.text.html.HTMLEditorKit$NavigateLinkAction
+}
+5 : {javax.swing.text.DefaultEditorKit$DeleteWordAction : javax.swing.text.DefaultEditorKit$DeleteWordAction
+}
+6 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+7 : {javax.swing.text.DefaultEditorKit$SelectWordAction : javax.swing.text.DefaultEditorKit$SelectWordAction
+}
+8 : {javax.swing.text.DefaultEditorKit$PageAction : javax.swing.text.DefaultEditorKit$PageAction
+}
+9 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+}
+10 : {javax.swing.text.DefaultEditorKit$SelectAllAction : javax.swing.text.DefaultEditorKit$SelectAllAction
+}
+11 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+12 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+13 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+}
+14 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+15 : {javax.swing.text.DefaultEditorKit$InsertContentAction : javax.swing.text.DefaultEditorKit$InsertContentAction
+}
+16 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+}
+17 : {javax.swing.text.DefaultEditorKit$PreviousWordAction : javax.swing.text.DefaultEditorKit$PreviousWordAction
+}
+18 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+}
+19 : {javax.swing.text.DefaultEditorKit$ToggleComponentOrientationAction : javax.swing.text.DefaultEditorKit$ToggleComponentOrientationAction
+}
+20 : {javax.swing.text.DefaultEditorKit$EndWordAction : javax.swing.text.DefaultEditorKit$EndWordAction
+}
+21 : {javax.swing.text.StyledEditorKit$StyledInsertBreakAction : javax.swing.text.StyledEditorKit$StyledInsertBreakAction
+}
+22 : {javax.swing.text.DefaultEditorKit$EndWordAction : javax.swing.text.DefaultEditorKit$EndWordAction
+}
+23 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+}
+24 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+25 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+}
+26 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+27 : {javax.swing.text.DefaultEditorKit$BeepAction : javax.swing.text.DefaultEditorKit$BeepAction
+}
+28 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+29 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+}
+30 : {javax.swing.text.DefaultEditorKit$PageAction : javax.swing.text.DefaultEditorKit$PageAction
+}
+31 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+32 : {javax.swing.text.DefaultEditorKit$BeginWordAction : javax.swing.text.DefaultEditorKit$BeginWordAction
+}
+33 : {javax.swing.text.StyledEditorKit$AlignmentAction : javax.swing.text.StyledEditorKit$AlignmentAction
+}
+34 : {javax.swing.text.DefaultEditorKit$DeletePrevCharAction : javax.swing.text.DefaultEditorKit$DeletePrevCharAction
+}
+35 : {javax.swing.text.DefaultEditorKit$BeginLineAction : javax.swing.text.DefaultEditorKit$BeginLineAction
+}
+36 : {javax.swing.text.StyledEditorKit$UnderlineAction : javax.swing.text.StyledEditorKit$UnderlineAction
+}
+37 : {javax.swing.text.html.HTMLEditorKit$InsertHRAction : javax.swing.text.html.HTMLEditorKit$InsertHRAction
+}
+38 : {javax.swing.text.DefaultEditorKit$DeleteWordAction : javax.swing.text.DefaultEditorKit$DeleteWordAction
+}
+39 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+40 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+41 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+42 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+43 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+44 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+45 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+46 : {javax.swing.text.StyledEditorKit$BoldAction : javax.swing.text.StyledEditorKit$BoldAction
+}
+47 : {javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction : javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction
+}
+48 : {javax.swing.text.StyledEditorKit$FontSizeAction : javax.swing.text.StyledEditorKit$FontSizeAction
+}
+49 : {javax.swing.text.StyledEditorKit$FontFamilyAction : javax.swing.text.StyledEditorKit$FontFamilyAction
+}
+50 : {javax.swing.text.DefaultEditorKit$CutAction : javax.swing.text.DefaultEditorKit$CutAction
+}
+51 : {javax.swing.text.DefaultEditorKit$SelectLineAction : javax.swing.text.DefaultEditorKit$SelectLineAction
+}
+52 : {javax.swing.text.html.HTMLEditorKit$NavigateLinkAction : javax.swing.text.html.HTMLEditorKit$NavigateLinkAction
+}
+53 : {javax.swing.text.DefaultEditorKit$EndParagraphAction : javax.swing.text.DefaultEditorKit$EndParagraphAction
+}
+54 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+55 : {javax.swing.text.html.HTMLEditorKit$BeginAction : javax.swing.text.html.HTMLEditorKit$BeginAction
+}
+56 : {javax.swing.text.DefaultEditorKit$CopyAction : javax.swing.text.DefaultEditorKit$CopyAction
+}
+57 : {javax.swing.text.DefaultEditorKit$SelectParagraphAction : javax.swing.text.DefaultEditorKit$SelectParagraphAction
+}
+58 : {javax.swing.text.StyledEditorKit$ItalicAction : javax.swing.text.StyledEditorKit$ItalicAction
+}
+59 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+60 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+61 : {javax.swing.text.DefaultEditorKit$EndAction : javax.swing.text.DefaultEditorKit$EndAction
+}
+62 : {javax.swing.text.DefaultEditorKit$NextWordAction : javax.swing.text.DefaultEditorKit$NextWordAction
+}
+63 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+64 : {javax.swing.text.DefaultEditorKit$NextWordAction : javax.swing.text.DefaultEditorKit$NextWordAction
+}
+65 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+66 : {javax.swing.text.DefaultEditorKit$DeleteNextCharAction : javax.swing.text.DefaultEditorKit$DeleteNextCharAction
+}
+67 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+68 : {javax.swing.text.DefaultEditorKit$EndLineAction : javax.swing.text.DefaultEditorKit$EndLineAction
+}
+69 : {javax.swing.text.DefaultEditorKit$BeginParagraphAction : javax.swing.text.DefaultEditorKit$BeginParagraphAction
+}
+70 : {javax.swing.text.DefaultEditorKit$WritableAction : javax.swing.text.DefaultEditorKit$WritableAction
+}
+71 : {javax.swing.text.html.HTMLEditorKit$BeginAction : javax.swing.text.html.HTMLEditorKit$BeginAction
+}
+72 : {javax.swing.text.DefaultEditorKit$VerticalPageAction : javax.swing.text.DefaultEditorKit$VerticalPageAction
+}
+73 : {javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction : javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction
+}
+74 : {javax.swing.text.DefaultEditorKit$EndAction : javax.swing.text.DefaultEditorKit$EndAction
+}
+75 : {javax.swing.text.DefaultEditorKit$NextVisualPositionAction : javax.swing.text.DefaultEditorKit$NextVisualPositionAction
+}
+76 : {javax.swing.text.DefaultEditorKit$EndLineAction : javax.swing.text.DefaultEditorKit$EndLineAction
+}
+77 : {javax.swing.text.DefaultEditorKit$UnselectAction : javax.swing.text.DefaultEditorKit$UnselectAction
+}
+78 : {javax.swing.text.DefaultEditorKit$PasteAction : javax.swing.text.DefaultEditorKit$PasteAction
+}
+79 : {javax.swing.text.DefaultEditorKit$InsertTabAction : javax.swing.text.DefaultEditorKit$InsertTabAction
+}
+80 : {javax.swing.text.DefaultEditorKit$DumpModelAction : javax.swing.text.DefaultEditorKit$DumpModelAction
+}
+81 : {javax.swing.text.DefaultEditorKit$EndParagraphAction : javax.swing.text.DefaultEditorKit$EndParagraphAction
+}
+82 : {javax.swing.text.DefaultEditorKit$BeginParagraphAction : javax.swing.text.DefaultEditorKit$BeginParagraphAction
+}
+83 : {javax.swing.text.DefaultEditorKit$BeginWordAction : javax.swing.text.DefaultEditorKit$BeginWordAction
+}
+84 : {javax.swing.text.DefaultEditorKit$PreviousWordAction : javax.swing.text.DefaultEditorKit$PreviousWordAction
+}
+
+}
+autoFormSubmission : {java.lang.Boolean : true
+}
+characterAttributeRun : {javax.swing.text.html.HTMLDocument$RunElement : LeafElement(content) 0,18
+
+allowsChildren : {java.lang.Boolean : false
+}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$RunElement : LeafElement(content) 0,18
+
+}
+childCount : {java.lang.Integer : 0
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 0
+}
+endOffset : {java.lang.Integer : 18
+}
+leaf : {java.lang.Boolean : true
+}
+name : {java.lang.String : content
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p) 17,18
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 3
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p) 17,18
+
+}
+childCount : {java.lang.Integer : 1
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 1
+}
+endOffset : {java.lang.Integer : 18
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : p
+empty : {java.lang.Boolean : false
+}
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(body) 17,18
+
+allowsChildren : {java.lang.Boolean : true
+}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+attributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(body) 17,18
+
+}
+childCount : {java.lang.Integer : 1
+}
+document : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+elementCount : {java.lang.Integer : 1
+}
+endOffset : {java.lang.Integer : 18
+}
+leaf : {java.lang.Boolean : false
+}
+name : {java.lang.String : body
+empty : {java.lang.Boolean : false
+}
+}
+parent : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(html) 0,18
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 17
+}
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(body) 17,18
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 17
+}
+}
+parentElement : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p) 17,18
+
+}
+resolveParent : null
+startOffset : {java.lang.Integer : 0
+}
+}
+contentType : {java.lang.String : text/html
+}
+defaultCursor : {java.awt.Cursor : java.awt.Cursor[Default Cursor]
+}
+inputAttributes : {javax.swing.text.StyleContext$NamedStyle : NamedStyle:content {name=content,}
+attributeCount : {java.lang.Integer : 1
+}
+attributeNames : {javax.swing.text.StyleContext$KeyEnumeration : javax.swing.text.StyleContext$KeyEnumeration
+}
+changeListeners : {[Ljavax.swing.event.ChangeListener;
+}
+name : {java.lang.String : content
+}
+resolveParent : null
+}
+linkCursor : {java.awt.Cursor : java.awt.Cursor[Hand Cursor]
+name : {java.lang.String : Hand Cursor
+empty : {java.lang.Boolean : false
+}
+}
+type : {java.lang.Integer : 12
+}
+}
+styleSheet : {javax.swing.text.html.StyleSheet : {name=menu,margin-left-ltr=40,margin-right-rtl=40,margin-top=10,margin-bottom=10,}
+{name=ul li ul,}
+{name=dd p,}
+{name=u,text-decoration=underline,}
+{name=pre,}
+{name=ul li menu,list-style-type=circle,margin-left-ltr=25,margin-right-rtl=25,}
+{name=address,}
+{name=ul li ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=ol li,}
+{name=dd,margin-left-ltr=40,margin-right-rtl=40,margin-top=0,margin-bottom=0,}
+{name=dt,margin-top=0,margin-bottom=0,}
+{name=h3,font-size=medium,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=dir,margin-left-ltr=40,margin-right-rtl=40,margin-top=10,margin-bottom=10,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,}
+{name=b,font-weight=bold,}
+{name=ul li ul li,}
+{name=tr,text-align=left,}
+{name=strike,text-decoration=line-through,}
+{name=dir li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=dir,}
+{name=a,color=blue,text-decoration=underline,}
+{name=strong,font-weight=bold,}
+{name=sup,}
+{name=var,}
+{name=sub,}
+{name=content,}
+{name=center,text-align=center,}
+{name=ul li ul li ul,}
+{name=blockquote,margin-top=5,margin-bottom=5,margin-left=35,margin-right=35,}
+{name=em,font-style=italic,}
+{name=ul,margin-top=10,margin-bottom=10,margin-left-ltr=50,margin-right-rtl=50,list-style-type=disc,}
+{name=kbd,font-size=small,font-family=Monospaced,}
+{name=big,font-size=x-large,}
+{name=strong,}
+{name=li p,}
+{name=pre p,margin-top=0,}
+{name=menu li p,}
+{name=default,}
+{name=samp,font-size=small,font-family=Monospaced,}
+{name=table,border-top-style=outset,border-right-style=outset,border-bottom-style=outset,border-left-style=outset,border-top-width=0,border-right-width=0,border-bottom-width=0,border-left-width=0,}
+{name=menu li p,margin-top=0,margin-bottom=0,}
+{name=code,}
+{name=pre p,}
+{name=tt,font-family=Monospaced,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,}
+{name=caption,caption-side=top,text-align=center,}
+{name=dir li p,}
+{name=menu li,}
+{name=samp,}
+{name=ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=sup,vertical-align=sup,}
+{name=ul li,}
+{name=td p,}
+{name=ul li ul li ul li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{default=AttributeSet,}
+{name=th,}
+{name=td,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,h5=AttributeSet,}
+{name=tr,}
+{name=h1,font-size=x-large,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=body,}
+{name=nobr,white-space=nowrap,}
+{name=i,font-style=italic,}
+{name=dfn,}
+{name=em,}
+{name=h6,font-size=xx-small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=p,}
+{name=pre,margin-top=5,margin-bottom=5,font-family=Monospaced,}
+{name=tt,}
+{name=s,}
+{name=u,}
+{name=var,font-weight=bold,font-style=italic,}
+{name=i,}
+{name=caption,}
+{name=blockquote,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,h4=AttributeSet,h5=AttributeSet,h6=AttributeSet,}
+{name=menu li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=a,}
+{name=address,color=blue,font-style=italic,}
+{name=b,}
+{name=ul,}
+{name=ol li,margin-left=0,margin-right=0,margin-top=0,margin-bottom=0,}
+{name=ul li p,margin-top=0,margin-bottom=0,}
+{name=nobr,}
+{name=dl,}
+{name=strike,}
+{name=dd,}
+{name=td p,margin-top=0,}
+{name=dir li,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,}
+{name=ul li ul li ul li,}
+{name=ol,margin-top=10,margin-bottom=10,margin-left-ltr=50,margin-right-rtl=50,list-style-type=decimal,}
+{default=AttributeSet,body=AttributeSet,}
+{name=s,text-decoration=line-through,}
+{name=h2,font-size=large,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=dt,}
+{name=li p,margin-top=0,margin-bottom=0,}
+{name=small,}
+{name=big,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,}
+{name=sub,vertical-align=sub,}
+{name=h4,font-size=small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=ul li p,}
+{name=cite,}
+{name=ul li menu,}
+{name=dfn,font-style=italic,}
+{name=code,font-size=small,font-family=Monospaced,}
+{name=table,}
+{name=h5,font-size=x-small,font-weight=bold,margin-top=10,margin-bottom=10,}
+{name=menu,}
+{name=h2,}
+{name=ul li ul,list-style-type=circle,margin-left-ltr=25,margin-right-rtl=25,}
+{name=ul li ul li ul,list-style-type=square,margin-left-ltr=25,margin-right-rtl=25,}
+{name=h3,}
+{name=h1,}
+{name=h6,}
+{name=ol,}
+{name=h4,}
+{name=h5,}
+{name=p,margin-top=15,}
+{name=dir li p,margin-top=0,margin-bottom=0,}
+{name=center,}
+{name=kbd,}
+{name=dl,margin-left=0,margin-top=10,margin-bottom=10,}
+{name=ol li p,margin-top=0,margin-bottom=0,}
+{name=dd p,margin-left=0,margin-top=0,margin-bottom=0,}
+{name=small,font-size=x-small,}
+{name=ol li p,}
+{default=AttributeSet,body=AttributeSet,p=AttributeSet,h1=AttributeSet,h2=AttributeSet,h3=AttributeSet,}
+{name=body,font-size=14pt,font-family=Serif,font-weight=normal,margin-left=0,margin-right=0,color=black,}
+{name=cite,font-style=italic,}
+{}
+
+}
+viewFactory : {javax.swing.text.html.HTMLEditorKit$HTMLFactory : javax.swing.text.html.HTMLEditorKit$HTMLFactory
+}
+}
+enabled : {java.lang.Boolean : true
+}
+focusAccelerator : {java.lang.Character :  
+}
+focusCycleRoot : {java.lang.Boolean : true
+}
+focusTraversalPolicy : {javax.swing.JEditorPane$1 : javax.swing.JEditorPane$1
+implicitDownCycleTraversal : {java.lang.Boolean : true
+}
+}
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : true
+}
+focusable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+height : {java.lang.Integer : 120
+}
+highlighter : {com.apple.laf.AquaHighlighter : com.apple.laf.AquaHighlighter
+}
+hyperlinkListeners : {[Ljavax.swing.event.HyperlinkListener;0 : {net.davidtanzer.babysteps.BabystepsTimer$2 : net.davidtanzer.babysteps.BabystepsTimer$2
+}
+
+}
+inheritsPopupMenu : {java.lang.Boolean : false
+}
+inputAttributes : {javax.swing.text.StyleContext$NamedStyle : NamedStyle:content {name=content,}
+}
+inputMethodRequests : {javax.swing.text.JTextComponent$InputMethodRequestsHandler : javax.swing.text.JTextComponent$InputMethodRequestsHandler
+committedTextLength : {java.lang.Integer : 17
+}
+insertPositionOffset : {java.lang.Integer : 0
+}
+}
+inputVerifier : null
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+keymap : {javax.swing.text.JTextComponent$DefaultKeymap : Keymap[AquaTextPaneUI]{}
+boundActions : {[Ljavax.swing.Action;
+}
+boundKeyStrokes : {[Ljavax.swing.KeyStroke;
+}
+defaultAction : {javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction : javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+name : {java.lang.String : AquaTextPaneUI
+empty : {java.lang.Boolean : false
+}
+}
+resolveParent : {javax.swing.text.JTextComponent$DefaultKeymap : Keymap[default]{}
+boundActions : {[Ljavax.swing.Action;
+}
+boundKeyStrokes : {[Ljavax.swing.KeyStroke;
+}
+defaultAction : {javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction : javax.swing.text.DefaultEditorKit$DefaultKeyTypedAction
+enabled : {java.lang.Boolean : true
+}
+keys : {[Ljava.lang.Object;0 : {java.lang.String : Name
+}
+
+}
+propertyChangeListeners : {[Ljava.beans.PropertyChangeListener;
+}
+}
+name : {java.lang.String : default
+empty : {java.lang.Boolean : false
+}
+}
+resolveParent : null
+}
+}
+layout : {javax.swing.plaf.basic.BasicTextUI$UpdateHandler : javax.swing.plaf.basic.BasicTextUI$UpdateHandler
+}
+logicalStyle : null
+managingFocus : {java.lang.Boolean : false
+}
+margin : {javax.swing.plaf.InsetsUIResource : javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0]
+}
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=2147483647,height=2147483647]
+height : {java.lang.Double : 2.147483647E9
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=2147483647,height=2147483647]
+}
+width : {java.lang.Double : 2.147483647E9
+}
+}
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+height : {java.lang.Double : 81.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+width : {java.lang.Double : 99.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+}
+name : null
+navigationFilter : null
+nextFocusableComponent : null
+opaque : {java.lang.Boolean : true
+}
+optimizedDrawingEnabled : {java.lang.Boolean : true
+}
+page : null
+paintingForPrint : {java.lang.Boolean : false
+}
+paintingTile : {java.lang.Boolean : false
+}
+paragraphAttributes : {javax.swing.text.html.HTMLDocument$BlockElement : BranchElement(p-implied) 0,1
+
+}
+preferredScrollableViewportSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+registeredKeyStrokes : {[Ljavax.swing.KeyStroke;0 : {javax.swing.KeyStroke : shift pressed UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 38
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+1 : {javax.swing.KeyStroke : shift alt pressed DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 40
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+2 : {javax.swing.KeyStroke : shift alt pressed KP_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 224
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+3 : {javax.swing.KeyStroke : shift meta pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+4 : {javax.swing.KeyStroke : ctrl pressed P
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 80
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+5 : {javax.swing.KeyStroke : shift meta pressed T
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 84
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+6 : {javax.swing.KeyStroke : shift meta pressed KP_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 224
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+7 : {javax.swing.KeyStroke : shift pressed KP_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 224
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+8 : {javax.swing.KeyStroke : pressed DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 40
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+9 : {javax.swing.KeyStroke : meta pressed BACK_SLASH
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 92
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+10 : {javax.swing.KeyStroke : ctrl pressed N
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 78
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+11 : {javax.swing.KeyStroke : pressed CUT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 65489
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+12 : {javax.swing.KeyStroke : pressed END
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 35
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+13 : {javax.swing.KeyStroke : shift pressed PAGE_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 33
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+14 : {javax.swing.KeyStroke : pressed KP_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 224
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+15 : {javax.swing.KeyStroke : pressed DELETE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 127
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+16 : {javax.swing.KeyStroke : meta pressed V
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 86
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+17 : {javax.swing.KeyStroke : shift pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+18 : {javax.swing.KeyStroke : meta pressed C
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 67
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+19 : {javax.swing.KeyStroke : shift alt pressed KP_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 225
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+20 : {javax.swing.KeyStroke : meta pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+21 : {javax.swing.KeyStroke : meta pressed UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 38
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+22 : {javax.swing.KeyStroke : pressed BACK_SPACE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 8
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+23 : {javax.swing.KeyStroke : meta pressed KP_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 224
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+24 : {javax.swing.KeyStroke : pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+25 : {javax.swing.KeyStroke : shift alt pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+26 : {javax.swing.KeyStroke : pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+27 : {javax.swing.KeyStroke : alt pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+28 : {javax.swing.KeyStroke : shift meta pressed DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 40
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+29 : {javax.swing.KeyStroke : shift meta pressed UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 38
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+30 : {javax.swing.KeyStroke : alt pressed BACK_SPACE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 8
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+31 : {javax.swing.KeyStroke : shift meta pressed PAGE_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 34
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+32 : {javax.swing.KeyStroke : shift pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+33 : {javax.swing.KeyStroke : meta pressed SPACE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 32
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+34 : {javax.swing.KeyStroke : alt pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+35 : {javax.swing.KeyStroke : alt pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+36 : {javax.swing.KeyStroke : ctrl pressed H
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 72
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+37 : {javax.swing.KeyStroke : shift alt pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+38 : {javax.swing.KeyStroke : pressed ENTER
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 10
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+39 : {javax.swing.KeyStroke : shift pressed HOME
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 36
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+40 : {javax.swing.KeyStroke : pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+41 : {javax.swing.KeyStroke : alt pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+42 : {javax.swing.KeyStroke : ctrl pressed F
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 70
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+43 : {javax.swing.KeyStroke : shift meta pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+44 : {javax.swing.KeyStroke : shift meta pressed KP_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 225
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+45 : {javax.swing.KeyStroke : shift pressed DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 40
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+46 : {javax.swing.KeyStroke : pressed PAGE_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 34
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+47 : {javax.swing.KeyStroke : shift alt pressed UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 38
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+48 : {javax.swing.KeyStroke : ctrl pressed E
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 69
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+49 : {javax.swing.KeyStroke : meta pressed T
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 84
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+50 : {javax.swing.KeyStroke : meta pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+51 : {javax.swing.KeyStroke : meta pressed A
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 65
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+52 : {javax.swing.KeyStroke : shift pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+53 : {javax.swing.KeyStroke : meta pressed KP_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 225
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+54 : {javax.swing.KeyStroke : ctrl pressed D
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 68
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+55 : {javax.swing.KeyStroke : shift ctrl pressed O
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 79
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 195
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+56 : {javax.swing.KeyStroke : shift alt pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+57 : {javax.swing.KeyStroke : shift pressed END
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 35
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+58 : {javax.swing.KeyStroke : ctrl pressed W
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 87
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+59 : {javax.swing.KeyStroke : alt pressed DELETE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 127
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 520
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+60 : {javax.swing.KeyStroke : ctrl pressed B
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 66
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+61 : {javax.swing.KeyStroke : pressed HOME
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 36
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+62 : {javax.swing.KeyStroke : ctrl pressed V
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 86
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+63 : {javax.swing.KeyStroke : pressed KP_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 225
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+64 : {javax.swing.KeyStroke : ctrl pressed A
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 65
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 130
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+65 : {javax.swing.KeyStroke : shift pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+66 : {javax.swing.KeyStroke : shift alt pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 585
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+67 : {javax.swing.KeyStroke : pressed COPY
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 65485
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+68 : {javax.swing.KeyStroke : meta pressed X
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 88
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+69 : {javax.swing.KeyStroke : shift pressed KP_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 225
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+70 : {javax.swing.KeyStroke : shift meta pressed RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 39
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+71 : {javax.swing.KeyStroke : shift meta pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+72 : {javax.swing.KeyStroke : pressed TAB
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 9
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+73 : {javax.swing.KeyStroke : shift meta pressed PAGE_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 33
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 325
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+74 : {javax.swing.KeyStroke : meta pressed DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 40
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+75 : {javax.swing.KeyStroke : pressed UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 38
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+76 : {javax.swing.KeyStroke : shift pressed PAGE_DOWN
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 34
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+77 : {javax.swing.KeyStroke : pressed KP_RIGHT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 227
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+78 : {javax.swing.KeyStroke : meta pressed KP_LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 226
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+79 : {javax.swing.KeyStroke : meta pressed LEFT
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 37
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 260
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+80 : {javax.swing.KeyStroke : pressed PAGE_UP
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 33
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+81 : {javax.swing.KeyStroke : pressed PASTE
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 65487
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+
+}
+requestFocusEnabled : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+scrollableTracksViewportHeight : {java.lang.Boolean : false
+}
+scrollableTracksViewportWidth : {java.lang.Boolean : false
+}
+selectedText : null
+selectedTextColor : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0]
+}
+selectionColor : {com.apple.laf.AquaImageFactory$SystemColorProxy : com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255]
+}
+selectionEnd : {java.lang.Integer : 0
+}
+selectionStart : {java.lang.Integer : 0
+}
+styledDocument : {javax.swing.text.html.HTMLDocument : javax.swing.text.html.HTMLDocument
+}
+text : {java.lang.String : <html>
+  <head>
+    
+  </head>
+  <body style="border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ffffff; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0">
+    <h1 align="center">
+      02:00
+    </h1>
+    <div align="center">
+      <a href="command://start"><font color="#555555">Start</font></a> <a href="command://quit"><font color="#555555">Quit</font></a>
+    </div>
+  </body>
+</html>
+
+empty : {java.lang.Boolean : false
+}
+}
+toolTipText : null
+topLevelAncestor : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+transferHandler : {javax.swing.plaf.basic.BasicTextUI$TextTransferHandler : javax.swing.plaf.basic.BasicTextUI$TextTransferHandler
+dragImage : null
+dragImageOffset : {java.awt.Point : java.awt.Point[x=0,y=0]
+}
+}
+validateRoot : {java.lang.Boolean : false
+}
+verifyInputWhenFocusTarget : {java.lang.Boolean : true
+}
+vetoableChangeListeners : {[Ljava.beans.VetoableChangeListener;
+}
+visible : {java.lang.Boolean : true
+}
+visibleRect : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+width : {java.lang.Integer : 250
+}
+x : {java.lang.Integer : 0
+}
+y : {java.lang.Integer : 0
+}
+}
+
+}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+debugGraphicsOptions : {java.lang.Integer : 0
+}
+doubleBuffered : {java.lang.Boolean : true
+}
+enabled : {java.lang.Boolean : true
+}
+focusCycleRoot : {java.lang.Boolean : false
+}
+focusTraversalPolicy : null
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : false
+}
+focusable : {java.lang.Boolean : true
+}
+font : {com.apple.laf.AquaFonts$DerivedUIResourceFont : com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {javax.swing.plaf.ColorUIResource : javax.swing.plaf.ColorUIResource[r=0,g=0,b=0]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=com.apple.laf.AquaFonts$DerivedUIResourceFont[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+height : {java.lang.Integer : 120
+}
+inheritsPopupMenu : {java.lang.Boolean : false
+}
+inputVerifier : null
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+layout : {javax.swing.JRootPane$1 : javax.swing.JRootPane$1[hgap=0,vgap=0]
+hgap : {java.lang.Integer : 0
+}
+vgap : {java.lang.Integer : 0
+}
+}
+managingFocus : {java.lang.Boolean : false
+}
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=2147483647,height=2147483647]
+}
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+name : {java.lang.String : null.contentPane
+empty : {java.lang.Boolean : false
+}
+}
+nextFocusableComponent : null
+opaque : {java.lang.Boolean : true
+}
+optimizedDrawingEnabled : {java.lang.Boolean : true
+}
+paintingForPrint : {java.lang.Boolean : false
+}
+paintingTile : {java.lang.Boolean : false
+}
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+registeredKeyStrokes : {[Ljavax.swing.KeyStroke;
+}
+requestFocusEnabled : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+toolTipText : null
+topLevelAncestor : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+transferHandler : null
+validateRoot : {java.lang.Boolean : false
+}
+verifyInputWhenFocusTarget : {java.lang.Boolean : true
+}
+vetoableChangeListeners : {[Ljava.beans.VetoableChangeListener;
+}
+visible : {java.lang.Boolean : true
+}
+visibleRect : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+width : {java.lang.Integer : 250
+}
+x : {java.lang.Integer : 0
+}
+y : {java.lang.Integer : 0
+}
+}
+
+}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+debugGraphicsOptions : {java.lang.Integer : 0
+}
+doubleBuffered : {java.lang.Boolean : false
+}
+enabled : {java.lang.Boolean : true
+}
+focusCycleRoot : {java.lang.Boolean : false
+}
+focusTraversalPolicy : null
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : false
+}
+focusable : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+height : {java.lang.Integer : 120
+}
+inheritsPopupMenu : {java.lang.Boolean : false
+}
+inputVerifier : null
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+layout : null
+managingFocus : {java.lang.Boolean : false
+}
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=32767,height=32767]
+}
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=1,height=1]
+height : {java.lang.Double : 1.0
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=1,height=1]
+}
+width : {java.lang.Double : 1.0
+}
+}
+name : {java.lang.String : null.layeredPane
+empty : {java.lang.Boolean : false
+}
+}
+nextFocusableComponent : null
+opaque : {java.lang.Boolean : false
+}
+optimizedDrawingEnabled : {java.lang.Boolean : true
+}
+paintingForPrint : {java.lang.Boolean : false
+}
+paintingTile : {java.lang.Boolean : false
+}
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=1,height=1]
+}
+registeredKeyStrokes : {[Ljavax.swing.KeyStroke;
+}
+requestFocusEnabled : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+toolTipText : null
+topLevelAncestor : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+transferHandler : null
+validateRoot : {java.lang.Boolean : false
+}
+verifyInputWhenFocusTarget : {java.lang.Boolean : true
+}
+vetoableChangeListeners : {[Ljava.beans.VetoableChangeListener;
+}
+visible : {java.lang.Boolean : true
+}
+visibleRect : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+width : {java.lang.Integer : 250
+}
+x : {java.lang.Integer : 0
+}
+y : {java.lang.Integer : 0
+}
+}
+
+}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+contentPane : {javax.swing.JPanel : javax.swing.JPanel[null.contentPane,0,0,250x120,layout=javax.swing.JRootPane$1,alignmentX=0.0,alignmentY=0.0,border=,flags=265,maximumSize=,minimumSize=,preferredSize=]
+}
+debugGraphicsOptions : {java.lang.Integer : 0
+}
+defaultButton : null
+doubleBuffered : {java.lang.Boolean : true
+}
+enabled : {java.lang.Boolean : true
+}
+focusCycleRoot : {java.lang.Boolean : false
+}
+focusTraversalPolicy : null
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : false
+}
+focusable : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+}
+glassPane : {javax.swing.JPanel : javax.swing.JPanel[null.glassPane,0,0,250x120,hidden,layout=java.awt.FlowLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777473,maximumSize=,minimumSize=,preferredSize=]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+height : {java.lang.Integer : 120
+}
+inheritsPopupMenu : {java.lang.Boolean : false
+}
+inputVerifier : null
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+layeredPane : {javax.swing.JLayeredPane : javax.swing.JLayeredPane[null.layeredPane,0,0,250x120,alignmentX=0.0,alignmentY=0.0,border=,flags=256,maximumSize=,minimumSize=,preferredSize=,optimizedDrawingPossible=true]
+}
+layout : {javax.swing.JRootPane$RootLayout : javax.swing.JRootPane$RootLayout
+}
+managingFocus : {java.lang.Boolean : false
+}
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=0,height=2147483647]
+height : {java.lang.Double : 2.147483647E9
+}
+size : {java.awt.Dimension : java.awt.Dimension[width=0,height=2147483647]
+}
+width : {java.lang.Double : 0.0
+}
+}
+menuBar : null
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+name : null
+nextFocusableComponent : null
+opaque : {java.lang.Boolean : true
+}
+optimizedDrawingEnabled : {java.lang.Boolean : true
+}
+paintingForPrint : {java.lang.Boolean : false
+}
+paintingTile : {java.lang.Boolean : false
+}
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+registeredKeyStrokes : {[Ljavax.swing.KeyStroke;0 : {javax.swing.KeyStroke : shift pressed F10
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 121
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 65
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+1 : {javax.swing.KeyStroke : pressed CONTEXT_MENU
+keyChar : {java.lang.Character : ￿
+}
+keyCode : {java.lang.Integer : 525
+}
+keyEventType : {java.lang.Integer : 401
+}
+modifiers : {java.lang.Integer : 0
+}
+onKeyRelease : {java.lang.Boolean : false
+}
+}
+
+}
+requestFocusEnabled : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+toolTipText : null
+topLevelAncestor : {javax.swing.JFrame : javax.swing.JFrame[frame0,0,23,250x120,invalid,layout=java.awt.BorderLayout,title=Babysteps Timer,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+}
+transferHandler : null
+validateRoot : {java.lang.Boolean : true
+}
+verifyInputWhenFocusTarget : {java.lang.Boolean : true
+}
+vetoableChangeListeners : {[Ljava.beans.VetoableChangeListener;
+}
+visible : {java.lang.Boolean : true
+}
+visibleRect : {java.awt.Rectangle : java.awt.Rectangle[x=0,y=0,width=250,height=120]
+}
+width : {java.lang.Integer : 250
+}
+windowDecorationStyle : {java.lang.Integer : 0
+}
+x : {java.lang.Integer : 0
+}
+y : {java.lang.Integer : 0
+}
+}
+
+}
+containerListeners : {[Ljava.awt.event.ContainerListener;
+}
+contentPane : {javax.swing.JPanel : javax.swing.JPanel[null.contentPane,0,0,250x120,layout=javax.swing.JRootPane$1,alignmentX=0.0,alignmentY=0.0,border=,flags=265,maximumSize=,minimumSize=,preferredSize=]
+}
+cursorType : {java.lang.Integer : 0
+}
+defaultCloseOperation : {java.lang.Integer : 3
+}
+enabled : {java.lang.Boolean : true
+}
+extendedState : {java.lang.Integer : 0
+}
+focusCycleRoot : {java.lang.Boolean : true
+}
+focusCycleRootAncestor : null
+focusOwner : {javax.swing.JTextPane : javax.swing.JTextPane[,0,0,250x120,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@5a1c0542,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=false,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],kit=javax.swing.text.html.HTMLEditorKit@56aac163,typeHandlers={text/html=javax.swing.text.html.HTMLEditorKit@56aac163, text/plain=javax.swing.text.StyledEditorKit@1f7030a6}]
+}
+focusTraversalPolicy : {javax.swing.LayoutFocusTraversalPolicy : javax.swing.LayoutFocusTraversalPolicy
+implicitDownCycleTraversal : {java.lang.Boolean : true
+}
+}
+focusTraversalPolicyProvider : {java.lang.Boolean : false
+}
+focusTraversalPolicySet : {java.lang.Boolean : true
+}
+focusable : {java.lang.Boolean : true
+}
+focusableWindow : {java.lang.Boolean : true
+}
+focusableWindowState : {java.lang.Boolean : true
+}
+focused : {java.lang.Boolean : true
+}
+font : {java.awt.Font : java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13]
+}
+foreground : {java.awt.SystemColor : java.awt.SystemColor[i=9]
+}
+glassPane : {javax.swing.JPanel : javax.swing.JPanel[null.glassPane,0,0,250x120,hidden,layout=java.awt.FlowLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777473,maximumSize=,minimumSize=,preferredSize=]
+}
+graphics : {sun.java2d.SunGraphics2D : sun.java2d.SunGraphics2D[font=java.awt.Font[family=Lucida Grande,name=Lucida Grande,style=plain,size=13],color=java.awt.SystemColor[i=9]]
+}
+iconImage : null
+iconImages : {java.util.ArrayList : []
+empty : {java.lang.Boolean : true
+}
+}
+inputContext : {sun.awt.im.InputMethodContext : sun.awt.im.InputMethodContext
+}
+insets : {java.awt.Insets : java.awt.Insets[top=0,left=0,bottom=0,right=0]
+}
+layeredPane : {javax.swing.JLayeredPane : javax.swing.JLayeredPane[null.layeredPane,0,0,250x120,alignmentX=0.0,alignmentY=0.0,border=,flags=256,maximumSize=,minimumSize=,preferredSize=,optimizedDrawingPossible=true]
+}
+layout : {java.awt.BorderLayout : java.awt.BorderLayout[hgap=0,vgap=0]
+hgap : {java.lang.Integer : 0
+}
+vgap : {java.lang.Integer : 0
+}
+}
+locale : {java.util.Locale : en_US
+}
+locationByPlatform : {java.lang.Boolean : false
+}
+maximizedBounds : null
+maximumSize : {java.awt.Dimension : java.awt.Dimension[width=2147483647,height=2147483647]
+}
+menuBar : null
+minimumSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+modalExclusionType : {java.awt.Dialog$ModalExclusionType : NO_EXCLUDE
+declaringClass : class java.awt.Dialog$ModalExclusionType
+}
+mostRecentFocusOwner : {javax.swing.JTextPane : javax.swing.JTextPane[,0,0,250x120,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@5a1c0542,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=false,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],kit=javax.swing.text.html.HTMLEditorKit@56aac163,typeHandlers={text/html=javax.swing.text.html.HTMLEditorKit@56aac163, text/plain=javax.swing.text.StyledEditorKit@1f7030a6}]
+}
+name : {java.lang.String : frame0
+empty : {java.lang.Boolean : false
+}
+}
+opacity : {java.lang.Float : 1.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
+opaque : {java.lang.Boolean : true
+}
+ownedWindows : {[Ljava.awt.Window;
+}
+owner : null
+preferredSize : {java.awt.Dimension : java.awt.Dimension[width=99,height=81]
+}
+resizable : {java.lang.Boolean : true
+}
+rootPane : {javax.swing.JRootPane : javax.swing.JRootPane[,0,0,250x120,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=]
+}
+shape : null
+showing : {java.lang.Boolean : true
+}
+state : {java.lang.Integer : 0
+}
+title : {java.lang.String : Babysteps Timer
+}
+toolkit : {sun.lwawt.macosx.LWCToolkit : sun.lwawt.macosx.LWCToolkit
+}
+transferHandler : null
+type : {java.awt.Window$Type : NORMAL
+declaringClass : class java.awt.Window$Type
+}
+undecorated : {java.lang.Boolean : true
+}
+validateRoot : {java.lang.Boolean : true
+}
+visible : {java.lang.Boolean : true
+}
+warningString : null
+windowFocusListeners : {[Ljava.awt.event.WindowFocusListener;
+}
+windowListeners : {[Ljava.awt.event.WindowListener;0 : {com.apple.laf.AquaRootPaneUI : com.apple.laf.AquaRootPaneUI
+}
+
+}
+windowStateListeners : {[Ljava.awt.event.WindowStateListener;
+}
+}
