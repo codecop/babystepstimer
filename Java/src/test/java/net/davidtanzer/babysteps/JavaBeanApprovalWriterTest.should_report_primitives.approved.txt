@@ -1,0 +1,15 @@
+primitive
+
+
+{java.lang.Integer : 3
+}
+{java.lang.String : 3
+empty : {java.lang.Boolean : false
+}
+}
+{java.lang.Double : 1.0
+infinite : {java.lang.Boolean : false
+}
+naN : {java.lang.Boolean : false
+}
+}
