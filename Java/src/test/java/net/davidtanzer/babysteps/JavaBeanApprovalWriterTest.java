@@ -32,4 +32,10 @@ public class JavaBeanApprovalWriterTest {
         Approvals.verify(this.extractNoExceptions(new String[]{"xax", "xbx"}));
     }
 
+    @Test
+    public void should_report_recurse_on_top_level_once_once() throws Exception {
+        Object[] recursiveDataStructure = {"a", null};
+        recursiveDataStructure[1] = recursiveDataStructure;
+        Approvals.verify(this.extractNoExceptions(recursiveDataStructure));
+    }
 }

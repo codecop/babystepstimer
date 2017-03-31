@@ -33,9 +33,15 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         data.append("{");
         data.append(c.getClass().getName());
 
-
-
         if (c.getClass().isArray()) {
+
+            if (visited.contains(c)) {
+                data.append("<already visited>");
+                data.append("}");
+                return data.toString();
+            }
+            visited.add(c);
+
             Object[] ca = (Object[]) c;
             for (int i = 0; i < ca.length; i++) {
                 data.append(i);
@@ -52,14 +58,12 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         data.append("\n");
 
         // cycles and non java core classes
-        if (visited.contains(c)) {
+        if (visited.contains(c) || !c.getClass().getName().startsWith("java") ) {
             //data.append(System.identityHashCode(c));
             data.append("}");
             return data.toString();
         }
         visited.add(c);
-
-        // || !c.getClass().getName().startsWith("java")
 
         for (PropertyDescriptor p : propertyDescriptors) {
             if (Arrays.asList("class", "bytes").contains(p.getName())) {
