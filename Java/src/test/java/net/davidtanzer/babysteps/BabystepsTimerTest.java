@@ -34,11 +34,16 @@ public class BabystepsTimerTest {
         Thread.sleep(3000);
     }
 
+    private void startTimer() throws InterruptedException {
+        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start"));
+        Thread.sleep(1500);
+    }
+
     @After
     public void closeTimer() throws InterruptedException {
         timerFrame.setVisible(false);
         timerFrame.dispose();
-        //Thread.sleep(3000);
+        Thread.sleep(1500);
     }
 
     @Test
@@ -50,8 +55,7 @@ public class BabystepsTimerTest {
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class})
     public void approveStartingTimerFrame() throws InterruptedException, MalformedURLException {
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start"));
-        Thread.sleep(1500);
+        startTimer();
 
         Approvals.verify(BabystepsTimer.timerPane);
     }
@@ -59,12 +63,35 @@ public class BabystepsTimerTest {
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
     public void approveStopTimerFrame() throws InterruptedException, MalformedURLException {
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start"));
-        Thread.sleep(3000);
+        startTimer();
 
         BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://stop"));
 
         Thread.sleep(1500);
+        Approvals.verify(BabystepsTimer.timerPane);
+    }
+
+
+    @Test
+    @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
+    public void approveResetTimerFrameIsGreen() throws InterruptedException, MalformedURLException {
+        startTimer();
+
+        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://reset"));
+
+        Thread.sleep(1500);
+        Approvals.verify(BabystepsTimer.timerPane);
+    }
+
+
+    @Test
+    @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
+    public void approveResetTimerFrameIsWhiteAfter5Sec() throws InterruptedException, MalformedURLException {
+        startTimer();
+
+        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://reset"));
+
+        Thread.sleep(5500);
         Approvals.verify(BabystepsTimer.timerPane);
     }
 
@@ -74,6 +101,5 @@ public class BabystepsTimerTest {
     public void approveInitialFrameAsString() throws InterruptedException, IllegalAccessException, IntrospectionException, InvocationTargetException {
         Approvals.verify(new JavaBeanApprovalWriter(timerFrame));
     }
-
 
 }
