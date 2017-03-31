@@ -33,6 +33,12 @@ public class JavaBeanApprovalWriterTest {
     }
 
     @Test
+    //TODO should support primitive arrays
+    public void should_ignore_primitive_arrays() throws Exception {
+        Approvals.verify(this.extractNoExceptions(new int[]{1, 2}));
+    }
+
+    @Test
     public void should_report_recurse_on_top_level_once_once() throws Exception {
         Object[] recursiveDataStructure = {"a", null};
         recursiveDataStructure[1] = recursiveDataStructure;

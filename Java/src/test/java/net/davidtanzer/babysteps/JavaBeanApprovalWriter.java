@@ -25,6 +25,9 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         if (c == null) {
             return "null";
         }
+        if (c.getClass().isPrimitive()) {
+            return c.toString();
+        }
 
         BeanInfo beanInfo = Introspector.getBeanInfo(c.getClass());
         PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
@@ -34,22 +37,25 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
         data.append(c.getClass().getName());
 
         if (c.getClass().isArray()) {
+            if (!c.getClass().getComponentType().isPrimitive()) {
 
-            if (visited.contains(c)) {
-                data.append("<already visited>");
-                data.append("}");
-                return data.toString();
-            }
-            visited.add(c);
+                if (visited.contains(c)) {
+                    data.append("<already visited>");
+                    data.append("}");
+                    return data.toString();
+                }
+                visited.add(c);
 
-            Object[] ca = (Object[]) c;
-            for (int i = 0; i < ca.length; i++) {
-                data.append(i);
-                data.append(" : ");
-                Object invoke = ca[i];
-                data.append(extractData(invoke));
-                data.append("\n");
+                Object[] ca = (Object[]) c;
+                for (int i = 0; i < ca.length; i++) {
+                    data.append(i);
+                    data.append(" : ");
+                    Object invoke = ca[i];
+                    data.append(extractData(invoke));
+                    data.append("\n");
+                }
             }
+            // ignore primitive arrays
         }
         else {
             data.append(" : ");
