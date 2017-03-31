@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 public class JavaBeanApprovalWriter extends ApprovalTextWriter {
 
     public JavaBeanApprovalWriter(Object c) throws IntrospectionException, InvocationTargetException, IllegalAccessException {
-        super(extractData(c), ".txt");
+        super(extractData(c), "txt");
     }
 
     private static String extractData(Object c) throws IntrospectionException, InvocationTargetException, IllegalAccessException {
