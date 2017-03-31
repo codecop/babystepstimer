@@ -90,7 +90,6 @@ public class BabystepsTimerTest {
         Approvals.verify(BabystepsTimer.timerPane);
     }
 
-
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
     public void approveResetTimerFrameIsWhiteAfter5Sec() throws InterruptedException, MalformedURLException {
@@ -98,7 +97,7 @@ public class BabystepsTimerTest {
 
         send("command://reset");
 
-        Thread.sleep(5500);
+        Thread.sleep(6000);
         Approvals.verify(BabystepsTimer.timerPane);
     }
 
