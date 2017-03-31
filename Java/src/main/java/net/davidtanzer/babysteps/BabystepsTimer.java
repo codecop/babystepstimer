@@ -79,7 +79,7 @@ public class BabystepsTimer {
 						timerFrame.setAlwaysOnTop(true);
 						timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, true));
 						timerFrame.repaint();
-						new TimerThread().start();
+						new TimerThread(timerPane).start();
 					} else if("command://stop".equals(e.getDescription())) {
 						timerRunning = false;
 						timerFrame.setAlwaysOnTop(false);
@@ -143,6 +143,13 @@ public class BabystepsTimer {
 	static Supplier<Long> time = System::currentTimeMillis;
 
 	private static final class TimerThread extends Thread {
+
+		private JTextPane timerPane;
+
+		public TimerThread(JTextPane timerPane) {
+			this.timerPane = timerPane;
+		}
+
 		@Override
 		public void run() {
 			timerRunning = true;
@@ -167,7 +174,7 @@ public class BabystepsTimer {
 						playSound("32304__acclivity__shipsbell.wav");
 						bodyBackgroundColor=BACKGROUND_COLOR_FAILED;
 					}
-					
+
 					timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
 					timerFrame.repaint();
 					lastRemainingTime = remainingTime;
