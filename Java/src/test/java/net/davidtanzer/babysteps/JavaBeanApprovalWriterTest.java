@@ -1,6 +1,10 @@
 package net.davidtanzer.babysteps;
 
 import org.approvaltests.Approvals;
+import org.approvaltests.reporters.JunitReporter;
+import org.approvaltests.reporters.QuietReporter;
+import org.approvaltests.reporters.UseReporter;
+import org.approvaltests.reporters.macosx.KDiff3Reporter;
 import org.junit.Test;
 
 import java.beans.IntrospectionException;
@@ -39,6 +43,7 @@ public class JavaBeanApprovalWriterTest {
     }
 
     @Test
+    @UseReporter({ KDiff3Reporter.class, JunitReporter.class, QuietReporter.class })
     public void should_report_recurse_on_top_level_once_once() throws Exception {
         Object[] recursiveDataStructure = {"a", null};
         recursiveDataStructure[1] = recursiveDataStructure;
