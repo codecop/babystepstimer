@@ -35,8 +35,12 @@ public class BabystepsTimerTest {
     }
 
     private void startTimer() throws InterruptedException {
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start"));
+        send("command://start");
         Thread.sleep(1500);
+    }
+
+    private void send(String desc) {
+        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, desc));
     }
 
     @After
@@ -65,7 +69,7 @@ public class BabystepsTimerTest {
     public void approveStopTimerFrame() throws InterruptedException, MalformedURLException {
         startTimer();
 
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://stop"));
+        send("command://stop");
 
         Thread.sleep(1500);
         Approvals.verify(BabystepsTimer.timerPane);
@@ -77,7 +81,7 @@ public class BabystepsTimerTest {
     public void approveResetTimerFrameIsGreen() throws InterruptedException, MalformedURLException {
         startTimer();
 
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://reset"));
+        send("command://reset");
 
         Thread.sleep(1500);
         Approvals.verify(BabystepsTimer.timerPane);
@@ -89,7 +93,7 @@ public class BabystepsTimerTest {
     public void approveResetTimerFrameIsWhiteAfter5Sec() throws InterruptedException, MalformedURLException {
         startTimer();
 
-        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://reset"));
+        send("command://reset");
 
         Thread.sleep(5500);
         Approvals.verify(BabystepsTimer.timerPane);
