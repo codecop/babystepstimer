@@ -1,6 +1,9 @@
 package net.davidtanzer.babysteps;
 
 import org.approvaltests.Approvals;
+import org.approvaltests.reporters.ImageWebReporter;
+import org.approvaltests.reporters.UseReporter;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.swing.*;
@@ -19,6 +22,7 @@ public class BabystepsTimerTest {
 
      */
     @Test
+    @UseReporter(ImageWebReporter.class)
     public void approveInitialFrame() throws InterruptedException {
         BabystepsTimer babystepsTimer = new BabystepsTimer();
         babystepsTimer.main(new String[0]);
@@ -31,7 +35,7 @@ public class BabystepsTimerTest {
         timerFrame.dispose();
     }
 
-    @Test
+    @Test @Ignore
     public void approveInitialFrameAsString() throws InterruptedException, IllegalAccessException, IntrospectionException, InvocationTargetException {
         BabystepsTimer babystepsTimer = new BabystepsTimer();
         babystepsTimer.main(new String[0]);
