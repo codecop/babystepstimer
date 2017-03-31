@@ -7,8 +7,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 
 public class BabystepsTimerTest {
 
@@ -28,6 +30,23 @@ public class BabystepsTimerTest {
         babystepsTimer.main(new String[0]);
         JFrame timerFrame = BabystepsTimer.timerFrame;
         Thread.sleep(3000);
+
+        Approvals.verify(BabystepsTimer.timerPane);
+
+        timerFrame.setVisible(false);
+        timerFrame.dispose();
+    }
+
+    @Test
+    @UseReporter({ImageWebReporter.class, ClipboardReporter.class})
+    public void approveStartingTimerFrame() throws InterruptedException, MalformedURLException {
+        BabystepsTimer babystepsTimer = new BabystepsTimer();
+        babystepsTimer.main(new String[0]);
+        JFrame timerFrame = BabystepsTimer.timerFrame;
+        Thread.sleep(3000);
+
+        BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start"));
+        Thread.sleep(1500);
 
         Approvals.verify(BabystepsTimer.timerPane);
 
