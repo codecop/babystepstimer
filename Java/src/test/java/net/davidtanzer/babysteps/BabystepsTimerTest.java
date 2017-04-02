@@ -13,24 +13,13 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
 
 public class BabystepsTimerTest {
     private JFrame timerFrame;
 
-    /*
-     - new
-     - start
-        - stop
-        - reset
-     - quite
-     - time passed
-     */
-
     @Before
     public void createTimer() throws InterruptedException {
-        BabystepsTimer babystepsTimer = new BabystepsTimer();
-        babystepsTimer.main(new String[0]);
+        BabystepsTimer.main(new String[0]);
         timerFrame = BabystepsTimer.timerFrame;
         Thread.sleep(3000);
     }
@@ -42,7 +31,8 @@ public class BabystepsTimerTest {
 
     private void send(String desc) {
         SwingUtilities.invokeLater(() -> {
-            BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, desc));
+            HyperlinkEvent event = new HyperlinkEvent(BabystepsTimer.timerPane, HyperlinkEvent.EventType.ACTIVATED, null, desc);
+            BabystepsTimer.timerPane.getHyperlinkListeners()[0].hyperlinkUpdate(event);
         });
     }
 
@@ -56,13 +46,13 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter(ImageWebReporter.class)
-    public void approveInitialFrame() throws InterruptedException {
+    public void approveInitialFrame() {
         Approvals.verify(BabystepsTimer.timerPane);
     }
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class})
-    public void approveStartingTimerFrame() throws InterruptedException, MalformedURLException {
+    public void approveStartingTimerFrame() throws InterruptedException {
         startTimer();
 
         Approvals.verify(BabystepsTimer.timerPane);
@@ -70,7 +60,7 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
-    public void approveStopTimerFrame() throws InterruptedException, MalformedURLException {
+    public void approveStopTimerFrame() throws InterruptedException {
         startTimer();
 
         send("command://stop");
@@ -81,7 +71,7 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
-    public void approveResetTimerFrameIsGreen() throws InterruptedException, MalformedURLException {
+    public void approveResetTimerFrameIsGreen() throws InterruptedException {
         startTimer();
 
         send("command://reset");
@@ -92,7 +82,7 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
-    public void approveResetTimerFrameIsWhiteAfter5Sec() throws InterruptedException, MalformedURLException {
+    public void approveResetTimerFrameIsWhiteAfter5Sec() throws InterruptedException {
         startTimer();
 
         send("command://reset");
@@ -109,7 +99,7 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
-    public void approveTimerGetsRedWhenRuningOut() throws InterruptedException, MalformedURLException {
+    public void approveTimerGetsRedWhenRuningOut() throws InterruptedException {
         startTimer();
 
         BabystepsTimer.time = () -> System.currentTimeMillis() + (60 + 58) * 1000;
@@ -120,7 +110,7 @@ public class BabystepsTimerTest {
 
     @Test
     @UseReporter({ImageWebReporter.class, ClipboardReporter.class, QuietReporter.class})
-    public void approveTimerRunsOver() throws InterruptedException, MalformedURLException {
+    public void approveTimerRunsOver() throws InterruptedException {
         startTimer();
 
         BabystepsTimer.time = () -> System.currentTimeMillis() + (60 + 58) * 1000;
@@ -133,7 +123,7 @@ public class BabystepsTimerTest {
     @Test
     @Ignore("Graphics changes when run several time in same JVM, can not fix the component tree.")
     @UseReporter({KDiff3Reporter.class, ClipboardReporter.class, JunitReporter.class, QuietReporter.class})
-    public void approveInitialFrameAsString() throws InterruptedException, IllegalAccessException, IntrospectionException, InvocationTargetException {
+    public void approveInitialFrameAsString() throws IllegalAccessException, IntrospectionException, InvocationTargetException {
         Approvals.verify(new JavaBeanApprovalWriter(timerFrame));
     }
 
