@@ -59,7 +59,7 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
             // ignore primitive arrays
         } else {
             data.append(" : ");
-            data.append(c.toString().replaceAll("@[\\da-f]+$",""));
+            data.append(c.toString().replaceAll("@[\\da-f]+$", ""));
         }
         data.append("\n");
 
@@ -85,7 +85,6 @@ public class JavaBeanApprovalWriter extends ApprovalTextWriter {
             data.append(extractData(invoke));
             data.append("\n");
         }
-
 
         data.append("}");
         return data.toString();

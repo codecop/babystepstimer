@@ -27,25 +27,25 @@ public class JavaBeanApprovalWriterTest {
     }
 
     @Test
-    public void should_report_primitives() throws Exception {
+    public void should_report_primitives() {
         Approvals.verifyAll("primitive", Arrays.<Object>asList(3, "3", 1.0), this::extractNoExceptions);
     }
 
     @Test
-    public void should_report_arrays() throws Exception {
-        Approvals.verify(this.extractNoExceptions(new String[]{"xax", "xbx"}));
+    public void should_report_arrays() {
+        Approvals.verify(this.extractNoExceptions(new String[] { "xax", "xbx" }));
     }
 
     @Test
     //TODO should support primitive arrays
-    public void should_ignore_primitive_arrays() throws Exception {
-        Approvals.verify(this.extractNoExceptions(new int[]{1, 2}));
+    public void should_ignore_primitive_arrays() {
+        Approvals.verify(this.extractNoExceptions(new int[] { 1, 2 }));
     }
 
     @Test
     @UseReporter({ KDiff3Reporter.class, JunitReporter.class, QuietReporter.class })
-    public void should_report_recurse_on_top_level_once_once() throws Exception {
-        Object[] recursiveDataStructure = {"a", null};
+    public void should_report_recurse_on_top_level_once_once() {
+        Object[] recursiveDataStructure = { "a", null };
         recursiveDataStructure[1] = recursiveDataStructure;
         Approvals.verify(this.extractNoExceptions(recursiveDataStructure));
     }
