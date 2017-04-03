@@ -2,17 +2,12 @@ package net.davidtanzer.babysteps;
 
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.*;
-import org.approvaltests.reporters.macosx.KDiff3Reporter;
-import org.approvaltests.writers.JavaBeanApprovalWriter;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
-import java.beans.IntrospectionException;
-import java.lang.reflect.InvocationTargetException;
 
 public class BabystepsTimerTest {
     private JFrame timerFrame;
@@ -118,13 +113,6 @@ public class BabystepsTimerTest {
 
         stopTime();
         Approvals.verify(BabystepsTimer.timerPane);
-    }
-
-    @Test
-    @Ignore("Graphics changes when run several time in same JVM, can not fix the component tree.")
-    @UseReporter({KDiff3Reporter.class, ClipboardReporter.class, JunitReporter.class, QuietReporter.class})
-    public void approveInitialFrameAsString() throws IllegalAccessException, IntrospectionException, InvocationTargetException {
-        Approvals.verify(new JavaBeanApprovalWriter(timerFrame));
     }
 
 }
