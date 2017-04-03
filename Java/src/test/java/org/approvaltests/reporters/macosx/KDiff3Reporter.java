@@ -4,6 +4,9 @@ import org.approvaltests.reporters.GenericDiffReporter;
 
 import java.text.MessageFormat;
 
+/**
+ * Copy of KDiff3Reporter with path for MacOS.
+ */
 public class KDiff3Reporter extends GenericDiffReporter {
     private static final String DIFF_PROGRAM = "/usr/local/bin/kdiff3";
     private static final String MESSAGE = MessageFormat.format("Unable to find KDiff3 at {0}", DIFF_PROGRAM);
