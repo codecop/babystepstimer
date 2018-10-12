@@ -38,6 +38,7 @@ public class BabystepsTimer {
     private static long currentCycleStartTime;
     private static String lastRemainingTime;
     private static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+    static Timer timer = new SystemTimer();
 
     private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
 
@@ -52,6 +53,8 @@ public class BabystepsTimer {
         timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
         timerPane.setEditable(false);
         timerPane.addMouseMotionListener(new MouseMotionListener() {
+            // TODO not covered
+
             private int lastX;
             private int lastY;
 
@@ -87,9 +90,10 @@ public class BabystepsTimer {
                         timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
                         timerFrame.repaint();
                     } else if ("command://reset".equals(e.getDescription())) {
-                        currentCycleStartTime = System.currentTimeMillis();
+                        currentCycleStartTime = timer.getTime();
                         bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
                     } else if ("command://quit".equals(e.getDescription())) {
+                        // TODO not covered
                         System.exit(0);
                     }
                 }
@@ -145,22 +149,25 @@ public class BabystepsTimer {
         @Override
         public void run() {
             timerRunning = true;
-            currentCycleStartTime = System.currentTimeMillis();
+            currentCycleStartTime = timer.getTime();
 
             while (timerRunning) {
-                long elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+                long elapsedTime = timer.getTime() - currentCycleStartTime;
 
                 if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    currentCycleStartTime = System.currentTimeMillis();
-                    elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+                    // TODO not covered
+                    currentCycleStartTime = timer.getTime();
+                    elapsedTime = timer.getTime() - currentCycleStartTime;
                 }
                 if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
+                    // TODO not covered
                     bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
                 }
 
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
                 if (!remainingTime.equals(lastRemainingTime)) {
                     if (remainingTime.equals("00:10")) {
+                        // TODO not covered
                         playSound("2166__suburban-grilla__bowl-struck.wav");
                     } else if (remainingTime.equals("00:00")) {
                         playSound("32304__acclivity__shipsbell.wav");
