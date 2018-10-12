@@ -2,13 +2,14 @@ package net.davidtanzer.babysteps;
 
 import org.junit.Test;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
-
-import java.awt.*;
-import java.net.MalformedURLException;
+import java.awt.Dimension;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class BabystepsTimerTest {
 
@@ -16,20 +17,40 @@ public class BabystepsTimerTest {
     private JTextPane timerPane;
 
     @Test
-    public void shouldDoAll() throws InterruptedException, MalformedURLException {
+    public void shouldDisplay() throws InterruptedException {
         showTimer();
         assertInitialTimerState();
+    }
 
-        clickStart();
+    @Test
+    public void shouldRunAndFinish() throws InterruptedException {
+        showTimer();
+
+        clickStart(2);
         sleep(1000);
         assertTimerMoved();
+
+        sleep(1000);
+        assertTimerFinished();
+    }
+
+    @Test
+    public void shouldReset() throws InterruptedException {
+        showTimer();
+        clickStart(2);
+        sleep(1000);
+
+        clickReset();
+        assertTimerReset();
     }
 
     private void showTimer() throws InterruptedException {
+        BabystepsTimer.SECONDS_IN_CYCLE = 120;
         BabystepsTimer.main(new String[0]);
         timerFrame = BabystepsTimer.timerFrame;
         timerPane = BabystepsTimer.timerPane;
         sleep(100);
+        clickStop();
     }
 
     private void sleep(int millis) {
@@ -40,9 +61,18 @@ public class BabystepsTimerTest {
         }
     }
 
+    private void clickStop() {
+        BabystepsTimer.SECONDS_IN_CYCLE = 120;
+        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://stop");
+        timerPane.fireHyperlinkUpdate(event);
+        sleep(100);
+    }
+
     private void assertInitialTimerState() {
-        String title = "Babysteps Timer";
-        assertEquals(title, timerFrame.getTitle());
+        assertEquals("Babysteps Timer", timerFrame.getTitle());
+        assertTrue(timerFrame.isUndecorated());
+        assertEquals(new Dimension(250, 120), timerFrame.getSize());
+        assertTrue(timerFrame.isVisible());
 
         String text = "<html>\n" +
                 "  <head>\n" +
@@ -58,17 +88,73 @@ public class BabystepsTimerTest {
                 "  </body>\n" +
                 "</html>\n";
         assertEquals(text, timerPane.getText());
-        Color foreground = new Color(51, 51, 51);
-        assertEquals(foreground, timerPane.getForeground());
-        Color background = new Color(0xff, 0xff, 0xff);
-        assertEquals(background, timerPane.getBackground());
+        assertFalse(timerPane.isEditable());
     }
 
-    private void clickStart() {
+    private void clickStart(int seconds) {
+        BabystepsTimer.SECONDS_IN_CYCLE = seconds;
         HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://start");
-        BabystepsTimer.timerPane.fireHyperlinkUpdate(event);
+        timerPane.fireHyperlinkUpdate(event);
+        sleep(100);
     }
 
     private void assertTimerMoved() {
+        String text = "<html>\n" +
+                "  <head>\n" +
+                "    \n" +
+                "  </head>\n" +
+                "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ffffff; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
+                "    <h1 align=\"center\">\n" +
+                "      00:01\n" +
+                "    </h1>\n" +
+                "    <div align=\"center\">\n" +
+                "      <a href=\"command://stop\"><font color=\"#555555\">Stop</font></a> <a href=\"command://reset\"><font color=\"#555555\">Reset</font></a> \n" +
+                "      <a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>\n" +
+                "    </div>\n" +
+                "  </body>\n" +
+                "</html>\n";
+        assertEquals(text, timerPane.getText());
+    }
+
+    private void assertTimerFinished() {
+        String text = "<html>\n" +
+                "  <head>\n" +
+                "    \n" +
+                "  </head>\n" +
+                "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ffcccc; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
+                "    <h1 align=\"center\">\n" +
+                "      00:00\n" +
+                "    </h1>\n" +
+                "    <div align=\"center\">\n" +
+                "      <a href=\"command://stop\"><font color=\"#555555\">Stop</font></a> <a href=\"command://reset\"><font color=\"#555555\">Reset</font></a> \n" +
+                "      <a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>\n" +
+                "    </div>\n" +
+                "  </body>\n" +
+                "</html>\n";
+        assertEquals(text, timerPane.getText());
+    }
+
+    private void clickReset() {
+        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://reset");
+        timerPane.fireHyperlinkUpdate(event);
+        sleep(100);
+    }
+
+    private void assertTimerReset() {
+        String text = "<html>\n" +
+                "  <head>\n" +
+                "    \n" +
+                "  </head>\n" +
+                "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ccffcc; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
+                "    <h1 align=\"center\">\n" +
+                "      00:02\n" +
+                "    </h1>\n" +
+                "    <div align=\"center\">\n" +
+                "      <a href=\"command://stop\"><font color=\"#555555\">Stop</font></a> <a href=\"command://reset\"><font color=\"#555555\">Reset</font></a> \n" +
+                "      <a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>\n" +
+                "    </div>\n" +
+                "  </body>\n" +
+                "</html>\n";
+        assertEquals(text, timerPane.getText());
     }
 }
