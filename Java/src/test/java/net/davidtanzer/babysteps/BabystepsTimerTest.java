@@ -16,6 +16,15 @@ public class BabystepsTimerTest {
     private JFrame timerFrame;
     private JTextPane timerPane;
 
+    /**
+     * Mutation Coverage 84%: Not covered is
+     * - whole MouseMotionListener
+     * - quit command
+     * - outer closing div (ignored by browser)
+     * - elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980
+     * - elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)
+     * - sounds
+     */
     @Test
     public void shouldDisplay_RunStop_RunFinish_Reset() throws InterruptedException {
         // Display
