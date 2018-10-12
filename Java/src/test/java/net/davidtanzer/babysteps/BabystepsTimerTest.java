@@ -17,26 +17,27 @@ public class BabystepsTimerTest {
     private JTextPane timerPane;
 
     @Test
-    public void shouldDisplay() throws InterruptedException {
+    public void shouldDisplay_RunStop_RunFinish_Reset() throws InterruptedException {
+        // Display
         showTimer();
         assertInitialTimerState();
-    }
 
-    @Test
-    public void shouldRunAndFinish() throws InterruptedException {
-        showTimer();
-
+        // RunStop
         clickStart(2);
         sleep(1000);
         assertTimerMoved();
+        clickStop();
+        assertInitialTimerState();
 
+        // RunFinish
+        clickStart(2);
+        sleep(1000);
         sleep(1000);
         assertTimerFinished();
-    }
 
-    @Test
-    public void shouldReset() throws InterruptedException {
-        showTimer();
+        clickStop();
+
+        // Reset
         clickStart(2);
         sleep(1000);
 
@@ -59,13 +60,6 @@ public class BabystepsTimerTest {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-    }
-
-    private void clickStop() {
-        BabystepsTimer.SECONDS_IN_CYCLE = 120;
-        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://stop");
-        timerPane.fireHyperlinkUpdate(event);
-        sleep(100);
     }
 
     private void assertInitialTimerState() {
@@ -156,5 +150,12 @@ public class BabystepsTimerTest {
                 "  </body>\n" +
                 "</html>\n";
         assertEquals(text, timerPane.getText());
+    }
+
+    private void clickStop() {
+        BabystepsTimer.SECONDS_IN_CYCLE = 120;
+        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, "command://stop");
+        timerPane.fireHyperlinkUpdate(event);
+        sleep(100);
     }
 }
