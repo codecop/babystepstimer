@@ -30,11 +30,11 @@ public class BabystepsTimer {
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
     private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
-    private static final long SECONDS_IN_CYCLE = 120;
+    static long SECONDS_IN_CYCLE = 120;
 
-    private static JFrame timerFrame;
-    private static JTextPane timerPane;
-    private static boolean timerRunning;
+    static JFrame timerFrame;
+    static JTextPane timerPane;
+    static boolean timerRunning;
     private static long currentCycleStartTime;
     private static String lastRemainingTime;
     private static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
