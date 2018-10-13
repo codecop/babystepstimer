@@ -55,8 +55,8 @@ public class BabystepsTimerTest {
         timerFrame.dispose();
         BabystepsTimer.timerFrame = null;
         BabystepsTimer.timerPane = null;
-        BabystepsTimer.SECONDS_IN_CYCLE = 120;
-        BabystepsTimer.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL;
+        BabystepsTimer.SECONDS_IN_CYCLE = 120; // hack to speed things up
+        BabystepsTimer.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL; // singleton fix
     }
 
     @Test
@@ -86,8 +86,12 @@ public class BabystepsTimerTest {
         String time = "02:00";
         String backgroundColor = "#ffffff";
         String links = startLinkHtml() + " " + quitLinkHtml() + "\n";
-        String text = html(time, backgroundColor, links);
-        assertEquals(text, timerPane.getText());
+        assertTimerHtml(time, backgroundColor, links);
+    }
+
+    private void assertTimerHtml(String time, String backgroundColor, String links) {
+        String html = expectedHtmlWith(time, backgroundColor, links);
+        assertEquals(html, timerPane.getText());
     }
 
     private String startLinkHtml() {
@@ -98,7 +102,7 @@ public class BabystepsTimerTest {
         return "<a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>";
     }
 
-    private String html(String time, String backgroundColor, String links) {
+    private String expectedHtmlWith(String time, String backgroundColor, String links) {
         return "<html>\n" +
                 "  <head>\n" +
                 "    \n" +
@@ -145,8 +149,7 @@ public class BabystepsTimerTest {
         String time = "01:59";
         String backgroundColor = "#ffffff";
         String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
-        String text = html(time, backgroundColor, links);
-        assertEquals(text, timerPane.getText());
+        assertTimerHtml(time, backgroundColor, links);
     }
 
     private String resetLinkHtmk() {
@@ -176,8 +179,7 @@ public class BabystepsTimerTest {
         String time = "00:00";
         String backgroundColor = "#ffcccc";
         String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
-        String text = html(time, backgroundColor, links);
-        assertEquals(text, timerPane.getText());
+        assertTimerHtml(time, backgroundColor, links);
     }
 
     @Test
@@ -201,15 +203,13 @@ public class BabystepsTimerTest {
         String time = "02:00";
         String backgroundColor = "#ccffcc";
         String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
-        String text = html(time, backgroundColor, links);
-        assertEquals(text, timerPane.getText());
+        assertTimerHtml(time, backgroundColor, links);
     }
 
     private void assertTimerMovedAfterReset() {
         String time = "01:59";
         String backgroundColor = "#ccffcc";
         String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
-        String text = html(time, backgroundColor, links);
-        assertEquals(text, timerPane.getText());
+        assertTimerHtml(time, backgroundColor, links);
     }
 }
