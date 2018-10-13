@@ -16,6 +16,7 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     protected void resetSingleton() {
         super.resetSingleton();
         BabystepsTimer.timer = new SystemTimer();
+        nextTime = System.currentTimeMillis();
     }
 
     public void waitFor(int seconds) {

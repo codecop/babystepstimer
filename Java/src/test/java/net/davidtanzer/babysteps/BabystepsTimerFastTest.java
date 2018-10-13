@@ -26,6 +26,15 @@ public class BabystepsTimerFastTest {
         timer.clickStart();
         timer.waitFor(120);
         assertThatTimerHtml.isFinished();
+        // TODO assert playing sound "32304__acclivity__shipsbell.wav"
+    }
+
+    @Test
+    public void shouldPlayGongTenSecondsToFinish() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(110);
+        // TODO assert playing sound "2166__suburban-grilla__bowl-struck.wav"
     }
 
 //    @Test
