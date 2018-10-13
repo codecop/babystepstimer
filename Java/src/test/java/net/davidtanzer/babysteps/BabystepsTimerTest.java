@@ -3,15 +3,6 @@ package net.davidtanzer.babysteps;
 import org.junit.After;
 import org.junit.Test;
 
-import javax.swing.JFrame;
-import javax.swing.JTextPane;
-import javax.swing.event.HyperlinkEvent;
-import java.awt.Dimension;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 /**
  * Mutation Coverage 84%: Not covered is
  * - whole MouseMotionListener
@@ -23,123 +14,49 @@ import static org.junit.Assert.assertTrue;
  */
 public class BabystepsTimerTest {
 
-    private JFrame timerFrame;
-    private JTextPane timerPane;
-    private final AssertTimerHtml assertTimerHtml = new AssertTimerHtml(() -> timerPane.getText());
+    private final BabystepsTimerDriver timer = new BabystepsTimerDriver();
+    private final AssertTimerHtml assertThatTimerHtml = new AssertTimerHtml(timer::getHtml);
 
     @After
     public void closeTimer() {
-        stopTimer();
-        resetSingleton();
-    }
-
-    private void stopTimer() {
-        BabystepsTimer.timerRunning = false;
-        waitForRender();
-    }
-
-    private void waitForRender() {
-        int timerSleepsMillisInThread = 10;
-        sleep(timerSleepsMillisInThread * 2);
-    }
-
-    private void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    private void resetSingleton() {
-        timerFrame.setVisible(false);
-        timerFrame.dispose();
-        BabystepsTimer.timerFrame = null;
-        BabystepsTimer.timerPane = null;
-        BabystepsTimer.SECONDS_IN_CYCLE = 120; // hack to speed things up
-        BabystepsTimer.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL; // singleton fix
+        timer.close();
     }
 
     @Test
     public void shouldDisplayInitialTimer() throws InterruptedException {
-        showTimer();
-        assertTimerFrameVisible();
-        assertTimerHtml.inInitialState();
-    }
-
-    private void showTimer() throws InterruptedException {
-        BabystepsTimer.main(new String[0]);
-        timerFrame = BabystepsTimer.timerFrame;
-        timerPane = BabystepsTimer.timerPane;
-        waitForRender();
-    }
-
-    private void assertTimerFrameVisible() {
-        assertEquals("Babysteps Timer", timerFrame.getTitle());
-        assertTrue(timerFrame.isUndecorated());
-        assertEquals(new Dimension(250, 120), timerFrame.getSize());
-        assertTrue(timerFrame.isVisible());
-
-        assertFalse(timerPane.isEditable());
+        timer.show();
+        timer.assertFrameVisible();
+        assertThatTimerHtml.isInInitialState();
     }
 
     @Test
     public void shouldRunStop() throws InterruptedException {
-        showTimer();
-        clickStart();
-        waitOneSecond();
-        assertTimerHtml.moved();
-        clickStop();
-        assertTimerHtml.inInitialState();
-    }
-
-    private void waitOneSecond() {
-        sleep(1000);
-    }
-
-    private void clickStart(int... seconds) {
-        if (seconds.length > 0) {
-            BabystepsTimer.SECONDS_IN_CYCLE = seconds[0];
-        }
-        click("command://start");
-        waitForRender();
-    }
-
-    private void click(String s) {
-        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, s);
-        timerPane.fireHyperlinkUpdate(event);
-    }
-
-    private void clickStop() {
-        BabystepsTimer.SECONDS_IN_CYCLE = 120;
-        click("command://stop");
-        waitForRender();
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(1);
+        assertThatTimerHtml.hasMoved();
+        timer.clickStop();
+        assertThatTimerHtml.isInInitialState();
     }
 
     @Test
     public void shouldRunToFinish() throws InterruptedException {
-        showTimer();
-        clickStart(2);
-        waitOneSecond();
-        waitOneSecond();
-        assertTimerHtml.finished();
+        timer.show();
+        timer.clickStart(2);
+        timer.waitFor(2);
+        assertThatTimerHtml.isFinished();
     }
 
     @Test
     public void shouldResetAndContinue() throws InterruptedException {
-        showTimer();
-        clickStart();
-        waitOneSecond();
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(1);
 
-        clickReset();
-        assertTimerHtml.reset();
-        waitOneSecond();
-        assertTimerHtml.movedAfterReset();
-    }
-
-    private void clickReset() {
-        click("command://reset");
-        waitForRender();
+        timer.clickReset();
+        assertThatTimerHtml.wasReset();
+        timer.waitFor(1);
+        assertThatTimerHtml.hasMovedAfterReset();
     }
 
 }

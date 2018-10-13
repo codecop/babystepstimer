@@ -9,4 +9,8 @@ Now we can make it more testable - that is faster tests (15')
 * not entirely automated, part in uncovered code was automated.
 * Ctrl+Shift+Alt+T -> refactor this
 
+Refactor first tests (80')
+* can reuse all first tests but will mock timer.
+* Can extract part of strings. Cool.
+
 Add fast tests.

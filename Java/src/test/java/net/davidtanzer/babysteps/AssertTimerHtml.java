@@ -11,38 +11,38 @@ public class AssertTimerHtml {
         this.html = html;
     }
 
-    public void inInitialState() {
+    public void isInInitialState() {
         String time = "02:00";
         String backgroundColor = "#ffffff";
         String links = startLinkHtml() + " " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void moved() {
+    public void hasMoved() {
         String time = "01:59";
         String backgroundColor = "#ffffff";
-        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void finished() {
+    public void isFinished() {
         String time = "00:00";
         String backgroundColor = "#ffcccc";
-        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void reset() {
+    public void wasReset() {
         String time = "02:00";
         String backgroundColor = "#ccffcc";
-        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void movedAfterReset() {
+    public void hasMovedAfterReset() {
         String time = "01:59";
         String backgroundColor = "#ccffcc";
-        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
@@ -75,7 +75,7 @@ public class AssertTimerHtml {
         return "<a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>";
     }
 
-    private String resetLinkHtmk() {
+    private String resetLinkHtml() {
         return "<a href=\"command://reset\"><font color=\"#555555\">Reset</font></a>";
     }
 
