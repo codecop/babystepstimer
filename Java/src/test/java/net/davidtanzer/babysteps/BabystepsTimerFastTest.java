@@ -41,7 +41,7 @@ public class BabystepsTimerFastTest {
     public void shouldPlayGongTenSecondsToFinish() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(110);
+        timer.waitFor(110); // only as fast test
         // TODO assert playing sound "2166__suburban-grilla__bowl-struck.wav"
     }
 
@@ -70,7 +70,29 @@ public class BabystepsTimerFastTest {
         timer.show();
         timer.clickStart();
         timer.clickReset();
-        timer.waitFor(5);
+        timer.waitFor(5); // only as fast test
+        assertThatTimerHtml.hasMoved("01:55");
+    }
+
+    @Test
+    public void shouldRunOver() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(119);
+        assertThatTimerHtml.hasMoved("00:01");
+        timer.waitFor(1);
+        assertThatTimerHtml.isFinished();
+        timer.waitFor(1);
+        assertThatTimerHtml.hasOverrun("02:00");
+    }
+
+    @Test
+    public void shouldBecomeWhite5SecondsAfterRunOver() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(120);
+        timer.waitFor(1);
+        timer.waitFor(5); // only as fast test
         assertThatTimerHtml.hasMoved("01:55");
     }
 

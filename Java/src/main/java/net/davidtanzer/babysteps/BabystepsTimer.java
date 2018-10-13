@@ -155,7 +155,6 @@ public class BabystepsTimer {
                 long elapsedTime = timer.getTime() - currentCycleStartTime;
 
                 if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    // TODO not covered
                     currentCycleStartTime = timer.getTime();
                     elapsedTime = timer.getTime() - currentCycleStartTime;
                 }
@@ -166,7 +165,6 @@ public class BabystepsTimer {
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
                 if (!remainingTime.equals(lastRemainingTime)) {
                     if (remainingTime.equals("00:10")) {
-                        // TODO not covered
                         playSound("2166__suburban-grilla__bowl-struck.wav");
                     } else if (remainingTime.equals("00:00")) {
                         playSound("32304__acclivity__shipsbell.wav");

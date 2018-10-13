@@ -5,6 +5,11 @@ import org.junit.Assert;
 import java.util.function.Supplier;
 
 public class AssertTimerHtml {
+
+    public static final String WHITE = "#ffffff";
+    public static final String RED = "#ffcccc";
+    public static final String GREEN = "#ccffcc";
+
     private final Supplier<String> html;
 
     public AssertTimerHtml(Supplier<String> html) {
@@ -13,19 +18,22 @@ public class AssertTimerHtml {
 
     public void isInInitialState() {
         String time = "02:00";
-        String backgroundColor = "#ffffff";
+        String backgroundColor = WHITE;
         String links = startLinkHtml() + " " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
 
     public void hasMoved(String time) {
-        String backgroundColor = "#ffffff";
+        String backgroundColor = WHITE;
         assertRunningTimerHtml(time, backgroundColor);
     }
 
     public void isFinished() {
-        String time = "00:00";
-        String backgroundColor = "#ffcccc";
+        hasOverrun("00:00");
+    }
+
+    public void hasOverrun(String time) {
+        String backgroundColor = RED;
         assertRunningTimerHtml(time, backgroundColor);
     }
 
@@ -34,7 +42,7 @@ public class AssertTimerHtml {
     }
 
     public void hasMovedAfterReset(String time) {
-        String backgroundColor = "#ccffcc";
+        String backgroundColor = GREEN;
         assertRunningTimerHtml(time, backgroundColor);
     }
 
