@@ -21,7 +21,7 @@ public class BabystepsTimerDriver {
         waitForRender();
     }
 
-    private void waitForRender() {
+    protected void waitForRender() {
         int timerSleepsMillisInThread = 10;
         sleep(timerSleepsMillisInThread * 2);
     }
@@ -81,7 +81,7 @@ public class BabystepsTimerDriver {
         waitForRender();
     }
 
-    private void resetSingleton() {
+    protected void resetSingleton() {
         timerFrame.setVisible(false);
         timerFrame.dispose();
         BabystepsTimer.timerFrame = null;
