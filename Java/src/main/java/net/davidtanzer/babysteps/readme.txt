@@ -1,16 +1,24 @@
 Run through the whole kata.
 
-First we need rough tests (70')
+Session 1
+---------
+
+First we need rough but very slow tests (70')
 * Ctrl+Shift+T -> navigate/create new test
 * Singleton class is a problem, Grrr. Need all tests in one because I cannot reset the Singleton.
 
-Now we can make it more testable - that is faster tests (15')
+Now we can make the timer more testable - prepare for faster tests (15')
 * extract System.currentTimeMillis with tool, move it to class
 * not entirely automated, part in uncovered code was automated.
 * Ctrl+Shift+Alt+T -> refactor this
 
-Refactor first tests (80')
-* can reuse all first tests but will mock timer.
-* Can extract part of strings. Cool.
+Session 2
+---------
 
-Add fast tests.
+Refactor and cleanup first tests (80')
+* fix the Singleton problem, split tests.
+* can reuse all original tests with stubbed timer.
+* IDEA can extract part of strings. Cool.
+
+Add fast tests (40').
+* after extraction of assertions and driver, new tests are easy
