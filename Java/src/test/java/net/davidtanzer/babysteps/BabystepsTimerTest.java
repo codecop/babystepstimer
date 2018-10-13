@@ -38,7 +38,8 @@ public class BabystepsTimerTest {
     }
 
     private void waitForRender() {
-        sleep(20);
+        int timerSleepsMillisInThread = 10;
+        sleep(timerSleepsMillisInThread * 2);
     }
 
     private void sleep(int millis) {
@@ -62,7 +63,7 @@ public class BabystepsTimerTest {
     public void shouldDisplayInitialTimer() throws InterruptedException {
         showTimer();
         assertTimerFrameVisible();
-        assertInitialTimerState();
+        assertTimerInInitialState();
     }
 
     private void showTimer() throws InterruptedException {
@@ -81,7 +82,7 @@ public class BabystepsTimerTest {
         assertFalse(timerPane.isEditable());
     }
 
-    private void assertInitialTimerState() {
+    private void assertTimerInInitialState() {
         String time = "02:00";
         String backgroundColor = "#ffffff";
         String links = startLinkHtml() + " " + quitLinkHtml() + "\n";
@@ -116,15 +117,21 @@ public class BabystepsTimerTest {
     @Test
     public void shouldRunStop() throws InterruptedException {
         showTimer();
-        clickStart(2);
-        sleep(1000);
+        clickStart();
+        waitOneSecond();
         assertTimerMoved();
         clickStop();
-        assertInitialTimerState();
+        assertTimerInInitialState();
     }
 
-    private void clickStart(int seconds) {
-        BabystepsTimer.SECONDS_IN_CYCLE = seconds;
+    private void waitOneSecond() {
+        sleep(1000);
+    }
+
+    private void clickStart(int... seconds) {
+        if (seconds.length > 0) {
+            BabystepsTimer.SECONDS_IN_CYCLE = seconds[0];
+        }
         click("command://start");
         waitForRender();
     }
@@ -135,7 +142,7 @@ public class BabystepsTimerTest {
     }
 
     private void assertTimerMoved() {
-        String time = "00:01";
+        String time = "01:59";
         String backgroundColor = "#ffffff";
         String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
         String text = html(time, backgroundColor, links);
@@ -150,78 +157,59 @@ public class BabystepsTimerTest {
         return "<a href=\"command://stop\"><font color=\"#555555\">Stop</font></a>";
     }
 
-    @Test
-    public void shouldDisplay_RunStop_RunFinish_Reset() throws InterruptedException {
-        // Display
-        showTimer();
-
-        // RunStop
-        clickStart(2);
-        sleep(1000);
-        assertTimerMoved();
-        clickStop();
-        assertInitialTimerState();
-
-        // RunFinish
-        clickStart(2);
-        sleep(1000);
-        sleep(1000);
-        assertTimerFinished();
-
-        clickStop();
-
-        // Reset
-        clickStart(2);
-        sleep(1000);
-
-        clickReset();
-        assertTimerReset();
-    }
-
-    private void assertTimerFinished() {
-        String text = "<html>\n" +
-                "  <head>\n" +
-                "    \n" +
-                "  </head>\n" +
-                "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ffcccc; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
-                "    <h1 align=\"center\">\n" +
-                "      00:00\n" +
-                "    </h1>\n" +
-                "    <div align=\"center\">\n" +
-                "      <a href=\"command://stop\"><font color=\"#555555\">Stop</font></a> <a href=\"command://reset\"><font color=\"#555555\">Reset</font></a> \n" +
-                "      <a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>\n" +
-                "    </div>\n" +
-                "  </body>\n" +
-                "</html>\n";
-        assertEquals(text, timerPane.getText());
-    }
-
-    private void clickReset() {
-        click("command://reset");
-        sleep(100);
-    }
-
-    private void assertTimerReset() {
-        String text = "<html>\n" +
-                "  <head>\n" +
-                "    \n" +
-                "  </head>\n" +
-                "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: #ccffcc; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
-                "    <h1 align=\"center\">\n" +
-                "      00:02\n" +
-                "    </h1>\n" +
-                "    <div align=\"center\">\n" +
-                "      <a href=\"command://stop\"><font color=\"#555555\">Stop</font></a> <a href=\"command://reset\"><font color=\"#555555\">Reset</font></a> \n" +
-                "      <a href=\"command://quit\"><font color=\"#555555\">Quit</font></a>\n" +
-                "    </div>\n" +
-                "  </body>\n" +
-                "</html>\n";
-        assertEquals(text, timerPane.getText());
-    }
-
     private void clickStop() {
         BabystepsTimer.SECONDS_IN_CYCLE = 120;
         click("command://stop");
         waitForRender();
+    }
+
+    @Test
+    public void shouldRunToFinish() throws InterruptedException {
+        showTimer();
+        clickStart(2);
+        waitOneSecond();
+        waitOneSecond();
+        assertTimerFinished();
+    }
+
+    private void assertTimerFinished() {
+        String time = "00:00";
+        String backgroundColor = "#ffcccc";
+        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String text = html(time, backgroundColor, links);
+        assertEquals(text, timerPane.getText());
+    }
+
+    @Test
+    public void shouldResetAndContinue() throws InterruptedException {
+        showTimer();
+        clickStart();
+        waitOneSecond();
+
+        clickReset();
+        assertTimerReset();
+        waitOneSecond();
+        assertTimerMovedAfterReset();
+    }
+
+    private void clickReset() {
+        click("command://reset");
+        waitForRender();
+    }
+
+    private void assertTimerReset() {
+        String time = "02:00";
+        String backgroundColor = "#ccffcc";
+        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String text = html(time, backgroundColor, links);
+        assertEquals(text, timerPane.getText());
+    }
+
+    private void assertTimerMovedAfterReset() {
+        String time = "01:59";
+        String backgroundColor = "#ccffcc";
+        String links = stopLinkHtml() + " " + resetLinkHtmk() + " \n" + "      " + quitLinkHtml() + "\n";
+        String text = html(time, backgroundColor, links);
+        assertEquals(text, timerPane.getText());
     }
 }
