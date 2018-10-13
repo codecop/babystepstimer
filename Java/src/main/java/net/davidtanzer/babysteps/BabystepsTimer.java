@@ -160,7 +160,6 @@ public class BabystepsTimer {
                     elapsedTime = timer.getTime() - currentCycleStartTime;
                 }
                 if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
-                    // TODO not covered
                     bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
                 }
 

@@ -18,30 +18,27 @@ public class AssertTimerHtml {
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void hasMoved() {
-        String time = "01:59";
+    public void hasMoved(String time) {
         String backgroundColor = "#ffffff";
-        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
-        assertTimerHtml(time, backgroundColor, links);
+        assertRunningTimerHtml(time, backgroundColor);
     }
 
     public void isFinished() {
         String time = "00:00";
         String backgroundColor = "#ffcccc";
-        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
-        assertTimerHtml(time, backgroundColor, links);
+        assertRunningTimerHtml(time, backgroundColor);
     }
 
     public void wasReset() {
-        String time = "02:00";
-        String backgroundColor = "#ccffcc";
-        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
-        assertTimerHtml(time, backgroundColor, links);
+        hasMovedAfterReset("02:00");
     }
 
-    public void hasMovedAfterReset() {
-        String time = "01:59";
+    public void hasMovedAfterReset(String time) {
         String backgroundColor = "#ccffcc";
+        assertRunningTimerHtml(time, backgroundColor);
+    }
+
+    private void assertRunningTimerHtml(String time, String backgroundColor) {
         String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
         assertTimerHtml(time, backgroundColor, links);
     }
@@ -82,5 +79,4 @@ public class AssertTimerHtml {
     private String stopLinkHtml() {
         return "<a href=\"command://stop\"><font color=\"#555555\">Stop</font></a>";
     }
-
 }

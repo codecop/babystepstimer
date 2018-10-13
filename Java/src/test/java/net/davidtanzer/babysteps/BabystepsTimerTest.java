@@ -30,11 +30,11 @@ public class BabystepsTimerTest {
     }
 
     @Test
-    public void shouldRunStop() throws InterruptedException {
+    public void shouldRunAndStop() throws InterruptedException {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);
-        assertThatTimerHtml.hasMoved();
+        assertThatTimerHtml.hasMoved("01:59");
         timer.clickStop();
         assertThatTimerHtml.isInInitialState();
     }
@@ -52,11 +52,10 @@ public class BabystepsTimerTest {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);
-
         timer.clickReset();
         assertThatTimerHtml.wasReset();
         timer.waitFor(1);
-        assertThatTimerHtml.hasMovedAfterReset();
+        assertThatTimerHtml.hasMovedAfterReset("01:59");
     }
 
 }

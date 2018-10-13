@@ -21,12 +21,20 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldRunToFinish() throws InterruptedException {
+    public void shouldDisplayInitialTimer() throws InterruptedException {
+        timer.show();
+        timer.assertFrameVisible();
+        assertThatTimerHtml.isInInitialState();
+    }
+
+    @Test
+    public void shouldRunAndStop() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(120);
-        assertThatTimerHtml.isFinished();
-        // TODO assert playing sound "32304__acclivity__shipsbell.wav"
+        timer.waitFor(59);
+        assertThatTimerHtml.hasMoved("01:01");
+        timer.clickStop();
+        assertThatTimerHtml.isInInitialState();
     }
 
     @Test
@@ -37,16 +45,33 @@ public class BabystepsTimerFastTest {
         // TODO assert playing sound "2166__suburban-grilla__bowl-struck.wav"
     }
 
-//    @Test
-//    public void shouldResetAndContinue() throws InterruptedException {
-//        timer.show();
-//        timer.clickStart();
-//        timer.waitFor(1);
-//
-//        timer.clickReset();
-//        assertThatTimerHtml.wasReset();
-//        timer.waitFor(1);
-//        assertThatTimerHtml.hasMovedAfterReset();
-//    }
+    @Test
+    public void shouldRunToFinish() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(120);
+        assertThatTimerHtml.isFinished();
+        // TODO assert playing sound "32304__acclivity__shipsbell.wav"
+    }
+
+    @Test
+    public void shouldResetAndContinue() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(20);
+        timer.clickReset();
+        assertThatTimerHtml.wasReset();
+        timer.waitFor(4);
+        assertThatTimerHtml.hasMovedAfterReset("01:56");
+    }
+
+    @Test
+    public void shouldBecomeWhite5SecondsAfterReset() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.clickReset();
+        timer.waitFor(5);
+        assertThatTimerHtml.hasMoved("01:55");
+    }
 
 }
