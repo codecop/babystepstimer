@@ -1,7 +1,5 @@
 package net.davidtanzer.babysteps;
 
-import org.junit.Assert;
-
 import java.util.function.Supplier;
 
 public class AssertTimerHtml {
@@ -52,8 +50,8 @@ public class AssertTimerHtml {
     }
 
     private void assertTimerHtml(String time, String backgroundColor, String links) {
-        String html = expectedHtmlWith(time, backgroundColor, links);
-        Assert.assertEquals(html, this.html.get());
+        String expectedHtml = expectedHtmlWith(time, backgroundColor, links);
+        RetryAssert.assertEquals(expectedHtml, this.html, 20);
     }
 
     private String expectedHtmlWith(String time, String backgroundColor, String links) {
