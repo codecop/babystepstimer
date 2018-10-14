@@ -138,6 +138,7 @@ public class BabystepsTimer {
 
     private static final class TimerThread extends Thread {
         private String lastRemainingTime;
+
         @Override
         public void run() {
             timerRunning = true;
@@ -150,15 +151,15 @@ public class BabystepsTimer {
                     currentCycleStartTime = timer.getTime();
                     elapsedTime = timer.getTime() - currentCycleStartTime;
                 }
-                if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
-                    bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
-                }
 
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
                 if (!remainingTime.equals(lastRemainingTime)) {
-                    if (remainingTime.equals("00:10")) {
+
+                    if (elapsedTime >= 5 * 1000 && elapsedTime < 5 * 1000 + 1000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
+                        bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+                    } else if (elapsedTime >= (SECONDS_IN_CYCLE - 10) * 1000 && elapsedTime < (SECONDS_IN_CYCLE - 10) * 1000 + 1000) {
                         playSound("2166__suburban-grilla__bowl-struck.wav");
-                    } else if (remainingTime.equals("00:00")) {
+                    } else if (elapsedTime >= SECONDS_IN_CYCLE * 1000) {
                         playSound("32304__acclivity__shipsbell.wav");
                         bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                     }
@@ -167,6 +168,7 @@ public class BabystepsTimer {
                         timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
                         timerFrame.repaint();
                     });
+
                     lastRemainingTime = remainingTime;
                 }
                 try {
