@@ -1,7 +1,5 @@
 package net.davidtanzer.babysteps;
 
-import org.junit.Assert;
-
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
@@ -24,7 +22,7 @@ public class BabystepsTimerDriver {
         waitForRender();
     }
 
-    protected void waitForRender() {
+    private void waitForRender() {
         int timerSleepsMillisInThread = 10;
         sleep(timerSleepsMillisInThread / 2);
     }

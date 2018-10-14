@@ -4,9 +4,9 @@ import java.util.function.Supplier;
 
 public class AssertTimerHtml {
 
-    public static final String WHITE = "#ffffff";
-    public static final String RED = "#ffcccc";
-    public static final String GREEN = "#ccffcc";
+    private static final String WHITE = "#ffffff";
+    private static final String RED = "#ffcccc";
+    private static final String GREEN = "#ccffcc";
 
     private final Supplier<String> html;
 
