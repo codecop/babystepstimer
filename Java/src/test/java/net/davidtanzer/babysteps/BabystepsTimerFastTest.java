@@ -33,7 +33,7 @@ public class BabystepsTimerFastTest {
         // run some time
         timer.clickStart();
         timer.waitFor(59);
-        assertThatTimerHtml.hasMoved("01:01");
+        assertThatTimerHtml.hasMovedNeutral("01:01");
         // stop
         timer.clickStop();
         assertThatTimerHtml.isInInitialState();
@@ -46,79 +46,86 @@ public class BabystepsTimerFastTest {
     public void shouldBeOnTopWhenRunning() throws InterruptedException {
         timer.show();
         timer.assertOnTop(false);
+
         timer.clickStart();
         timer.assertOnTop(true);
+
         timer.clickStop();
         timer.assertOnTop(false);
     }
 
     @Test
-    public void shouldPlayGongTenSecondsToFinish() throws InterruptedException {
+    public void shouldPlayGongTenSecondsToFail() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(110); // only as fast test
+        timer.waitFor(timer.secondsInCycle() - 10); // only as fast test
         timer.assertAudioClipPlayed("2166__suburban-grilla__bowl-struck.wav");
     }
 
     @Test
-    public void shouldRunToFinish() throws InterruptedException {
+    public void shouldRunToFail() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(120);
-        assertThatTimerHtml.isFinished();
+        timer.waitFor(timer.secondsInCycle());
+        assertThatTimerHtml.isFailed();
     }
 
     @Test
-    public void shouldPlayBellWhenFinished() throws InterruptedException {
+    public void shouldPlayBellWhenFailed() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(120);
+        timer.waitFor(timer.secondsInCycle());
         timer.assertAudioClipPlayed("32304__acclivity__shipsbell.wav");
     }
 
     @Test
-    public void shouldResetAndContinue() throws InterruptedException {
+    public void shouldResetAndStartOverAsPass() throws InterruptedException {
         timer.show();
         // run some time
         timer.clickStart();
         timer.waitFor(20);
         // reset
         timer.clickReset();
-        assertThatTimerHtml.wasReset();
+        assertThatTimerHtml.isPassed();
         // continue running
         timer.waitFor(4);
-        assertThatTimerHtml.hasMovedAfterReset("01:56");
+        assertThatTimerHtml.hasMovedAfterPass("01:56");
     }
 
     @Test
-    public void shouldBecomeWhite5SecondsAfterReset() throws InterruptedException {
+    public void shouldBecomeNeutral5SecondsAfterReset() throws InterruptedException {
         timer.show();
         timer.clickStart();
         timer.clickReset();
         timer.waitFor(5); // only as fast test
-        assertThatTimerHtml.hasMoved("01:55");
+        assertThatTimerHtml.hasMovedNeutral("01:55");
     }
 
     @Test
-    public void shouldRunOver() throws InterruptedException {
+    public void shouldFailAndRunOver() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(119);
-        assertThatTimerHtml.hasMoved("00:01");
+        timer.waitFor(timer.secondsInCycle() - 1);
+        assertThatTimerHtml.hasMovedNeutral("00:01");
         timer.waitFor(1);
-        assertThatTimerHtml.isFinished();
+        assertThatTimerHtml.isFailed();
+
+        // run over
         timer.waitFor(1);
-        assertThatTimerHtml.hasOverrun("02:00");
+        assertThatTimerHtml.hasMovedAfterFail("02:00");
     }
 
     @Test
-    public void shouldBecomeWhite5SecondsAfterRunOver() throws InterruptedException {
+    public void shouldBecomeNeutral5SecondsAfterFail() throws InterruptedException {
         timer.show();
         timer.clickStart();
-        timer.waitFor(120);
+        timer.waitFor(timer.secondsInCycle());
+
+        // run over
         timer.waitFor(1);
+
         timer.waitFor(5); // only as fast test
-        assertThatTimerHtml.hasMoved("01:55");
+        assertThatTimerHtml.hasMovedNeutral("01:55");
     }
 
 }

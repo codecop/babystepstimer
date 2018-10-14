@@ -109,4 +109,8 @@ public class BabystepsTimerDriver {
     public void waitFor(int seconds) {
         sleep(seconds * 1000);
     }
+
+    public int secondsInCycle() {
+        return (int) BabystepsTimer.SECONDS_IN_CYCLE;
+    }
 }

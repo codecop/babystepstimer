@@ -34,28 +34,28 @@ public class BabystepsTimerTest {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);
-        assertThatTimerHtml.hasMoved("01:59");
+        assertThatTimerHtml.hasMovedNeutral("01:59");
         timer.clickStop();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
-    public void shouldRunToFinish() throws InterruptedException {
+    public void shouldRunToFail() throws InterruptedException {
         timer.show();
         timer.clickStart(2);
-        timer.waitFor(2);
-        assertThatTimerHtml.isFinished();
+        timer.waitFor(timer.secondsInCycle());
+        assertThatTimerHtml.isFailed();
     }
 
     @Test
-    public void shouldResetAndContinue() throws InterruptedException {
+    public void shouldResetAndStartOverAsPass() throws InterruptedException {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);
         timer.clickReset();
-        assertThatTimerHtml.wasReset();
+        assertThatTimerHtml.isPassed();
         timer.waitFor(1);
-        assertThatTimerHtml.hasMovedAfterReset("01:59");
+        assertThatTimerHtml.hasMovedAfterPass("01:59");
     }
 
 }

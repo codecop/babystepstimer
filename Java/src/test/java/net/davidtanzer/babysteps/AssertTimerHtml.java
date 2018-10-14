@@ -21,25 +21,25 @@ public class AssertTimerHtml {
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void hasMoved(String time) {
+    public void hasMovedNeutral(String time) {
         String backgroundColor = WHITE;
         assertRunningTimerHtml(time, backgroundColor);
     }
 
-    public void isFinished() {
-        hasOverrun("00:00");
+    public void isFailed() {
+        hasMovedAfterFail("00:00");
     }
 
-    public void hasOverrun(String time) {
+    public void hasMovedAfterFail(String time) {
         String backgroundColor = RED;
         assertRunningTimerHtml(time, backgroundColor);
     }
 
-    public void wasReset() {
-        hasMovedAfterReset("02:00");
+    public void isPassed() {
+        hasMovedAfterPass("02:00");
     }
 
-    public void hasMovedAfterReset(String time) {
+    public void hasMovedAfterPass(String time) {
         String backgroundColor = GREEN;
         assertRunningTimerHtml(time, backgroundColor);
     }
