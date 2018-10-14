@@ -1,7 +1,5 @@
 package net.davidtanzer.babysteps;
 
-import org.junit.Assert;
-
 public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
 
     private long nextTime = System.currentTimeMillis();
@@ -17,7 +15,7 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
         return nextTime;
     }
 
-    private void playAudioClip(String name) {
+    private synchronized void playAudioClip(String name) {
         lastAudioClip = name;
     }
 
@@ -31,11 +29,11 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
 
     public void waitFor(int seconds) {
         nextTime = nextTime + seconds * 1000;
-        waitForRender();
+        waitForTimerThread();
     }
 
-    public void assertAudioClipPlayed(String expectedName) {
-        Assert.assertEquals(expectedName, lastAudioClip);
+    public synchronized void assertAudioClipPlayed(String expectedName) {
+        RetryAssert.assertEquals(expectedName, () -> lastAudioClip, 100);
         lastAudioClip = null;
     }
 }

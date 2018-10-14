@@ -47,7 +47,7 @@
                         <param>net.davidtanzer.babysteps.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>net.davidtanzer.babysteps.*</param>
+                        <param>net.davidtanzer.babysteps.BabystepsTimerFastTest*</param>
                     </targetTests>
                     <mutators>
                         <mutator>ALL</mutator>

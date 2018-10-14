@@ -1,5 +1,7 @@
 package net.davidtanzer.babysteps;
 
+import org.junit.Assert;
+
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
@@ -8,6 +10,7 @@ import java.awt.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class BabystepsTimerDriver {
 
@@ -22,6 +25,11 @@ public class BabystepsTimerDriver {
     }
 
     protected void waitForRender() {
+        int timerSleepsMillisInThread = 10;
+        sleep(timerSleepsMillisInThread / 2);
+    }
+
+    protected void waitForTimerThread() {
         int timerSleepsMillisInThread = 10;
         sleep(timerSleepsMillisInThread * 2);
     }
@@ -38,9 +46,19 @@ public class BabystepsTimerDriver {
         assertEquals("Babysteps Timer", timerFrame.getTitle());
         assertTrue(timerFrame.isUndecorated());
         assertEquals(new Dimension(250, 120), timerFrame.getSize());
+        assertEquals(JFrame.EXIT_ON_CLOSE, timerFrame.getDefaultCloseOperation());
         assertTrue(timerFrame.isVisible());
 
         assertFalse(timerPane.isEditable());
+        Component[] components = timerFrame.getContentPane().getComponents();
+        for (Component component : components) {
+            if (component == timerPane) return;
+        }
+        fail("timerPane not in ConentPane");
+    }
+
+    public void assertOnTop(boolean onTop) {
+        assertEquals(onTop, timerFrame.isAlwaysOnTop());
     }
 
     public String getHtml() {
@@ -78,7 +96,7 @@ public class BabystepsTimerDriver {
 
     private void stopTimer() {
         BabystepsTimer.timerRunning = false;
-        waitForRender();
+        waitForTimerThread();
     }
 
     protected void resetSingleton() {

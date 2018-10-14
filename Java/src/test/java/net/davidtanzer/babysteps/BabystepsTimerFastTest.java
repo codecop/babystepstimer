@@ -4,11 +4,10 @@ import org.junit.After;
 import org.junit.Test;
 
 /**
- * Mutation Coverage tbd: Not covered is
+ * Mutation Coverage 87%: Not covered is
  * - whole MouseMotionListener
  * - quit command
  * - outer closing div (ignored by browser)
- * - sounds
  */
 public class BabystepsTimerFastTest {
 
@@ -27,14 +26,31 @@ public class BabystepsTimerFastTest {
         assertThatTimerHtml.isInInitialState();
     }
 
+    // TODO test ENTERED/EXITED event type does not trigger any action (all 4 actions)
+
     @Test
     public void shouldRunAndStop() throws InterruptedException {
         timer.show();
+        // run some time
         timer.clickStart();
         timer.waitFor(59);
         assertThatTimerHtml.hasMoved("01:01");
+        // stop
         timer.clickStop();
         assertThatTimerHtml.isInInitialState();
+        // and stay stopped
+        timer.waitFor(5);
+        assertThatTimerHtml.isInInitialState();
+    }
+
+    @Test
+    public void shouldBeOnTopWhenRunning() throws InterruptedException {
+        timer.show();
+        timer.assertOnTop(false);
+        timer.clickStart();
+        timer.assertOnTop(true);
+        timer.clickStop();
+        timer.assertOnTop(false);
     }
 
     @Test
@@ -51,16 +67,26 @@ public class BabystepsTimerFastTest {
         timer.clickStart();
         timer.waitFor(120);
         assertThatTimerHtml.isFinished();
+    }
+
+    @Test
+    public void shouldPlayBellWhenFinished() throws InterruptedException {
+        timer.show();
+        timer.clickStart();
+        timer.waitFor(120);
         timer.assertAudioClipPlayed("32304__acclivity__shipsbell.wav");
     }
 
     @Test
     public void shouldResetAndContinue() throws InterruptedException {
         timer.show();
+        // run some time
         timer.clickStart();
         timer.waitFor(20);
+        // reset
         timer.clickReset();
         assertThatTimerHtml.wasReset();
+        // continue running
         timer.waitFor(4);
         assertThatTimerHtml.hasMovedAfterReset("01:56");
     }
