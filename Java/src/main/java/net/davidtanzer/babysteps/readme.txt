@@ -39,3 +39,44 @@ Add more tests based on Mutation + make tests more rely able (60')
 * got 87% mutation coverage, could still add one or two things
 
 ==> fast tests with little more coverage = 2.25h
+
+Analyse BabystepsTimer's Code and Requirements/Domain (60')
+* not sure how to start. What is business logic?
+
+> There is a timer.
+> * it can be started and stopped and reset.
+> * It knows when it started a cycle.
+> * It knows how to count down seconds, passed and failed runs,
+> * plays sounds and changes colors (states?)
+> * calls the UI and receives commands from the UI.
+> * Needs callbacks for displayTimer in 3 states (neutral, fail, pass) with current remaining seconds
+>
+> Sub domains are time, UI/GFX, sounds.
+>
+> Time:
+> * get CurrentTime, difference to earlier time in Seconds = elapsed
+> * that would be a value object, returned by the Timer API.
+> * is called from core domain
+> * also remaining is seconds, but needed +980 millis, too?
+> * Seconds is also a value object.
+> * Seconds can format as minutes:seconds? -- or is that UI
+>
+> Sounds:
+> * play one of two sounds
+> * interface of domain, implementation uses AudioClip (library) abstraction.
+> * is called from core domain
+>
+> Threading/Scheduling:
+> * technical, start/stop thread, exchange values
+>
+> UI:
+> * displays Swing timer graphics
+> * allows moving around
+> * can be on top
+> * has colors
+> * is called from core domain and also calls into core domain.
+
+Refactor some details (30')
+* to separate dependencies I need a IoC mechanism, e.g. construtor.
+* maybe first change is to remove all statics. This should simplify tests a bit
+  and remove need to access inner states for cleanup
