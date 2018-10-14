@@ -19,6 +19,7 @@ import java.text.DecimalFormat;
 
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
@@ -162,8 +163,10 @@ public class BabystepsTimer {
                         bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                     }
 
-                    timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
-                    timerFrame.repaint();
+                    SwingUtilities.invokeLater(() -> {
+                        timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
+                        timerFrame.repaint();
+                    });
                     lastRemainingTime = remainingTime;
                 }
                 try {
