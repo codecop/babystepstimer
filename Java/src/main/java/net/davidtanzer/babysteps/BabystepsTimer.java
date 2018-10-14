@@ -31,16 +31,15 @@ public class BabystepsTimer {
 
     static JFrame timerFrame;
     static JTextPane timerPane;
+    // TODO volatile, accessed from two threads
     static boolean timerRunning;
+    // TODO volatile, accessed from two threads
     private static long currentCycleStartTime;
-    private static String lastRemainingTime;
     static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
     static Timer timer = new SystemTimer();
     static AudioClip audioClip = new SampledAudioClip();
 
-    private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
-
-    public static void main(final String[] args) throws InterruptedException {
+    public static void main(final String[] args) {
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
 
@@ -107,6 +106,7 @@ public class BabystepsTimer {
         long remainingSeconds = SECONDS_IN_CYCLE - elapsedSeconds;
 
         long remainingMinutes = remainingSeconds / 60;
+        DecimalFormat twoDigitsFormat = new DecimalFormat("00");
         return twoDigitsFormat.format(remainingMinutes) + ":" + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
     }
 
@@ -136,6 +136,7 @@ public class BabystepsTimer {
     }
 
     private static final class TimerThread extends Thread {
+        private String lastRemainingTime;
         @Override
         public void run() {
             timerRunning = true;
