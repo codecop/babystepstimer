@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class BabystepsTimerFastTest {
 
-    private final BabystepsTimerDriver timer = new BabystepsStubTimerDriver();
+    private final BabystepsStubTimerDriver timer = new BabystepsStubTimerDriver();
     private final AssertTimerHtml assertThatTimerHtml = new AssertTimerHtml(timer::getHtml);
 
     @After
@@ -42,7 +42,7 @@ public class BabystepsTimerFastTest {
         timer.show();
         timer.clickStart();
         timer.waitFor(110); // only as fast test
-        // TODO assert playing sound "2166__suburban-grilla__bowl-struck.wav"
+        timer.assertAudioClipPlayed("2166__suburban-grilla__bowl-struck.wav");
     }
 
     @Test
@@ -51,7 +51,7 @@ public class BabystepsTimerFastTest {
         timer.clickStart();
         timer.waitFor(120);
         assertThatTimerHtml.isFinished();
-        // TODO assert playing sound "32304__acclivity__shipsbell.wav"
+        timer.assertAudioClipPlayed("32304__acclivity__shipsbell.wav");
     }
 
     @Test

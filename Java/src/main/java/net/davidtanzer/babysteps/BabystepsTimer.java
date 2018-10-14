@@ -17,9 +17,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.text.DecimalFormat;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
@@ -39,6 +36,7 @@ public class BabystepsTimer {
     private static String lastRemainingTime;
     static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
     static Timer timer = new SystemTimer();
+    static AudioClip audioClip = new SampledAudioClip();
 
     private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
 
@@ -132,15 +130,7 @@ public class BabystepsTimer {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            BabystepsTimer.class.getResourceAsStream("/" + url));
-                    clip.open(inputStream);
-                    clip.start();
-                } catch (Exception e) {
-                    System.err.println(e.getMessage());
-                }
+                audioClip.play(url);
             }
         }).start();
     }
