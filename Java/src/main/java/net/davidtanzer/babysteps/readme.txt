@@ -22,3 +22,14 @@ Refactor and cleanup first tests (80')
 
 Add fast tests (40').
 * after extraction of assertions and driver, new tests are easy
+* still flaky from time to time 20%
+
+Session 3
+---------
+
+Add mock for audio clip (15')
+* now the whole audio is not in test scope any more. but it never was.
+
+Add more tests based on Mutation + make tests more rely able (1h)
+* flaky tests are a problem when assessing mutation coverage
+* the more tests I create, the worse it gets.

@@ -8,6 +8,7 @@ import org.junit.Test;
  * - whole MouseMotionListener
  * - quit command
  * - outer closing div (ignored by browser)
+ * - TODO test ENTERED/EXITED event type does not trigger any action (all 4 actions)
  */
 public class BabystepsTimerFastTest {
 
@@ -25,8 +26,6 @@ public class BabystepsTimerFastTest {
         timer.assertFrameVisible();
         assertThatTimerHtml.isInInitialState();
     }
-
-    // TODO test ENTERED/EXITED event type does not trigger any action (all 4 actions)
 
     @Test
     public void shouldRunAndStop() throws InterruptedException {
