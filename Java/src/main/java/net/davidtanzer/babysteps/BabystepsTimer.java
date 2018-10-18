@@ -183,4 +183,9 @@ public class BabystepsTimer {
             }
         }
     }
+
+    public void close() {
+        timerFrame.setVisible(false);
+        timerFrame.dispose();
+    }
 }

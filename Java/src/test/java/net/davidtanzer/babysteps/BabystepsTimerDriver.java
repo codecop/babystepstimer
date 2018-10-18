@@ -68,7 +68,7 @@ public class BabystepsTimerDriver {
 
     public void clickStart(int... seconds) {
         if (seconds.length > 0) {
-            BabystepsTimer.SECONDS_IN_CYCLE = seconds[0];
+            BabystepsTimer.SECONDS_IN_CYCLE = seconds[0]; // optional hack to speed things up
         }
         click("command://start");
         waitForRender();
@@ -92,7 +92,7 @@ public class BabystepsTimerDriver {
 
     public void close() {
         stopTimer();
-        resetSingleton();
+        destroyFrame();
     }
 
     private void stopTimer() {
@@ -100,13 +100,9 @@ public class BabystepsTimerDriver {
         waitForTimerThread();
     }
 
-    protected void resetSingleton() {
-        timerFrame.setVisible(false);
-        timerFrame.dispose();
-        sut.timerFrame = null;
-        sut.timerPane = null;
-        BabystepsTimer.SECONDS_IN_CYCLE = 120; // hack to speed things up
-        sut.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL; // singleton fix
+    private void destroyFrame() {
+        sut.close();
+        BabystepsTimer.SECONDS_IN_CYCLE = 120; // undo hack to speed things up
     }
 
     public void waitFor(int seconds) {

@@ -2,14 +2,16 @@ package net.davidtanzer.babysteps;
 
 public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
 
-    private long nextTime = System.currentTimeMillis();
+    private long nextTime;
     private String lastAudioClip;
 
     @Override
     public void show() {
         super.show();
         sut.timer = this::getTime;
+        nextTime = System.currentTimeMillis();
         sut.audioClip = this::playAudioClip;
+        lastAudioClip = null;
     }
 
     private long getTime() {
@@ -18,15 +20,6 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
 
     private synchronized void playAudioClip(String name) {
         lastAudioClip = name;
-    }
-
-    @Override
-    protected void resetSingleton() {
-        super.resetSingleton();
-        sut.timer = new SystemTimer();
-        nextTime = System.currentTimeMillis();
-        sut.audioClip = new SampledAudioClip();
-        lastAudioClip = null;
     }
 
     @Override
