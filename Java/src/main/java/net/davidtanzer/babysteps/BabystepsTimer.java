@@ -39,19 +39,19 @@ public class BabystepsTimer {
     private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
     
     private final Timer timer;
-    private final AudioClip audioClip;
+    private final BabystepsSignal signal;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
     }
     
     public BabystepsTimer() {
-        this(new SystemTimer(), new SampledAudioClip());
+        this(new SystemTimer(), new AudioSignal(new SampledAudioClip()));
     }
     
-    /* for test */ BabystepsTimer(final Timer timer, final AudioClip audioClip) {
+    /* for test */ BabystepsTimer(final Timer timer, final BabystepsSignal signal) {
         this.timer = timer;
-        this.audioClip = audioClip;
+        this.signal = signal;
         
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
@@ -139,15 +139,6 @@ public class BabystepsTimer {
         return timerHtml;
     }
 
-    public synchronized void playSound(final String url) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                audioClip.play(url);
-            }
-        }).start();
-    }
-
     private final class TimerThread extends Thread {
         private String lastRemainingTime;
 
@@ -170,9 +161,9 @@ public class BabystepsTimer {
                     if (elapsedTime >= 5 * 1000 && elapsedTime < 5 * 1000 + 1000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
                         bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
                     } else if (elapsedTime >= (SECONDS_IN_CYCLE - 10) * 1000 && elapsedTime < (SECONDS_IN_CYCLE - 10) * 1000 + 1000) {
-                        playSound("2166__suburban-grilla__bowl-struck.wav");
+                        signal.warning();
                     } else if (elapsedTime >= SECONDS_IN_CYCLE * 1000) {
-                        playSound("32304__acclivity__shipsbell.wav");
+                        signal.failure();
                         bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                     }
 
@@ -196,4 +187,5 @@ public class BabystepsTimer {
         timerFrame.setVisible(false);
         timerFrame.dispose();
     }
+
 }

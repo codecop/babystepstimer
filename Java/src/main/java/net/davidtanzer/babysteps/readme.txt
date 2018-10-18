@@ -50,9 +50,9 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * it can be started and stopped and reset.
 > * It knows when it started a cycle.
 > * It knows how to count down seconds, passed and failed runs,
-> * plays sounds and changes colors (states?)
+> * plays sounds and changes colours (states?)
 > * calls the UI and receives commands from the UI.
-> * Needs callbacks for displayTimer in 3 states (neutral, fail, pass) with current remaining seconds
+> * Needs call backs for displayTimer in 3 states (neutral, fail, pass) with current remaining seconds
 >
 > Sub domains are time, UI/GFX, sounds.
 >
@@ -60,7 +60,7 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * get CurrentTime, difference to earlier time in Seconds = elapsed
 > * that would be a value object, returned by the Timer API.
 > * is called from core domain
-> * also remaining is seconds, but needed +980 millis, too?
+> * also remaining is seconds, but needed +980 milliseconds, too?
 > * Seconds is also a value object.
 > * Seconds can format as minutes:seconds? -- or is that UI
 >
@@ -76,7 +76,7 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * displays Swing timer graphics
 > * allows moving around
 > * can be on top
-> * has colors
+> * has colours
 > * is called from core domain and also calls into core domain.
 
 Refactor some details (30')
@@ -94,8 +94,12 @@ using Eclipse
 * IDEA: TODO need to update analysis options to flag that
 * Tests fail always due blinking on x86 laptop.
 
-Refactor to instance ()
+Prepare for dependency injection (30')
 * to separate dependencies I need a IoC mechanism, e.g. constructor "injection".
 * maybe first change should be to remove all statics. This should simplify tests a bit
   and remove need to access inner states for cleanup.
+* refactor to instance 
 * introduce stubbed dependencies by second constructor.
+
+Extract logic ()
+* audio technology and domain concept of signal.
