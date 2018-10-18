@@ -103,3 +103,4 @@ Prepare for dependency injection (30')
 
 Extract logic ()
 * audio technology and domain concept of signal.
+* UI with readable names for colour changes
