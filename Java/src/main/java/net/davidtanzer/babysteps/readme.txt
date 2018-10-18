@@ -101,6 +101,7 @@ Prepare for dependency injection (30')
 * refactor to instance 
 * introduce stubbed dependencies by second constructor.
 
-Extract logic ()
-* audio technology and domain concept of signal.
+Extract logic (90')
+* Audio technology and domain concept of signal.
 * UI with readable names for colour changes
+* all UI done. Leaves only timing, threading and core logic inside.
