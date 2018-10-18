@@ -2,45 +2,48 @@ Run through the whole kata.
 
 Session 1
 ---------
+using IDEA Community Edition
 
 First we need rough but very slow tests (70')
-* Ctrl+Shift+T -> navigate/create new test
-* Singleton class is a problem, Grrr. Need all tests in one because I cannot reset the Singleton.
-* got 84% mutation coverage, not bad
+* IDEA: Ctrl+Shift+T -> navigate to/create new test
+* Singleton class is a problem, Grrr. Need all tests in one because I cannot reset the singleton.
+* Got 84% mutation coverage, not bad
 
-Now we can make the timer more testable - prepare for faster tests (15')
+Now we can make the code more testable - prepare for faster tests (15')
 * extract System.currentTimeMillis with tool, move it to class
 * not entirely automated, part in uncovered code was automated.
-* Ctrl+Shift+Alt+T -> refactor this
+* IDEA: Ctrl+Shift+Alt+T -> refactor this
 
 Session 2
 ---------
+using IDEA Community Edition
 
 Refactor and cleanup first tests (80')
-* fix the Singleton problem, split tests.
-* can reuse all original tests with stubbed timer.
+* fix the singleton problem, split tests.
+* can reuse all original tests with stubbed timer as well.
 * IDEA can extract part of strings. Cool.
 
 ==> slow tests with good abstractions = 2.5h
 
 Add fast tests (40').
 * after extraction of assertions and driver, new tests are easy
-* still flaky from time to time 20%
+* still blinking from time to time, blinking with 20%
 
 Session 3
 ---------
+using IDEA Community Edition
 
 Add mock for audio clip (15')
 * now the whole audio is not in test scope any more. but it never was.
 
 Add more tests based on Mutation + make tests more rely able (60')
-* flaky tests are a problem when assessing mutation coverage
-* the more tests I create, the worse it gets.
+* blinking tests are a problem when assessing mutation coverage
+* The more tests I create, the worse it gets.
 * got 87% mutation coverage, could still add one or two things
 
 ==> fast tests with little more coverage = 2.25h
 
-Analyse BabystepsTimer's Code and Requirements/Domain (60')
+Analysis Babysteps Timer's Code and Requirements/Domain (60')
 * not sure how to start. What is business logic?
 
 > There is a timer.
@@ -77,6 +80,17 @@ Analyse BabystepsTimer's Code and Requirements/Domain (60')
 > * is called from core domain and also calls into core domain.
 
 Refactor some details (30')
-* to separate dependencies I need a IoC mechanism, e.g. construtor.
-* maybe first change is to remove all statics. This should simplify tests a bit
+* to separate dependencies I need a IoC mechanism, e.g. constructor "injection".
+* maybe first change should be to remove all statics. This should simplify tests a bit
   and remove need to access inner states for cleanup
+
+Session 4
+---------
+using Eclipse
+
+* IDEA does not flag: 
+  Potential resource leak: 'clip' may not be closed
+  The declared exception InterruptedException is not actually thrown by the method show()
+  The method getTime() of type SystemTimer should be tagged with @Override since it actually overrides a superinterface method
+  TODO need to update analysis options
+
