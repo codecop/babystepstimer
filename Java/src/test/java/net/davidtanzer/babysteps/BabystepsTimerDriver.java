@@ -17,10 +17,14 @@ public class BabystepsTimerDriver {
     private JTextPane timerPane;
 
     public void show() {
-        sut = new BabystepsTimer();
+        sut = createTimer();
         timerFrame = sut.timerFrame;
         timerPane = sut.timerPane;
         waitForRender();
+    }
+
+    protected BabystepsTimer createTimer() {
+        return new BabystepsTimer();
     }
 
     private void waitForRender() {

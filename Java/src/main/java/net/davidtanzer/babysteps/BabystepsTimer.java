@@ -24,27 +24,35 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 public class BabystepsTimer {
-    static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
+    private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
     private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
-    static long SECONDS_IN_CYCLE = 120;
+    /* for slow test */ static long SECONDS_IN_CYCLE = 120;
 
-    JFrame timerFrame;
-    JTextPane timerPane;
-    // TODO volatile, accessed from two threads
-    boolean timerRunning;
-    // TODO volatile, accessed from two threads
+    /* for test */ final JFrame timerFrame;
+    /* for test */ final JTextPane timerPane;
+
+    // TODO volatile/thread safe, accessed/written from two threads
+    /* for test */ boolean timerRunning;
     private long currentCycleStartTime;
-    String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
-    Timer timer = new SystemTimer();
-    AudioClip audioClip = new SampledAudioClip();
+    private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+    
+    private final Timer timer;
+    private final AudioClip audioClip;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
     }
     
-    BabystepsTimer() {
+    public BabystepsTimer() {
+        this(new SystemTimer(), new SampledAudioClip());
+    }
+    
+    /* for test */ BabystepsTimer(final Timer timer, final AudioClip audioClip) {
+        this.timer = timer;
+        this.audioClip = audioClip;
+        
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
 

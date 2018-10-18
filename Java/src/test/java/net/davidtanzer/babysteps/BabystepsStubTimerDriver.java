@@ -6,14 +6,12 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     private String lastAudioClip;
 
     @Override
-    public void show() {
-        super.show();
-        sut.timer = this::getTime;
+    protected BabystepsTimer createTimer() {
         nextTime = System.currentTimeMillis();
-        sut.audioClip = this::playAudioClip;
         lastAudioClip = null;
+        return new BabystepsTimer(this::getTime, this::playAudioClip);
     }
-
+    
     private long getTime() {
         return nextTime;
     }

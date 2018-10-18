@@ -97,4 +97,5 @@ using Eclipse
 Refactor to instance ()
 * to separate dependencies I need a IoC mechanism, e.g. constructor "injection".
 * maybe first change should be to remove all statics. This should simplify tests a bit
-  and remove need to access inner states for cleanup
+  and remove need to access inner states for cleanup.
+* introduce stubbed dependencies by second constructor.
