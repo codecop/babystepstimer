@@ -28,9 +28,6 @@ public class BabystepsTimer {
 
     /* for slow test */ static long SECONDS_IN_CYCLE = 120;
 
-    /* for test */ final JFrame timerFrame;
-    /* for test */ final JTextPane timerPane;
-
     // TODO volatile/thread safe, accessed/written from two threads
     /* for test */ boolean timerRunning;
     private long currentCycleStartTime;
@@ -43,8 +40,46 @@ public class BabystepsTimer {
         private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
         private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
+        /* for test */ final JFrame timerFrame;
+        /* for test */ final JTextPane timerPane;
+        
         private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
 
+        UI() {
+            timerFrame = new JFrame("Babysteps Timer");
+            timerFrame.setUndecorated(true);
+            timerFrame.setSize(250, 120);
+            timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            timerPane = new JTextPane();
+            timerPane.setContentType("text/html");
+            timerPane.setEditable(false);
+            timerPane.addMouseMotionListener(new MouseMotionListener() {
+                // TODO not covered
+
+                private int lastX;
+                private int lastY;
+
+                @Override
+                public void mouseMoved(final MouseEvent e) {
+                    lastX = e.getXOnScreen();
+                    lastY = e.getYOnScreen();
+                }
+
+                @Override
+                public void mouseDragged(final MouseEvent e) {
+                    int x = e.getXOnScreen();
+                    int y = e.getYOnScreen();
+
+                    timerFrame.setLocation(timerFrame.getLocation().x + (x - lastX), timerFrame.getLocation().y + (y - lastY));
+
+                    lastX = x;
+                    lastY = y;
+                }
+            });
+            // TODO addHyperlinkListener etc. 
+        }
+        
         public void showNormal() {
             bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
         }
@@ -63,11 +98,7 @@ public class BabystepsTimer {
 
         public void showTime(final String timerText, final boolean running) {
             Runnable update = () -> timerPane.setText(createTimerHtml(timerText, running));
-            if (SwingUtilities.isEventDispatchThread()) {
-                update.run();
-            } else {
-                invokeAndWait(update);
-            }
+            invokeOnEventThread(update);
         }
 
         private String createTimerHtml(final String timerText, final boolean running) {
@@ -84,6 +115,14 @@ public class BabystepsTimer {
             timerHtml += "<a style=\"color: #555555;\" href=\"command://quit\">Quit</a> ";
             timerHtml += "</div>" + "</body></html>";
             return timerHtml;
+        }
+
+        private void invokeOnEventThread(Runnable update) {
+            if (SwingUtilities.isEventDispatchThread()) {
+                update.run();
+            } else {
+                invokeAndWait(update);
+            }
         }
 
         private void invokeAndWait(Runnable update) {
@@ -103,7 +142,7 @@ public class BabystepsTimer {
         }
     }
     
-    private final UI ui = new UI();
+    /* for test */ final UI ui;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
@@ -116,52 +155,23 @@ public class BabystepsTimer {
     /* for test */ BabystepsTimer(final Timer timer, final BabystepsSignal signal) {
         this.timer = timer;
         this.signal = signal;
-        
-        timerFrame = new JFrame("Babysteps Timer");
-        timerFrame.setUndecorated(true);
-        timerFrame.setSize(250, 120);
-        timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ui = new UI();
 
-        timerPane = new JTextPane();
-        timerPane.setContentType("text/html");
         String timerText = getRemainingTimeCaption(0L);
         ui.showTime(timerText, false);
-        timerPane.setEditable(false);
-        timerPane.addMouseMotionListener(new MouseMotionListener() {
-            // TODO not covered
-
-            private int lastX;
-            private int lastY;
-
-            @Override
-            public void mouseMoved(final MouseEvent e) {
-                lastX = e.getXOnScreen();
-                lastY = e.getYOnScreen();
-            }
-
-            @Override
-            public void mouseDragged(final MouseEvent e) {
-                int x = e.getXOnScreen();
-                int y = e.getYOnScreen();
-
-                timerFrame.setLocation(timerFrame.getLocation().x + (x - lastX), timerFrame.getLocation().y + (y - lastY));
-
-                lastX = x;
-                lastY = y;
-            }
-        });
-        timerPane.addHyperlinkListener(new HyperlinkListener() {
+        
+        ui.timerPane.addHyperlinkListener(new HyperlinkListener() {
             @Override
             public void hyperlinkUpdate(final HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if ("command://start".equals(e.getDescription())) {
-                        timerFrame.setAlwaysOnTop(true);
+                        ui.timerFrame.setAlwaysOnTop(true);
                         String timerText = getRemainingTimeCaption(0L);
                         ui.showTime(timerText, true);
                         new TimerThread().start();
                     } else if ("command://stop".equals(e.getDescription())) {
                         timerRunning = false;
-                        timerFrame.setAlwaysOnTop(false);
+                        ui.timerFrame.setAlwaysOnTop(false);
                         ui.showNormal();
                         String timerText = getRemainingTimeCaption(0L);
                         ui.showTime(timerText, false);
@@ -177,9 +187,8 @@ public class BabystepsTimer {
                 }
             }
         });
-        timerFrame.getContentPane().add(timerPane);
-
-        timerFrame.setVisible(true);
+        ui.timerFrame.getContentPane().add(ui.timerPane);
+        ui.timerFrame.setVisible(true);
     }
 
     private String getRemainingTimeCaption(final long elapsedTime) {
@@ -218,7 +227,6 @@ public class BabystepsTimer {
                         signal.failure();
                         ui.showFailure();
                     }
-
                     ui.showTime(remainingTime, true);
 
                     lastRemainingTime = remainingTime;
@@ -233,8 +241,8 @@ public class BabystepsTimer {
     }
 
     public void close() {
-        timerFrame.setVisible(false);
-        timerFrame.dispose();
+        ui.timerFrame.setVisible(false);
+        ui.timerFrame.dispose();
     }
 
 }

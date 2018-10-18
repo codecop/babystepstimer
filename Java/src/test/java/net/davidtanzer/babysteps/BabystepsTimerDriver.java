@@ -18,8 +18,8 @@ public class BabystepsTimerDriver {
 
     public void show() {
         sut = createTimer();
-        timerFrame = sut.timerFrame;
-        timerPane = sut.timerPane;
+        timerFrame = sut.ui.timerFrame;
+        timerPane = sut.ui.timerPane;
         waitForRender();
     }
 
