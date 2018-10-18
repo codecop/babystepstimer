@@ -15,6 +15,7 @@ package net.davidtanzer.babysteps;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;
 
 import javax.swing.JFrame;
@@ -42,12 +43,11 @@ public class BabystepsTimer {
         private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
         private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
-        String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+        private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
 
         public void showNormal() {
             bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
         }
-
 
         public void showFailure() {
             bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
@@ -56,29 +56,51 @@ public class BabystepsTimer {
         public void showPassed() {
             bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
         }
-        
+
         public boolean isNormal() {
             return BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor);
         }
-     
-        public String createTimerHtml(final String timerText, final boolean running) {
+
+        public void showTime(final String timerText, final boolean running) {
+            Runnable update = () -> timerPane.setText(createTimerHtml(timerText, running));
+            if (SwingUtilities.isEventDispatchThread()) {
+                update.run();
+            } else {
+                invokeAndWait(update);
+            }
+        }
+
+        private String createTimerHtml(final String timerText, final boolean running) {
             final String bodyColor = bodyBackgroundColor;
-            String timerHtml = "<html><body style=\"border: 3px solid #555555; background: " + bodyColor + "; margin: 0; padding: 0;\">" +
-                    "<h1 style=\"text-align: center; font-size: 30px; color: #333333;\">" + timerText + "</h1>" +
-                    "<div style=\"text-align: center\">";
+            String timerHtml = "<html><body style=\"border: 3px solid #555555; background: " + bodyColor + "; margin: 0; padding: 0;\">"
+                    + "<h1 style=\"text-align: center; font-size: 30px; color: #333333;\">" + timerText + "</h1>"
+                    + "<div style=\"text-align: center\">";
             if (running) {
-                timerHtml += "<a style=\"color: #555555;\" href=\"command://stop\">Stop</a> " +
-                        "<a style=\"color: #555555;\" href=\"command://reset\">Reset</a> ";
+                timerHtml += "<a style=\"color: #555555;\" href=\"command://stop\">Stop</a> "
+                        + "<a style=\"color: #555555;\" href=\"command://reset\">Reset</a> ";
             } else {
                 timerHtml += "<a style=\"color: #555555;\" href=\"command://start\">Start</a> ";
             }
             timerHtml += "<a style=\"color: #555555;\" href=\"command://quit\">Quit</a> ";
-            timerHtml += "</div>" +
-                    "</body></html>";
+            timerHtml += "</div>" + "</body></html>";
             return timerHtml;
         }
 
-        
+        private void invokeAndWait(Runnable update) {
+            try {
+                
+                SwingUtilities.invokeAndWait(update);
+                
+            } catch (@SuppressWarnings("unused") InterruptedException ignored) {
+                Thread.currentThread().interrupt();
+                
+            } catch (InvocationTargetException e) {
+                if (e.getTargetException() instanceof RuntimeException) {
+                    throw (RuntimeException) e.getTargetException();
+                }
+                throw new RuntimeException(e); 
+            }
+        }
     }
     
     private final UI ui = new UI();
@@ -97,13 +119,13 @@ public class BabystepsTimer {
         
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
-
         timerFrame.setSize(250, 120);
         timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         timerPane = new JTextPane();
         timerPane.setContentType("text/html");
         String timerText = getRemainingTimeCaption(0L);
-        timerPane.setText(ui.createTimerHtml(timerText, false));
+        ui.showTime(timerText, false);
         timerPane.setEditable(false);
         timerPane.addMouseMotionListener(new MouseMotionListener() {
             // TODO not covered
@@ -135,19 +157,19 @@ public class BabystepsTimer {
                     if ("command://start".equals(e.getDescription())) {
                         timerFrame.setAlwaysOnTop(true);
                         String timerText = getRemainingTimeCaption(0L);
-                        timerPane.setText(ui.createTimerHtml(timerText, true));
-                        timerFrame.repaint();
+                        ui.showTime(timerText, true);
                         new TimerThread().start();
                     } else if ("command://stop".equals(e.getDescription())) {
                         timerRunning = false;
                         timerFrame.setAlwaysOnTop(false);
                         ui.showNormal();
                         String timerText = getRemainingTimeCaption(0L);
-                        timerPane.setText(ui.createTimerHtml(timerText, false));
-                        timerFrame.repaint();
+                        ui.showTime(timerText, false);
                     } else if ("command://reset".equals(e.getDescription())) {
                         currentCycleStartTime = timer.getTime();
                         ui.showPassed();
+                        String timerText = getRemainingTimeCaption(0L);
+                        ui.showTime(timerText, true);
                     } else if ("command://quit".equals(e.getDescription())) {
                         // TODO not covered
                         System.exit(0);
@@ -197,10 +219,7 @@ public class BabystepsTimer {
                         ui.showFailure();
                     }
 
-                    SwingUtilities.invokeLater(() -> {
-                        timerPane.setText(ui.createTimerHtml(remainingTime, true));
-                        timerFrame.repaint();
-                    });
+                    ui.showTime(remainingTime, true);
 
                     lastRemainingTime = remainingTime;
                 }
