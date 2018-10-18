@@ -36,10 +36,32 @@ public class BabystepsTimer {
     // TODO volatile/thread safe, accessed/written from two threads
     /* for test */ boolean timerRunning;
     private long currentCycleStartTime;
-    private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
     
     private final Timer timer;
     private final BabystepsSignal signal;
+    
+    class UI {
+        String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+
+        public void showNormal() {
+            bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+        }
+
+        public void showPassed() {
+            bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+        }
+
+        public void showFailure() {
+            bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
+        }
+
+        public boolean isNormal() {
+            return BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor);
+        }
+        
+    }
+    
+    private final UI ui = new UI();
 
     public static void main(final String[] args) {
         new BabystepsTimer();
@@ -101,7 +123,7 @@ public class BabystepsTimer {
                         timerFrame.repaint();
                     } else if ("command://reset".equals(e.getDescription())) {
                         currentCycleStartTime = timer.getTime();
-                        bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+                        ui.showPassed();
                     } else if ("command://quit".equals(e.getDescription())) {
                         // TODO not covered
                         System.exit(0);
@@ -158,17 +180,17 @@ public class BabystepsTimer {
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
                 if (!remainingTime.equals(lastRemainingTime)) {
 
-                    if (elapsedTime >= 5 * 1000 && elapsedTime < 5 * 1000 + 1000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
-                        bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+                    if (elapsedTime >= 5 * 1000 && elapsedTime < 5 * 1000 + 1000 && !ui.isNormal()) {
+                        ui.showNormal();
                     } else if (elapsedTime >= (SECONDS_IN_CYCLE - 10) * 1000 && elapsedTime < (SECONDS_IN_CYCLE - 10) * 1000 + 1000) {
                         signal.warning();
                     } else if (elapsedTime >= SECONDS_IN_CYCLE * 1000) {
                         signal.failure();
-                        bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
+                        ui.showFailure();
                     }
 
                     SwingUtilities.invokeLater(() -> {
-                        timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
+                        timerPane.setText(createTimerHtml(remainingTime, ui.bodyBackgroundColor, true));
                         timerFrame.repaint();
                     });
 
