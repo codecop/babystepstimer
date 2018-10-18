@@ -12,13 +12,14 @@ import static org.junit.Assert.fail;
 
 public class BabystepsTimerDriver {
 
+    protected BabystepsTimer sut;
     private JFrame timerFrame;
     private JTextPane timerPane;
 
     public void show() {
-        BabystepsTimer.main(new String[0]);
-        timerFrame = BabystepsTimer.timerFrame;
-        timerPane = BabystepsTimer.timerPane;
+        sut = new BabystepsTimer();
+        timerFrame = sut.timerFrame;
+        timerPane = sut.timerPane;
         waitForRender();
     }
 
@@ -50,8 +51,9 @@ public class BabystepsTimerDriver {
         assertFalse(timerPane.isEditable());
         Component[] components = timerFrame.getContentPane().getComponents();
         for (Component component : components) {
-            if (component == timerPane)
+            if (component == timerPane) {
                 return;
+            }
         }
         fail("timerPane not in ConentPane");
     }
@@ -94,17 +96,17 @@ public class BabystepsTimerDriver {
     }
 
     private void stopTimer() {
-        BabystepsTimer.timerRunning = false;
+        sut.timerRunning = false;
         waitForTimerThread();
     }
 
     protected void resetSingleton() {
         timerFrame.setVisible(false);
         timerFrame.dispose();
-        BabystepsTimer.timerFrame = null;
-        BabystepsTimer.timerPane = null;
+        sut.timerFrame = null;
+        sut.timerPane = null;
         BabystepsTimer.SECONDS_IN_CYCLE = 120; // hack to speed things up
-        BabystepsTimer.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL; // singleton fix
+        sut.bodyBackgroundColor = BabystepsTimer.BACKGROUND_COLOR_NEUTRAL; // singleton fix
     }
 
     public void waitFor(int seconds) {

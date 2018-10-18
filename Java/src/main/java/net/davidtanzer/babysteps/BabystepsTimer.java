@@ -30,17 +30,21 @@ public class BabystepsTimer {
 
     static long SECONDS_IN_CYCLE = 120;
 
-    static JFrame timerFrame;
-    static JTextPane timerPane;
+    JFrame timerFrame;
+    JTextPane timerPane;
     // TODO volatile, accessed from two threads
-    static boolean timerRunning;
+    boolean timerRunning;
     // TODO volatile, accessed from two threads
-    private static long currentCycleStartTime;
-    static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
-    static Timer timer = new SystemTimer();
-    static AudioClip audioClip = new SampledAudioClip();
+    private long currentCycleStartTime;
+    String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+    Timer timer = new SystemTimer();
+    AudioClip audioClip = new SampledAudioClip();
 
     public static void main(final String[] args) {
+        new BabystepsTimer();
+    }
+    
+    BabystepsTimer() {
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
 
@@ -102,7 +106,7 @@ public class BabystepsTimer {
         timerFrame.setVisible(true);
     }
 
-    private static String getRemainingTimeCaption(final long elapsedTime) {
+    private String getRemainingTimeCaption(final long elapsedTime) {
         long elapsedSeconds = elapsedTime / 1000;
         long remainingSeconds = SECONDS_IN_CYCLE - elapsedSeconds;
 
@@ -111,7 +115,7 @@ public class BabystepsTimer {
         return twoDigitsFormat.format(remainingMinutes) + ":" + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
     }
 
-    private static String createTimerHtml(final String timerText, final String bodyColor, final boolean running) {
+    private String createTimerHtml(final String timerText, final String bodyColor, final boolean running) {
         String timerHtml = "<html><body style=\"border: 3px solid #555555; background: " + bodyColor + "; margin: 0; padding: 0;\">" +
                 "<h1 style=\"text-align: center; font-size: 30px; color: #333333;\">" + timerText + "</h1>" +
                 "<div style=\"text-align: center\">";
@@ -127,7 +131,7 @@ public class BabystepsTimer {
         return timerHtml;
     }
 
-    public static synchronized void playSound(final String url) {
+    public synchronized void playSound(final String url) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -136,7 +140,7 @@ public class BabystepsTimer {
         }).start();
     }
 
-    private static final class TimerThread extends Thread {
+    private final class TimerThread extends Thread {
         private String lastRemainingTime;
 
         @Override

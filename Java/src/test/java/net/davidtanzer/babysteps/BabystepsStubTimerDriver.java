@@ -8,8 +8,8 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     @Override
     public void show() {
         super.show();
-        BabystepsTimer.timer = this::getTime;
-        BabystepsTimer.audioClip = this::playAudioClip;
+        sut.timer = this::getTime;
+        sut.audioClip = this::playAudioClip;
     }
 
     private long getTime() {
@@ -23,9 +23,9 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     @Override
     protected void resetSingleton() {
         super.resetSingleton();
-        BabystepsTimer.timer = new SystemTimer();
+        sut.timer = new SystemTimer();
         nextTime = System.currentTimeMillis();
-        BabystepsTimer.audioClip = new SampledAudioClip();
+        sut.audioClip = new SampledAudioClip();
         lastAudioClip = null;
     }
 

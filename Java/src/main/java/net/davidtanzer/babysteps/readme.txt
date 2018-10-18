@@ -80,9 +80,8 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * is called from core domain and also calls into core domain.
 
 Refactor some details (30')
-* to separate dependencies I need a IoC mechanism, e.g. constructor "injection".
-* maybe first change should be to remove all statics. This should simplify tests a bit
-  and remove need to access inner states for cleanup
+* Simplify timer thread.
+* Poke around a bit...
 
 Session 4
 ---------
@@ -92,5 +91,10 @@ using Eclipse
   Potential resource leak: 'clip' may not be closed
   The declared exception InterruptedException is not actually thrown by the method show()
   The method getTime() of type SystemTimer should be tagged with @Override since it actually overrides a superinterface method
-  TODO need to update analysis options
+* IDEA: TODO need to update analysis options to flag that
+* Tests fail always due blinking on x86 laptop.
 
+Refactor to instance ()
+* to separate dependencies I need a IoC mechanism, e.g. constructor "injection".
+* maybe first change should be to remove all statics. This should simplify tests a bit
+  and remove need to access inner states for cleanup
