@@ -5,7 +5,8 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     private long nextTime = System.currentTimeMillis();
     private String lastAudioClip;
 
-    public void show() throws InterruptedException {
+    @Override
+    public void show() {
         super.show();
         BabystepsTimer.timer = this::getTime;
         BabystepsTimer.audioClip = this::playAudioClip;
@@ -19,6 +20,7 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
         lastAudioClip = name;
     }
 
+    @Override
     protected void resetSingleton() {
         super.resetSingleton();
         BabystepsTimer.timer = new SystemTimer();
@@ -27,6 +29,7 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
         lastAudioClip = null;
     }
 
+    @Override
     public void waitFor(int seconds) {
         nextTime = nextTime + seconds * 1000;
         waitForTimerThread();

@@ -23,7 +23,7 @@ public class RetryAssert {
     private static void waitBeforeRetry(int millis) {
         try {
             MONITOR.wait(millis);
-        } catch (InterruptedException e) {
+        } catch (@SuppressWarnings("unused") InterruptedException interrupted) {
             Thread.currentThread().interrupt();
         }
     }

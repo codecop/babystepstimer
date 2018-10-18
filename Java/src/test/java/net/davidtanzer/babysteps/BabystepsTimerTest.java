@@ -23,14 +23,14 @@ public class BabystepsTimerTest {
     }
 
     @Test
-    public void shouldDisplayInitialTimer() throws InterruptedException {
+    public void shouldDisplayInitialTimer() {
         timer.show();
         timer.assertFrameVisible();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
-    public void shouldRunAndStop() throws InterruptedException {
+    public void shouldRunAndStop() {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);
@@ -40,7 +40,7 @@ public class BabystepsTimerTest {
     }
 
     @Test
-    public void shouldRunToFail() throws InterruptedException {
+    public void shouldRunToFail() {
         timer.show();
         timer.clickStart(2);
         timer.waitFor(timer.secondsInCycle());
@@ -48,7 +48,7 @@ public class BabystepsTimerTest {
     }
 
     @Test
-    public void shouldResetAndStartOverAsPass() throws InterruptedException {
+    public void shouldResetAndStartOverAsPass() {
         timer.show();
         timer.clickStart();
         timer.waitFor(1);

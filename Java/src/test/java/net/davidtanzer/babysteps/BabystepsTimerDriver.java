@@ -15,7 +15,7 @@ public class BabystepsTimerDriver {
     private JFrame timerFrame;
     private JTextPane timerPane;
 
-    public void show() throws InterruptedException {
+    public void show() {
         BabystepsTimer.main(new String[0]);
         timerFrame = BabystepsTimer.timerFrame;
         timerPane = BabystepsTimer.timerPane;
@@ -35,7 +35,7 @@ public class BabystepsTimerDriver {
     private void sleep(int millis) {
         try {
             Thread.sleep(millis);
-        } catch (InterruptedException e) {
+        } catch (@SuppressWarnings("unused") InterruptedException interrupted) {
             Thread.currentThread().interrupt();
         }
     }
@@ -50,7 +50,8 @@ public class BabystepsTimerDriver {
         assertFalse(timerPane.isEditable());
         Component[] components = timerFrame.getContentPane().getComponents();
         for (Component component : components) {
-            if (component == timerPane) return;
+            if (component == timerPane)
+                return;
         }
         fail("timerPane not in ConentPane");
     }

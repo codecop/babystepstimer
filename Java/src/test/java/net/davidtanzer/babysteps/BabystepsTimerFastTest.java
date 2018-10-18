@@ -21,14 +21,14 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldDisplayInitialTimer() throws InterruptedException {
+    public void shouldDisplayInitialTimer() {
         timer.show();
         timer.assertFrameVisible();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
-    public void shouldRunAndStop() throws InterruptedException {
+    public void shouldRunAndStop() {
         timer.show();
         // run some time
         timer.clickStart();
@@ -43,7 +43,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldBeOnTopWhenRunning() throws InterruptedException {
+    public void shouldBeOnTopWhenRunning() {
         timer.show();
         timer.assertOnTop(false);
 
@@ -55,7 +55,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldPlayGongTenSecondsToFail() throws InterruptedException {
+    public void shouldPlayGongTenSecondsToFail() {
         timer.show();
         timer.clickStart();
         timer.waitFor(timer.secondsInCycle() - 10); // only as fast test
@@ -63,7 +63,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldRunToFail() throws InterruptedException {
+    public void shouldRunToFail() {
         timer.show();
         timer.clickStart();
         timer.waitFor(timer.secondsInCycle());
@@ -71,7 +71,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldPlayBellWhenFailed() throws InterruptedException {
+    public void shouldPlayBellWhenFailed() {
         timer.show();
         timer.clickStart();
         timer.waitFor(timer.secondsInCycle());
@@ -79,7 +79,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldResetAndStartOverAsPass() throws InterruptedException {
+    public void shouldResetAndStartOverAsPass() {
         timer.show();
         // run some time
         timer.clickStart();
@@ -93,7 +93,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldBecomeNeutral5SecondsAfterReset() throws InterruptedException {
+    public void shouldBecomeNeutral5SecondsAfterReset() {
         timer.show();
         timer.clickStart();
         timer.clickReset();
@@ -102,7 +102,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldFailAndRunOver() throws InterruptedException {
+    public void shouldFailAndRunOver() {
         timer.show();
         timer.clickStart();
         timer.waitFor(timer.secondsInCycle() - 1);
@@ -116,7 +116,7 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldBecomeNeutral5SecondsAfterFail() throws InterruptedException {
+    public void shouldBecomeNeutral5SecondsAfterFail() {
         timer.show();
         timer.clickStart();
         timer.waitFor(timer.secondsInCycle());
