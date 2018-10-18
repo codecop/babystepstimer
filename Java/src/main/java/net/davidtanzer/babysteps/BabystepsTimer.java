@@ -15,9 +15,6 @@ package net.davidtanzer.babysteps;
 
 import java.text.DecimalFormat;
 
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
-
 public class BabystepsTimer {
 
     /* for slow test */ static long SECONDS_IN_CYCLE = 120;
@@ -25,57 +22,63 @@ public class BabystepsTimer {
     // TODO volatile/thread safe, accessed/written from two threads
     /* for test */ boolean timerRunning;
     private long currentCycleStartTime;
-    
+
     private final Timer timer;
     private final BabystepsSignal signal;
-    
     /* for test */ final UI ui;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
     }
-    
+
     public BabystepsTimer() {
         this(new SystemTimer(), new AudioSignal(new SampledAudioClip()));
     }
-    
+
     /* for test */ BabystepsTimer(final Timer timer, final BabystepsSignal signal) {
         this.timer = timer;
         this.signal = signal;
-        ui = new UI();
-        ui.create();
-        
-        ui.timerPane.addHyperlinkListener(new HyperlinkListener() {
+        this.ui = new SwingUI();
+
+        BabystepsActions actions = new BabystepsActions() {
             @Override
-            public void hyperlinkUpdate(final HyperlinkEvent e) {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if ("command://start".equals(e.getDescription())) {
-                        ui.onTop();
-                        String timerText = getRemainingTimeCaption(0L);
-                        ui.showTime(timerText, true);
-                        new TimerThread().start();
-                    } else if ("command://stop".equals(e.getDescription())) {
-                        timerRunning = false;
-                        ui.notOnTop();
-                        ui.showNormal();
-                        String timerText = getRemainingTimeCaption(0L);
-                        ui.showTime(timerText, false);
-                    } else if ("command://reset".equals(e.getDescription())) {
-                        currentCycleStartTime = timer.getTime();
-                        ui.showPassed();
-                        String timerText = getRemainingTimeCaption(0L);
-                        ui.showTime(timerText, true);
-                    } else if ("command://quit".equals(e.getDescription())) {
-                        // TODO not covered
-                        System.exit(0);
-                    }
-                }
+            public void start() {
+                ui.onTop();
+                String timerText = getRemainingTimeCaption(0L);
+                ui.showTime(timerText, true);
+                new TimerThread().start();
             }
-        });
+
+            @Override
+            public void stop() {
+                timerRunning = false;
+                ui.notOnTop();
+                ui.showNormal();
+                String timerText = getRemainingTimeCaption(0L);
+                ui.showTime(timerText, false);
+            }
+
+            @Override
+            public void reset() {
+                currentCycleStartTime = timer.getTime();
+                ui.showPassed();
+                String timerText = getRemainingTimeCaption(0L);
+                ui.showTime(timerText, true);
+            }
+
+            @Override
+            public void quit() {
+                // TODO not covered
+                System.exit(0);
+            }
+        };
+
+        ui.create();
 
         String timerText = getRemainingTimeCaption(0L);
         ui.showTime(timerText, false);
 
+        ui.setActions(actions);
         ui.display();
     }
 
