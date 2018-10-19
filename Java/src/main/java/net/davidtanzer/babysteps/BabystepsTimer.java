@@ -15,16 +15,17 @@ package net.davidtanzer.babysteps;
 
 import java.text.DecimalFormat;
 
-public class BabystepsTimer {
+public class BabystepsTimer implements BabystepsActions, RepeatingTask {
 
     /* for slow test */ static long SECONDS_IN_CYCLE = 120;
-
-    // TODO volatile/thread safe, accessed/written from two threads
-    /* for test */ boolean timerRunning;
 
     private final BabystepsClock clock;
     private final BabystepsSignal signal;
     /* for test */ final BabystepsUI ui;
+
+    private final String initialTimeCaption;
+    private boolean timerRunning;
+    private String lastTimerCaption;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
@@ -39,43 +40,78 @@ public class BabystepsTimer {
         this.signal = signal;
         this.ui = new SwingUI();
 
+        initialTimeCaption = getRemainingTimeCaption(ElapsedSeconds.NONE);
+
         ui.create();
-
-        final String initialTimeCaption = getRemainingTimeCaption(ElapsedSeconds.NONE);
         ui.showTime(initialTimeCaption, false);
-
-        BabystepsActions actions = new BabystepsActions() {
-            @Override
-            public void start() {
-                ui.onTop();
-                ui.showTime(initialTimeCaption, true);
-                new TimerThread().start();
-            }
-
-            @Override
-            public void stop() {
-                timerRunning = false;
-                ui.notOnTop();
-                ui.showNormal();
-                ui.showTime(initialTimeCaption, false);
-            }
-
-            @Override
-            public void reset() {
-                clock.resetCycle();
-                ui.showPassed();
-                ui.showTime(initialTimeCaption, true);
-            }
-
-            @Override
-            public void quit() {
-                // TODO not covered
-                System.exit(0);
-            }
-        };
-        ui.setActions(actions);
-
+        ui.setActions(this);
         ui.display();
+    }
+
+    @Override
+    public void start() {
+        setRunning(true);
+        ui.onTop();
+        ui.showTime(initialTimeCaption, true);
+        clock.resetCycle();
+        new RepeatingTaskThread(this, 10).start();
+    }
+
+    @Override
+    public void stop() {
+        setRunning(false);
+        ui.notOnTop();
+        ui.showNormal();
+        ui.showTime(initialTimeCaption, false);
+    }
+
+    @Override
+    public void reset() {
+        clock.resetCycle();
+        ui.showPassed();
+        ui.showTime(initialTimeCaption, true);
+    }
+
+    @Override
+    public void quit() {
+        // TODO not covered
+        System.exit(0);
+    }
+
+    @Override
+    public synchronized boolean isRunning() {
+        return timerRunning;
+    }
+
+    /* for test */ synchronized void setRunning(boolean state) {
+        timerRunning = state;
+    }
+
+    @Override
+    public void tick() {
+        ElapsedSeconds elapsedSeconds = clock.getElapsedTime();
+
+        boolean hasRunOver = elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE, 980);
+        if (hasRunOver) {
+            clock.resetCycle();
+            elapsedSeconds = clock.getElapsedTime();
+        }
+
+        String remainingTime = getRemainingTimeCaption(elapsedSeconds);
+        if (!remainingTime.equals(lastTimerCaption)) {
+
+            if (elapsedSeconds.isBetween(5, 6) && !ui.isNormal()) {
+                ui.showNormal();
+            } else if (elapsedSeconds.isBetween(SECONDS_IN_CYCLE - 10, SECONDS_IN_CYCLE - 9)) {
+                signal.warning();
+            } else if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE)) {
+                signal.failure();
+                ui.showFailure();
+            }
+            ui.showTime(remainingTime, true);
+
+            lastTimerCaption = remainingTime;
+        }
     }
 
     private String getRemainingTimeCaption(final ElapsedSeconds elapsedTime) {
@@ -84,46 +120,6 @@ public class BabystepsTimer {
         long remainingMinutes = remainingSeconds / 60;
         DecimalFormat twoDigitsFormat = new DecimalFormat("00");
         return twoDigitsFormat.format(remainingMinutes) + ':' + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
-    }
-
-    private final class TimerThread extends Thread {
-        private String lastRemainingTime;
-
-        @Override
-        public void run() {
-            timerRunning = true;
-            clock.resetCycle();
-
-            while (timerRunning) {
-                ElapsedSeconds elapsedSeconds = clock.getElapsedTime();
-
-                if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE, 980)) {
-                    clock.resetCycle();
-                    elapsedSeconds = clock.getElapsedTime();
-                }
-
-                String remainingTime = getRemainingTimeCaption(elapsedSeconds);
-                if (!remainingTime.equals(lastRemainingTime)) {
-
-                    if (elapsedSeconds.isBetween(5, 6) && !ui.isNormal()) {
-                        ui.showNormal();
-                    } else if (elapsedSeconds.isBetween(SECONDS_IN_CYCLE - 10, SECONDS_IN_CYCLE - 9)) {
-                        signal.warning();
-                    } else if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE)) {
-                        signal.failure();
-                        ui.showFailure();
-                    }
-                    ui.showTime(remainingTime, true);
-
-                    lastRemainingTime = remainingTime;
-                }
-                try {
-                    sleep(10);
-                } catch (InterruptedException e) {
-                    //We don't really care about this one...
-                }
-            }
-        }
     }
 
     public void close() {

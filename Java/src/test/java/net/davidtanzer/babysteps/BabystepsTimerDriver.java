@@ -101,7 +101,7 @@ public class BabystepsTimerDriver {
     }
 
     private void stopTimer() {
-        sut.timerRunning = false;
+        sut.setRunning(false);
         waitForTimerThread();
     }
 

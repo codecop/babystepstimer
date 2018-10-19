@@ -47,17 +47,17 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 * not sure how to start. What is business logic?
 
 > There is a timer.
-> * it can be started and stopped and reset.
-> * It knows when it started a cycle.
-> * It knows how to count down seconds, passed and failed runs,
-> * plays sounds and changes colours (states?)
+> * it can be started and stopped and reset. [x]
+> * It knows when it started a cycle. [x]
+> * It knows how to count down seconds, passed and failed runs. [x]
+> * plays sounds and changes colours (states?) [x]
 > * calls the UI and receives commands from the UI.
 > * Needs call backs for displayTimer in 3 states (neutral, fail, pass) with current remaining seconds
 >
 > Sub domains are time, UI/GFX, sounds.
 >
 > Time:
-> * get CurrentTime, difference to earlier time in Seconds = elapsed
+> * get current time, difference to earlier time in seconds = elapsed [x]
 > * that would be a value object, returned by the Timer API.
 > * is called from core domain
 > * also remaining is seconds, but needed +980 milliseconds, too?
@@ -65,7 +65,7 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * Seconds can format as minutes:seconds? -- or is that UI
 >
 > Sounds:
-> * play one of two sounds
+> * play one of two sounds [x]
 > * interface of domain, implementation uses AudioClip (library) abstraction.
 > * is called from core domain
 >
@@ -73,10 +73,10 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * technical, start/stop thread, exchange values
 >
 > UI:
-> * displays Swing timer graphics
-> * allows moving around
-> * can be on top
-> * has colours
+> * displays Swing timer graphics [x]
+> * allows moving around [x]
+> * can be on top [x]
+> * has colours [x]
 > * is called from core domain and also calls into core domain.
 
 Refactor some details (30')
@@ -112,3 +112,4 @@ using IDEA Community Edition
 
 Continue extraction
 * mark core domain with "Babysteps" prefix.
+* Extract clock and time
