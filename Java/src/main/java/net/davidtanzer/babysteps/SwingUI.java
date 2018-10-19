@@ -9,7 +9,10 @@ import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
 
-public class SwingUI implements UI {
+/**
+ * Implementation of an UI using Swing. The UI is driven from the core logic.
+ */
+public class SwingUI implements BabystepsUI {
 
     private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";

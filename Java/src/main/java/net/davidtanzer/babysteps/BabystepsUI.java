@@ -1,9 +1,9 @@
 package net.davidtanzer.babysteps;
 
 /**
- * UI in terms of core domain.
+ * UI in terms of the core domain.
  */
-public interface UI {
+public interface BabystepsUI {
 
     void create();
 

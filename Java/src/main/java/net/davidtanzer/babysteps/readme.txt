@@ -110,4 +110,5 @@ Session 5
 ---------
 using IDEA Community Edition
 
-
+Continue extraction
+* mark core domain with "Babysteps" prefix.

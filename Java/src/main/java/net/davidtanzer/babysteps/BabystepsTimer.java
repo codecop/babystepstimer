@@ -25,7 +25,7 @@ public class BabystepsTimer {
 
     private final Timer timer;
     private final BabystepsSignal signal;
-    /* for test */ final UI ui;
+    /* for test */ final BabystepsUI ui;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
