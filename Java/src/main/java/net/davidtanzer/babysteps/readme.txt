@@ -1,5 +1,6 @@
 Run through the whole kata.
 
+
 Session 1
 ---------
 using IDEA Community Edition
@@ -13,6 +14,7 @@ Now we can make the code more testable - prepare for faster tests (15')
 * extract System.currentTimeMillis with tool, move it to class
 * not entirely automated, part in uncovered code was automated.
 * IDEA: Ctrl+Shift+Alt+T -> refactor this
+
 
 Session 2
 ---------
@@ -28,6 +30,7 @@ Refactor and cleanup first tests (80')
 Add fast tests (40').
 * after extraction of assertions and driver, new tests are easy
 * still blinking from time to time, blinking with 20%
+
 
 Session 3
 ---------
@@ -70,7 +73,7 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 > * is called from core domain
 >
 > Threading/Scheduling:
-> * technical, start/stop thread, exchange values
+> * technical, start/stop thread, exchange values [x]
 >
 > UI:
 > * displays Swing timer graphics [x]
@@ -82,6 +85,7 @@ Analysis Babysteps Timer's Code and Requirements/Domain (60')
 Refactor some details (30')
 * Simplify timer thread.
 * Poke around a bit...
+
 
 Session 4
 ---------
@@ -106,10 +110,15 @@ Extract logic (90')
 * UI with readable names for colour changes
 * all UI done. Leaves only timing, threading and core logic inside.
 
+
 Session 5
 ---------
 using IDEA Community Edition
 
-Continue extraction
+Continue extraction (75')
 * mark core domain with "Babysteps" prefix.
-* Extract clock and time
+* Extract clock and time.
+* Extract scheduling.
+* Fix warnings again and again.
+
+==> refactor and split into different responsibilities = 4.75h
