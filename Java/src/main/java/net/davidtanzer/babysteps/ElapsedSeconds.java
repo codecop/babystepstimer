@@ -1,11 +1,11 @@
 package net.davidtanzer.babysteps;
-
 /**
  * Value of sub domain time to abstract milliseconds.
  */
 public class ElapsedSeconds {
 
-    final long millis; // TODO hide
+    public static final ElapsedSeconds NONE = new ElapsedSeconds(0L);
+    private final long millis;
 
     public ElapsedSeconds(long millis) {
         this.millis = millis;
@@ -22,4 +22,9 @@ public class ElapsedSeconds {
     public boolean isBetween(long fromSeconds, long toSeconds) {
         return millis >= fromSeconds * 1000 && millis < toSeconds * 1000;
     }
+
+    public long getSeconds() {
+        return millis / 1000;
+    }
+
 }

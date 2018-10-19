@@ -22,7 +22,7 @@ public class BabystepsTimer {
     // TODO volatile/thread safe, accessed/written from two threads
     /* for test */ boolean timerRunning;
 
-    private final SystemClock clock;
+    private final BabystepsClock clock;
     private final BabystepsSignal signal;
     /* for test */ final BabystepsUI ui;
 
@@ -34,17 +34,21 @@ public class BabystepsTimer {
         this(new SystemClock(new SystemTimer()), new AudioSignal(new SampledAudioClip()));
     }
 
-    /* for test */ BabystepsTimer(final SystemClock clock, final BabystepsSignal signal) {
+    /* for test */ BabystepsTimer(final BabystepsClock clock, final BabystepsSignal signal) {
         this.clock = clock;
         this.signal = signal;
         this.ui = new SwingUI();
+
+        ui.create();
+
+        final String initialTimeCaption = getRemainingTimeCaption(ElapsedSeconds.NONE);
+        ui.showTime(initialTimeCaption, false);
 
         BabystepsActions actions = new BabystepsActions() {
             @Override
             public void start() {
                 ui.onTop();
-                String timerText = getRemainingTimeCaption(0L);
-                ui.showTime(timerText, true);
+                ui.showTime(initialTimeCaption, true);
                 new TimerThread().start();
             }
 
@@ -53,16 +57,14 @@ public class BabystepsTimer {
                 timerRunning = false;
                 ui.notOnTop();
                 ui.showNormal();
-                String timerText = getRemainingTimeCaption(0L);
-                ui.showTime(timerText, false);
+                ui.showTime(initialTimeCaption, false);
             }
 
             @Override
             public void reset() {
                 clock.resetCycle();
                 ui.showPassed();
-                String timerText = getRemainingTimeCaption(0L);
-                ui.showTime(timerText, true);
+                ui.showTime(initialTimeCaption, true);
             }
 
             @Override
@@ -71,19 +73,13 @@ public class BabystepsTimer {
                 System.exit(0);
             }
         };
-
-        ui.create();
-
-        String timerText = getRemainingTimeCaption(0L);
-        ui.showTime(timerText, false);
-
         ui.setActions(actions);
+
         ui.display();
     }
 
-    private String getRemainingTimeCaption(final long elapsedTime) {
-        long elapsedSeconds = elapsedTime / 1000;
-        long remainingSeconds = SECONDS_IN_CYCLE - elapsedSeconds;
+    private String getRemainingTimeCaption(final ElapsedSeconds elapsedTime) {
+        long remainingSeconds = SECONDS_IN_CYCLE - elapsedTime.getSeconds();
 
         long remainingMinutes = remainingSeconds / 60;
         DecimalFormat twoDigitsFormat = new DecimalFormat("00");
@@ -106,7 +102,7 @@ public class BabystepsTimer {
                     elapsedSeconds = clock.getElapsedTime();
                 }
 
-                String remainingTime = getRemainingTimeCaption(elapsedSeconds.millis);
+                String remainingTime = getRemainingTimeCaption(elapsedSeconds);
                 if (!remainingTime.equals(lastRemainingTime)) {
 
                     if (elapsedSeconds.isBetween(5, 6) && !ui.isNormal()) {
