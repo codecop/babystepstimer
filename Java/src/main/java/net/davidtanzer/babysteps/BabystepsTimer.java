@@ -21,9 +21,8 @@ public class BabystepsTimer {
 
     // TODO volatile/thread safe, accessed/written from two threads
     /* for test */ boolean timerRunning;
-    private long currentCycleStartTime;
 
-    private final Timer timer;
+    private final SystemClock clock;
     private final BabystepsSignal signal;
     /* for test */ final BabystepsUI ui;
 
@@ -32,11 +31,11 @@ public class BabystepsTimer {
     }
 
     public BabystepsTimer() {
-        this(new SystemTimer(), new AudioSignal(new SampledAudioClip()));
+        this(new SystemClock(new SystemTimer()), new AudioSignal(new SampledAudioClip()));
     }
 
-    /* for test */ BabystepsTimer(final Timer timer, final BabystepsSignal signal) {
-        this.timer = timer;
+    /* for test */ BabystepsTimer(final SystemClock clock, final BabystepsSignal signal) {
+        this.clock = clock;
         this.signal = signal;
         this.ui = new SwingUI();
 
@@ -60,7 +59,7 @@ public class BabystepsTimer {
 
             @Override
             public void reset() {
-                currentCycleStartTime = timer.getTime();
+                clock.reset();
                 ui.showPassed();
                 String timerText = getRemainingTimeCaption(0L);
                 ui.showTime(timerText, true);
@@ -97,14 +96,14 @@ public class BabystepsTimer {
         @Override
         public void run() {
             timerRunning = true;
-            currentCycleStartTime = timer.getTime();
+            clock.reset();
 
             while (timerRunning) {
-                long elapsedTime = timer.getTime() - currentCycleStartTime;
+                long elapsedTime = clock.getElapsedTime();
 
                 if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    currentCycleStartTime = timer.getTime();
-                    elapsedTime = timer.getTime() - currentCycleStartTime;
+                    clock.reset();
+                    elapsedTime = clock.getElapsedTime();
                 }
 
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
