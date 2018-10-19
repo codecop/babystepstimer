@@ -1,7 +1,7 @@
 package net.davidtanzer.babysteps;
 
 /**
- * Adapter of domain concept signal to audio.
+ * Adapter of domain concept signal to audio signal.
  */
 public class AudioSignal implements BabystepsSignal {
 

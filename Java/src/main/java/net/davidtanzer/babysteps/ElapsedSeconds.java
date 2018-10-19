@@ -1,6 +1,7 @@
 package net.davidtanzer.babysteps;
+
 /**
- * Value of sub domain time to abstract milliseconds.
+ * Value object of sub domain time to abstract milliseconds.
  */
 public class ElapsedSeconds {
 

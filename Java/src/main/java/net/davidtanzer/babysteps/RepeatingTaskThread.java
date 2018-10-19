@@ -1,7 +1,7 @@
 package net.davidtanzer.babysteps;
 
 /**
- * Abstraction over scheduling a repeated task.
+ * Abstraction over (sub domain) scheduling a repeated task.
  */
 public class RepeatingTaskThread extends Thread {
 

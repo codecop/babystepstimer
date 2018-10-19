@@ -1,7 +1,7 @@
 package net.davidtanzer.babysteps;
 
 /**
- * (Domain) actions of the timer from the UI.
+ * (Domain) actions of the timer from the UI. These are the commands it can respond to.
  */
 public interface BabystepsActions {
 

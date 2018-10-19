@@ -15,6 +15,9 @@ package net.davidtanzer.babysteps;
 
 import java.text.DecimalFormat;
 
+/**
+ * Business logic of the timer.
+ */
 public class BabystepsTimer implements BabystepsActions, RepeatingTask {
 
     /* for slow test */ static long SECONDS_IN_CYCLE = 120;
