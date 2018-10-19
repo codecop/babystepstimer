@@ -21,8 +21,8 @@ public class SampledAudioClip implements AudioClip {
 
     private void playSound(final String url) {
         try (Clip clip = AudioSystem.getClip();
-                InputStream audioResource = BabystepsTimer.class.getResourceAsStream("/" + url);
-                AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioResource)) {
+             InputStream audioResource = BabystepsTimer.class.getResourceAsStream('/' + url);
+             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioResource)) {
             clip.open(audioStream);
             clip.start();
         } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {

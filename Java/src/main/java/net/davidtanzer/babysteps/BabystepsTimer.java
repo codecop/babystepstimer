@@ -88,7 +88,7 @@ public class BabystepsTimer {
 
         long remainingMinutes = remainingSeconds / 60;
         DecimalFormat twoDigitsFormat = new DecimalFormat("00");
-        return twoDigitsFormat.format(remainingMinutes) + ":" + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
+        return twoDigitsFormat.format(remainingMinutes) + ':' + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
     }
 
     private final class TimerThread extends Thread {

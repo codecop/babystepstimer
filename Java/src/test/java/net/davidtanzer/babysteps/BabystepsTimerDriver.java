@@ -3,7 +3,8 @@ package net.davidtanzer.babysteps;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Dimension;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

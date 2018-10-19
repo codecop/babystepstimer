@@ -105,3 +105,9 @@ Extract logic (90')
 * Audio technology and domain concept of signal.
 * UI with readable names for colour changes
 * all UI done. Leaves only timing, threading and core logic inside.
+
+Session 5
+---------
+using IDEA Community Edition
+
+

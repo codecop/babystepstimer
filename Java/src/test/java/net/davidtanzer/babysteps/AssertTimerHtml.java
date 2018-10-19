@@ -17,7 +17,7 @@ public class AssertTimerHtml {
     public void isInInitialState() {
         String time = "02:00";
         String backgroundColor = WHITE;
-        String links = startLinkHtml() + " " + quitLinkHtml() + "\n";
+        String links = startLinkHtml() + ' ' + quitLinkHtml() + '\n';
         assertTimerHtml(time, backgroundColor, links);
     }
 
@@ -45,7 +45,7 @@ public class AssertTimerHtml {
     }
 
     private void assertRunningTimerHtml(String time, String backgroundColor) {
-        String links = stopLinkHtml() + " " + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + "\n";
+        String links = stopLinkHtml() + ' ' + resetLinkHtml() + " \n" + "      " + quitLinkHtml() + '\n';
         assertTimerHtml(time, backgroundColor, links);
     }
 
@@ -61,7 +61,7 @@ public class AssertTimerHtml {
                 "  </head>\n" +
                 "  <body style=\"border-top-color: #555555; border-top-style: solid; border-top-width: 3px; border-right-color: #555555; border-right-style: solid; border-right-width: 3px; border-bottom-color: #555555; border-bottom-style: solid; border-bottom-width: 3px; border-left-color: #555555; border-left-style: solid; border-left-width: 3px; background-color: " + backgroundColor + "; background-image: null; background-repeat: repeat; background-attachment: scroll; background-position: null; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0\">\n" +
                 "    <h1 align=\"center\">\n" +
-                "      " + time + "\n" +
+                "      " + time + '\n' +
                 "    </h1>\n" +
                 "    <div align=\"center\">\n" +
                 "      " + links +

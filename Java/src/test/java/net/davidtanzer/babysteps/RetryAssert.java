@@ -21,10 +21,12 @@ public class RetryAssert {
     }
 
     private static void waitBeforeRetry(int millis) {
-        try {
-            MONITOR.wait(millis);
-        } catch (@SuppressWarnings("unused") InterruptedException interrupted) {
-            Thread.currentThread().interrupt();
+        synchronized (MONITOR) {
+            try {
+                MONITOR.wait(millis);
+            } catch (@SuppressWarnings("unused") InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 }

@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
 
 public class SwingUI implements UI {
 
@@ -59,22 +58,23 @@ public class SwingUI implements UI {
 
     @Override
     public void setActions(final BabystepsActions actions) {
-        timerPane.addHyperlinkListener(new HyperlinkListener() {
-            @Override
-            public void hyperlinkUpdate(final HyperlinkEvent e) {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if ("command://start".equals(e.getDescription())) {
-                        actions.start();
-                    } else if ("command://stop".equals(e.getDescription())) {
-                        actions.stop();
-                    } else if ("command://reset".equals(e.getDescription())) {
-                        actions.reset();
-                    } else if ("command://quit".equals(e.getDescription())) {
-                        actions.quit();
-                    }
-                }
+        timerPane.addHyperlinkListener(e -> {
+            if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                dispatch(actions, e.getDescription());
             }
         });
+    }
+
+    private void dispatch(BabystepsActions actions, String action) {
+        if ("command://start".equals(action)) {
+            actions.start();
+        } else if ("command://stop".equals(action)) {
+            actions.stop();
+        } else if ("command://reset".equals(action)) {
+            actions.reset();
+        } else if ("command://quit".equals(action)) {
+            actions.quit();
+        }
     }
 
     @Override
