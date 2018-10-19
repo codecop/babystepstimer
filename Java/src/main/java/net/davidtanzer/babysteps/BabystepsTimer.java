@@ -59,7 +59,7 @@ public class BabystepsTimer {
 
             @Override
             public void reset() {
-                clock.reset();
+                clock.resetCycle();
                 ui.showPassed();
                 String timerText = getRemainingTimeCaption(0L);
                 ui.showTime(timerText, true);
@@ -96,24 +96,24 @@ public class BabystepsTimer {
         @Override
         public void run() {
             timerRunning = true;
-            clock.reset();
+            clock.resetCycle();
 
             while (timerRunning) {
-                long elapsedTime = clock.getElapsedTime();
+                ElapsedSeconds elapsedSeconds = clock.getElapsedTime();
 
-                if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    clock.reset();
-                    elapsedTime = clock.getElapsedTime();
+                if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE, 980)) {
+                    clock.resetCycle();
+                    elapsedSeconds = clock.getElapsedTime();
                 }
 
-                String remainingTime = getRemainingTimeCaption(elapsedTime);
+                String remainingTime = getRemainingTimeCaption(elapsedSeconds.millis);
                 if (!remainingTime.equals(lastRemainingTime)) {
 
-                    if (elapsedTime >= 5 * 1000 && elapsedTime < 5 * 1000 + 1000 && !ui.isNormal()) {
+                    if (elapsedSeconds.isBetween(5, 6) && !ui.isNormal()) {
                         ui.showNormal();
-                    } else if (elapsedTime >= (SECONDS_IN_CYCLE - 10) * 1000 && elapsedTime < (SECONDS_IN_CYCLE - 10) * 1000 + 1000) {
+                    } else if (elapsedSeconds.isBetween(SECONDS_IN_CYCLE - 10, SECONDS_IN_CYCLE - 9)) {
                         signal.warning();
-                    } else if (elapsedTime >= SECONDS_IN_CYCLE * 1000) {
+                    } else if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE)) {
                         signal.failure();
                         ui.showFailure();
                     }

@@ -12,11 +12,11 @@ public class SystemClock {
         this.timer = timer;
     }
 
-    public void reset() {
+    public void resetCycle() {
         currentCycleStartTime = timer.getTime();
     }
 
-    public long getElapsedTime() {
-        return timer.getTime() - currentCycleStartTime;
+    public ElapsedSeconds getElapsedTime() {
+        return new ElapsedSeconds(timer.getTime() - currentCycleStartTime);
     }
 }
