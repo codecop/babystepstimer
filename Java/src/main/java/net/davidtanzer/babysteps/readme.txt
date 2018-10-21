@@ -122,3 +122,14 @@ Continue extraction (75')
 * Fix warnings again and again.
 
 ==> refactor and split into different responsibilities = 4.75h
+
+
+Session 6
+---------
+using IDEA Community Edition
+
+Final cleanups
+* renames
+* split test case
+* Extract task scheduling completely, no new ...
+* I wonder if I can do more ;-)

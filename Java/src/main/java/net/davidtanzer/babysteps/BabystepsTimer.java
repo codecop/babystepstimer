@@ -24,6 +24,7 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
     private final BabystepsClock clock;
     private final BabystepsSignal signal;
     /* for test */ final BabystepsUI ui;
+    private final RepeatingTaskScheduler scheduler;
 
     private final String initialTimeCaption;
     private boolean timerRunning;
@@ -34,13 +35,18 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
     }
 
     public BabystepsTimer() {
-        this(new SystemClock(new SystemTimer()), new AudioSignal(new SampledAudioClip()), new SwingUI());
+        this(new SystemClock(new SystemTimer()),
+             new AudioSignal(new SampledAudioClip()),
+             new SwingUI(),
+             new RepeatingTaskThreadScheduler());
     }
 
-    /* for test */ BabystepsTimer(final BabystepsClock clock, final BabystepsSignal signal, final BabystepsUI ui) {
+    /* for test */ BabystepsTimer(final BabystepsClock clock, final BabystepsSignal signal,
+                                  final BabystepsUI ui, final RepeatingTaskScheduler scheduler) {
         this.clock = clock;
         this.signal = signal;
         this.ui = ui;
+        this.scheduler = scheduler;
 
         initialTimeCaption = getRemainingTimeCaption(ElapsedSeconds.NONE);
 
@@ -57,7 +63,7 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
         ui.showNormal();
         ui.showTime(initialTimeCaption, true);
         clock.resetCycle();
-        new RepeatingTaskThread(this, 10).start();
+        scheduler.schedule(this, 10);
     }
 
     @Override

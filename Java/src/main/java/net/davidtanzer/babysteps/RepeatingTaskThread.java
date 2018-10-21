@@ -1,16 +1,13 @@
 package net.davidtanzer.babysteps;
 
-/**
- * Abstraction over (sub domain) scheduling a repeated task.
- */
-public class RepeatingTaskThread extends Thread {
+class RepeatingTaskThread extends Thread {
 
     private final RepeatingTask task;
-    private final long pauseBetweenTasks;
+    private final long pauseBetweenRuns;
 
-    public RepeatingTaskThread(RepeatingTask task, long pauseBetweenTasks) {
+    public RepeatingTaskThread(final RepeatingTask task, final long pauseBetweenRuns) {
         this.task = task;
-        this.pauseBetweenTasks = pauseBetweenTasks;
+        this.pauseBetweenRuns = pauseBetweenRuns;
     }
 
     @Override
@@ -23,7 +20,7 @@ public class RepeatingTaskThread extends Thread {
 
     private void sleep() {
         try {
-            sleep(pauseBetweenTasks);
+            sleep(pauseBetweenRuns);
         } catch (InterruptedException e) {
             //We don't really care about this one...
         }
