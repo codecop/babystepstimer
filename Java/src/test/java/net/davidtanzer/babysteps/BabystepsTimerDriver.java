@@ -61,7 +61,7 @@ public class BabystepsTimerDriver {
                 return;
             }
         }
-        fail("timerPane not in ConentPane");
+        fail("timerPane not in ContentPane");
     }
 
     public void assertOnTop(boolean onTop) {
