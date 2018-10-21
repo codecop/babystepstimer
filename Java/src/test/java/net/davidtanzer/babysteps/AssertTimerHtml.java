@@ -21,7 +21,7 @@ public class AssertTimerHtml {
         assertTimerHtml(time, backgroundColor, links);
     }
 
-    public void hasMovedNeutral(String time) {
+    public void hasMoved(String time) {
         String backgroundColor = WHITE;
         assertRunningTimerHtml(time, backgroundColor);
     }

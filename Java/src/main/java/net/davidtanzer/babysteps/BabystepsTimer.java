@@ -10,7 +10,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-
 package net.davidtanzer.babysteps;
 
 import java.text.DecimalFormat;
@@ -28,20 +27,20 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
 
     private final String initialTimeCaption;
     private boolean timerRunning;
-    private String lastTimerCaption;
+    private String lastTimeCaption;
 
     public static void main(final String[] args) {
         new BabystepsTimer();
     }
 
     public BabystepsTimer() {
-        this(new SystemClock(new SystemTimer()), new AudioSignal(new SampledAudioClip()));
+        this(new SystemClock(new SystemTimer()), new AudioSignal(new SampledAudioClip()), new SwingUI());
     }
 
-    /* for test */ BabystepsTimer(final BabystepsClock clock, final BabystepsSignal signal) {
+    /* for test */ BabystepsTimer(final BabystepsClock clock, final BabystepsSignal signal, final BabystepsUI ui) {
         this.clock = clock;
         this.signal = signal;
-        this.ui = new SwingUI();
+        this.ui = ui;
 
         initialTimeCaption = getRemainingTimeCaption(ElapsedSeconds.NONE);
 
@@ -55,6 +54,7 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
     public void start() {
         setRunning(true);
         ui.onTop();
+        ui.showNormal();
         ui.showTime(initialTimeCaption, true);
         clock.resetCycle();
         new RepeatingTaskThread(this, 10).start();
@@ -70,9 +70,9 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
 
     @Override
     public void reset() {
-        clock.resetCycle();
         ui.showPassed();
         ui.showTime(initialTimeCaption, true);
+        clock.resetCycle();
     }
 
     @Override
@@ -92,34 +92,34 @@ public class BabystepsTimer implements BabystepsActions, RepeatingTask {
 
     @Override
     public void tick() {
-        ElapsedSeconds elapsedSeconds = clock.getElapsedTime();
+        ElapsedSeconds elapsedSeconds = clock.getElapsedSeconds();
 
-        boolean hasRunOver = elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE, 980);
+        boolean hasRunOver = elapsedSeconds.areMoreOrEqual(SECONDS_IN_CYCLE, 980);
         if (hasRunOver) {
             clock.resetCycle();
-            elapsedSeconds = clock.getElapsedTime();
+            elapsedSeconds = clock.getElapsedSeconds();
         }
 
-        String remainingTime = getRemainingTimeCaption(elapsedSeconds);
-        if (!remainingTime.equals(lastTimerCaption)) {
+        String timeCaption = getRemainingTimeCaption(elapsedSeconds);
+        if (!timeCaption.equals(lastTimeCaption)) {
 
-            if (elapsedSeconds.isBetween(5, 6) && !ui.isNormal()) {
+            if (elapsedSeconds.areBetween(5, 6) && !ui.isNormal()) {
                 ui.showNormal();
-            } else if (elapsedSeconds.isBetween(SECONDS_IN_CYCLE - 10, SECONDS_IN_CYCLE - 9)) {
+            } else if (elapsedSeconds.areBetween(SECONDS_IN_CYCLE - 10, SECONDS_IN_CYCLE - 9)) {
                 signal.warning();
-            } else if (elapsedSeconds.isMoreOrEqual(SECONDS_IN_CYCLE)) {
+            } else if (elapsedSeconds.areMoreOrEqual(SECONDS_IN_CYCLE)) {
                 signal.failure();
                 ui.showFailure();
             }
-            ui.showTime(remainingTime, true);
+            ui.showTime(timeCaption, true);
 
-            lastTimerCaption = remainingTime;
+            lastTimeCaption = timeCaption;
         }
     }
 
-    private String getRemainingTimeCaption(final ElapsedSeconds elapsedTime) {
-        long remainingSeconds = SECONDS_IN_CYCLE - elapsedTime.getSeconds();
-
+    private String getRemainingTimeCaption(final ElapsedSeconds elapsedSeconds) {
+        // TODO TimeCaption could be a value object (minutes, seconds), formatting itself
+        long remainingSeconds = SECONDS_IN_CYCLE - elapsedSeconds.get();
         long remainingMinutes = remainingSeconds / 60;
         DecimalFormat twoDigitsFormat = new DecimalFormat("00");
         return twoDigitsFormat.format(remainingMinutes) + ':' + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);

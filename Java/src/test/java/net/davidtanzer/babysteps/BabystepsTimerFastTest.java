@@ -4,11 +4,12 @@ import org.junit.After;
 import org.junit.Test;
 
 /**
+ * Complete tests which run fast but do not execute timer and audio code.<p>
  * Mutation Coverage 87%: Not covered is
  * - whole MouseMotionListener
  * - quit command
  * - outer closing div (ignored by browser)
- * - TODO test ENTERED/EXITED event type does not trigger any action (all 4 actions)
+ * - ENTERED/EXITED event type should not trigger any action (all 4 actions)
  */
 public class BabystepsTimerFastTest {
 
@@ -23,19 +24,25 @@ public class BabystepsTimerFastTest {
     @Test
     public void shouldDisplayInitialTimer() {
         timer.show();
-        timer.assertFrameVisible();
+        timer.assertFrameNameSizeAndIsVisible();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
-    public void shouldRunAndStop() {
+    public void shouldRun() {
         timer.show();
-        // run some time
-        timer.clickStart();
-        timer.waitFor(59);
-        assertThatTimerHtml.hasMovedNeutral("01:01");
+        timer.start();
+        timer.waitFor(timer.secondsInCycle() - 1);
+        assertThatTimerHtml.hasMoved("00:01");
+    }
+
+    @Test
+    public void shouldStopWhenRunning() {
+        timer.show();
+        timer.start();
+        timer.waitFor(timer.secondsInCycle() - 1);
         // stop
-        timer.clickStop();
+        timer.stop();
         assertThatTimerHtml.isInInitialState();
         // and stay stopped
         timer.waitFor(5);
@@ -43,21 +50,21 @@ public class BabystepsTimerFastTest {
     }
 
     @Test
-    public void shouldBeOnTopWhenRunning() {
+    public void shouldBeOnTopWhileRunning() {
         timer.show();
         timer.assertOnTop(false);
 
-        timer.clickStart();
+        timer.start();
         timer.assertOnTop(true);
 
-        timer.clickStop();
+        timer.stop();
         timer.assertOnTop(false);
     }
 
     @Test
-    public void shouldPlayGongTenSecondsToFail() {
+    public void shouldPlayGongTenSecondsBeforeFailing() {
         timer.show();
-        timer.clickStart();
+        timer.start();
         timer.waitFor(timer.secondsInCycle() - 10); // only as fast test
         timer.assertAudioClipPlayed("2166__suburban-grilla__bowl-struck.wav");
     }
@@ -65,7 +72,7 @@ public class BabystepsTimerFastTest {
     @Test
     public void shouldRunToFail() {
         timer.show();
-        timer.clickStart();
+        timer.start();
         timer.waitFor(timer.secondsInCycle());
         assertThatTimerHtml.isFailed();
     }
@@ -73,19 +80,43 @@ public class BabystepsTimerFastTest {
     @Test
     public void shouldPlayBellWhenFailed() {
         timer.show();
-        timer.clickStart();
+        timer.start();
         timer.waitFor(timer.secondsInCycle());
         timer.assertAudioClipPlayed("32304__acclivity__shipsbell.wav");
+    }
+
+    @Test
+    public void shouldRunOverWhenFailed() {
+        // run to fail
+        timer.show();
+        timer.start();
+        timer.waitFor(timer.secondsInCycle());
+        // run over
+        timer.waitFor(1);
+        assertThatTimerHtml.hasMovedAfterFail("02:00");
+    }
+
+    @Test
+    public void shouldBecomeNeutral5SecondsAfterFail() {
+        timer.show();
+        timer.start();
+        timer.waitFor(timer.secondsInCycle());
+
+        // run over
+        timer.waitFor(1);
+
+        timer.waitFor(5); // only as fast test
+        assertThatTimerHtml.hasMoved("01:55");
     }
 
     @Test
     public void shouldResetAndStartOverAsPass() {
         timer.show();
         // run some time
-        timer.clickStart();
+        timer.start();
         timer.waitFor(20);
         // reset
-        timer.clickReset();
+        timer.reset();
         assertThatTimerHtml.isPassed();
         // continue running
         timer.waitFor(4);
@@ -95,37 +126,10 @@ public class BabystepsTimerFastTest {
     @Test
     public void shouldBecomeNeutral5SecondsAfterReset() {
         timer.show();
-        timer.clickStart();
-        timer.clickReset();
+        timer.start();
+        timer.reset();
         timer.waitFor(5); // only as fast test
-        assertThatTimerHtml.hasMovedNeutral("01:55");
-    }
-
-    @Test
-    public void shouldFailAndRunOver() {
-        timer.show();
-        timer.clickStart();
-        timer.waitFor(timer.secondsInCycle() - 1);
-        assertThatTimerHtml.hasMovedNeutral("00:01");
-        timer.waitFor(1);
-        assertThatTimerHtml.isFailed();
-
-        // run over
-        timer.waitFor(1);
-        assertThatTimerHtml.hasMovedAfterFail("02:00");
-    }
-
-    @Test
-    public void shouldBecomeNeutral5SecondsAfterFail() {
-        timer.show();
-        timer.clickStart();
-        timer.waitFor(timer.secondsInCycle());
-
-        // run over
-        timer.waitFor(1);
-
-        timer.waitFor(5); // only as fast test
-        assertThatTimerHtml.hasMovedNeutral("01:55");
+        assertThatTimerHtml.hasMoved("01:55");
     }
 
 }

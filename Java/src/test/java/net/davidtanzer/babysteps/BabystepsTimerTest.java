@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Test;
 
 /**
+ * Basic tests which run slow.<p>
  * Mutation Coverage 84%: Not covered is
  * - whole MouseMotionListener
  * - quit command
@@ -25,24 +26,25 @@ public class BabystepsTimerTest {
     @Test
     public void shouldDisplayInitialTimer() {
         timer.show();
-        timer.assertFrameVisible();
+        timer.assertFrameNameSizeAndIsVisible();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
     public void shouldRunAndStop() {
+        // in fact two tests initial->run, running->stop
         timer.show();
-        timer.clickStart();
+        timer.start();
         timer.waitFor(1);
-        assertThatTimerHtml.hasMovedNeutral("01:59");
-        timer.clickStop();
+        assertThatTimerHtml.hasMoved("01:59");
+        timer.stop();
         assertThatTimerHtml.isInInitialState();
     }
 
     @Test
     public void shouldRunToFail() {
         timer.show();
-        timer.clickStart(2);
+        timer.start(2);
         timer.waitFor(timer.secondsInCycle());
         assertThatTimerHtml.isFailed();
     }
@@ -50,9 +52,9 @@ public class BabystepsTimerTest {
     @Test
     public void shouldResetAndStartOverAsPass() {
         timer.show();
-        timer.clickStart();
+        timer.start();
         timer.waitFor(1);
-        timer.clickReset();
+        timer.reset();
         assertThatTimerHtml.isPassed();
         timer.waitFor(1);
         assertThatTimerHtml.hasMovedAfterPass("01:59");

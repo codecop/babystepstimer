@@ -116,8 +116,8 @@ public class SwingUI implements BabystepsUI {
     }
 
     @Override
-    public void showTime(final String timerText, final boolean running) {
-        Runnable update = () -> timerPane.setText(createTimerHtml(timerText, running));
+    public void showTime(final String timeCaption, final boolean running) {
+        Runnable update = () -> timerPane.setText(createTimerHtml(timeCaption, running));
         invokeOnEventThread(update);
     }
 

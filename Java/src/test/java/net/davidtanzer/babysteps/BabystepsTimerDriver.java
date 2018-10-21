@@ -14,6 +14,7 @@ import static org.junit.Assert.fail;
 public class BabystepsTimerDriver {
 
     protected BabystepsTimer sut;
+
     private JFrame timerFrame;
     private JTextPane timerPane;
 
@@ -35,7 +36,7 @@ public class BabystepsTimerDriver {
 
     protected void waitForTimerThread() {
         int timerSleepsMillisInThread = 10;
-        sleep(timerSleepsMillisInThread * 2);
+        sleep(timerSleepsMillisInThread * 3 / 2);
     }
 
     private void sleep(int millis) {
@@ -46,7 +47,7 @@ public class BabystepsTimerDriver {
         }
     }
 
-    public void assertFrameVisible() {
+    public void assertFrameNameSizeAndIsVisible() {
         assertEquals("Babysteps Timer", timerFrame.getTitle());
         assertTrue(timerFrame.isUndecorated());
         assertEquals(new Dimension(250, 120), timerFrame.getSize());
@@ -71,7 +72,7 @@ public class BabystepsTimerDriver {
         return timerPane.getText();
     }
 
-    public void clickStart(int... seconds) {
+    public void start(int... seconds) {
         if (seconds.length > 0) {
             BabystepsTimer.SECONDS_IN_CYCLE = seconds[0]; // optional hack to speed things up
         }
@@ -79,19 +80,19 @@ public class BabystepsTimerDriver {
         waitForRender();
     }
 
-    public void clickStop() {
+    public void stop() {
         BabystepsTimer.SECONDS_IN_CYCLE = 120;
         click("command://stop");
         waitForRender();
     }
 
-    public void clickReset() {
+    public void reset() {
         click("command://reset");
         waitForRender();
     }
 
-    private void click(String s) {
-        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, s);
+    private void click(String description) {
+        HyperlinkEvent event = new HyperlinkEvent(timerPane, HyperlinkEvent.EventType.ACTIVATED, null, description);
         timerPane.fireHyperlinkUpdate(event);
     }
 

@@ -9,9 +9,9 @@ public class BabystepsStubTimerDriver extends BabystepsTimerDriver {
     protected BabystepsTimer createTimer() {
         nextTime = System.currentTimeMillis();
         lastAudioClip = null;
-        return new BabystepsTimer(new SystemClock(this::getTime), new AudioSignal(this::playAudioClip));
+        return new BabystepsTimer(new SystemClock(this::getTime), new AudioSignal(this::playAudioClip), new SwingUI());
     }
-    
+
     private long getTime() {
         return nextTime;
     }

@@ -13,7 +13,7 @@ public class RetryAssert {
             String actualString = actual.get();
             if (!expectedString.equals(actualString)) {
                 waitBeforeRetry(millis);
-                System.out.println("try again");
+                System.out.println("trying again");
                 actualString = actual.get();
             }
             Assert.assertEquals(expectedString, actualString);

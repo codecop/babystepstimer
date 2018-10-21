@@ -18,7 +18,8 @@ public class SystemClock implements BabystepsClock {
     }
 
     @Override
-    public ElapsedSeconds getElapsedTime() {
-        return new ElapsedSeconds(timer.getTime() - currentCycleStartTime);
+    public ElapsedSeconds getElapsedSeconds() {
+        long elapsedMillis = timer.getTime() - currentCycleStartTime;
+        return ElapsedSeconds.fromMillis(elapsedMillis);
     }
 }

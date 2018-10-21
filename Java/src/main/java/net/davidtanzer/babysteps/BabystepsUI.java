@@ -23,7 +23,7 @@ public interface BabystepsUI {
 
     boolean isNormal();
 
-    void showTime(String timerText, boolean running);
+    void showTime(String timeCaption, boolean running);
 
     void destroy();
 

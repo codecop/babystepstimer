@@ -5,26 +5,30 @@ package net.davidtanzer.babysteps;
  */
 public class ElapsedSeconds {
 
-    public static final ElapsedSeconds NONE = new ElapsedSeconds(0L);
+    public static final ElapsedSeconds NONE = fromMillis(0L);
     private final long millis;
 
-    public ElapsedSeconds(long millis) {
+    public static ElapsedSeconds fromMillis(long millis) {
+        return new ElapsedSeconds(millis);
+    }
+
+    private ElapsedSeconds(long millis) {
         this.millis = millis;
     }
 
-    public boolean isMoreOrEqual(long seconds) {
-        return isMoreOrEqual(seconds, 0);
+    public boolean areMoreOrEqual(long seconds) {
+        return areMoreOrEqual(seconds, 0);
     }
 
-    public boolean isMoreOrEqual(long seconds, int millis) {
+    public boolean areMoreOrEqual(long seconds, int millis) {
         return this.millis >= seconds * 1000 + millis;
     }
 
-    public boolean isBetween(long fromSeconds, long toSeconds) {
+    public boolean areBetween(long fromSeconds, long toSeconds) {
         return millis >= fromSeconds * 1000 && millis < toSeconds * 1000;
     }
 
-    public long getSeconds() {
+    public long get() {
         return millis / 1000;
     }
 

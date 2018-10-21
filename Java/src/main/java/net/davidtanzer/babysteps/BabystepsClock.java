@@ -7,5 +7,5 @@ public interface BabystepsClock {
 
     void resetCycle();
 
-    ElapsedSeconds getElapsedTime();
+    ElapsedSeconds getElapsedSeconds();
 }
