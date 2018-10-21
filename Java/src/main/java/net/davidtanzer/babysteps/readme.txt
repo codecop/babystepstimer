@@ -128,8 +128,10 @@ Session 6
 ---------
 using IDEA Community Edition
 
-Final cleanups
+Final cleanups (60')
 * renames
 * split test case
 * Extract task scheduling completely, no new ...
 * I wonder if I can do more ;-)
+
+==> total time = 10h
