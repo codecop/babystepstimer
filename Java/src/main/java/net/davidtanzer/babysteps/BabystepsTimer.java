@@ -53,7 +53,32 @@ public class BabystepsTimer {
         }
         
     };
-    static TimerListener listener = new TimerListener() {
+    static TimerListener timerListener = new TimerListener() {
+
+        @Override
+        public void start() {
+            timerView.setAlwaysOnTop(true);
+            timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
+            new TimerThread().start();
+        }
+
+        @Override
+        public void stop() {
+            model.timerRunning = false;
+            timerView.setAlwaysOnTop(false);
+            timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+        }
+
+        @Override
+        public void reset() {
+            model.currentCycleStartTime = System.currentTimeMillis();
+            model.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+        }
+
+        @Override
+        public void quit() {
+            System.exit(0);
+        }
         
     };
     static JTextPane timerPane;
@@ -99,18 +124,13 @@ public class BabystepsTimer {
             public void hyperlinkUpdate(final HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if ("command://start".equals(e.getDescription())) {
-                        timerView.setAlwaysOnTop(true);
-                        timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
-                        new TimerThread().start();
+                        timerListener.start();
                     } else if ("command://stop".equals(e.getDescription())) {
-                        model.timerRunning = false;
-                        timerView.setAlwaysOnTop(false);
-                        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+                        timerListener.stop();
                     } else if ("command://reset".equals(e.getDescription())) {
-                        model.currentCycleStartTime = System.currentTimeMillis();
-                        model.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+                        timerListener.reset();
                     } else if ("command://quit".equals(e.getDescription())) {
-                        System.exit(0);
+                        timerListener.quit();
                     }
                 }
             }
