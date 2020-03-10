@@ -23,17 +23,20 @@ public class BabystepsTimer implements TimerListener, Runnable {
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
     private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
-    /* for test */ static long SECONDS_IN_CYCLE = 120;
-    private final DecimalFormat twoDigitsFormat = new DecimalFormat("00");
     /* for test */ static TimerView timerView = new SwingHtmlTimerView();
-    private final TimerModel timerModel;
+    private final DecimalFormat twoDigitsFormat = new DecimalFormat("00");
+    /* for test */ static long SECONDS_IN_CYCLE = 120;
+
+    private String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+    private boolean timerRunning;
+    private long currentCycleStartTime;
+    private String lastRemainingTime;
 
     public static void main(final String[] args) throws InterruptedException {
         new BabystepsTimer(timerView);
     }
 
     public BabystepsTimer(TimerView timerView) {
-        timerModel = new TimerModel(BACKGROUND_COLOR_NEUTRAL);
         timerView.register(this);
         timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
     }
@@ -47,15 +50,15 @@ public class BabystepsTimer implements TimerListener, Runnable {
 
     @Override
     public void stop() {
-        timerModel.timerRunning = false;
+        timerRunning = false;
         timerView.setAlwaysOnTop(false);
         timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
     }
 
     @Override
     public void reset() {
-        timerModel.currentCycleStartTime = System.currentTimeMillis();
-        timerModel.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+        currentCycleStartTime = System.currentTimeMillis();
+        bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
     }
 
     @Override
@@ -90,31 +93,31 @@ public class BabystepsTimer implements TimerListener, Runnable {
 
     @Override
     public void run() {
-        timerModel.timerRunning = true;
-        timerModel.currentCycleStartTime = System.currentTimeMillis();
+        timerRunning = true;
+        currentCycleStartTime = System.currentTimeMillis();
 
-        while (timerModel.timerRunning) {
-            long elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
+        while (timerRunning) {
+            long elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
 
             if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                timerModel.currentCycleStartTime = System.currentTimeMillis();
-                elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
+                currentCycleStartTime = System.currentTimeMillis();
+                elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
             }
-            if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(timerModel.bodyBackgroundColor)) {
-                timerModel.bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+            if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
+                bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
             }
 
             String remainingTime = getRemainingTimeCaption(elapsedTime);
-            if (!remainingTime.equals(timerModel.lastRemainingTime)) {
+            if (!remainingTime.equals(lastRemainingTime)) {
                 if (remainingTime.equals("00:10")) {
                     playSound("2166__suburban-grilla__bowl-struck.wav");
                 } else if (remainingTime.equals("00:00")) {
                     playSound("32304__acclivity__shipsbell.wav");
-                    timerModel.bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
+                    bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                 }
 
-                timerView.showRunning(remainingTime, timerModel.bodyBackgroundColor); // TODO color -> enum
-                timerModel.lastRemainingTime = remainingTime;
+                timerView.showRunning(remainingTime, bodyBackgroundColor); // TODO color -> enum
+                lastRemainingTime = remainingTime;
             }
             try {
                 Thread.sleep(10);
