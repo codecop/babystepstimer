@@ -13,7 +13,7 @@ class SwingHtmlTimerView implements TimerView {
     final JFrame timerFrame;
     final JTextPane timerPane;
 
-    public SwingHtmlTimerView(TimerListener timerListener) {
+    public SwingHtmlTimerView() {
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
 
@@ -44,6 +44,13 @@ class SwingHtmlTimerView implements TimerView {
                 lastY = y;
             }
         });
+        timerFrame.getContentPane().add(timerPane);
+        timerFrame.setVisible(true);
+    }
+    
+    @Override
+    public void register(TimerListener timerListener) 
+    {
         timerPane.addHyperlinkListener(new HyperlinkListener() {
             @Override
             public void hyperlinkUpdate(final HyperlinkEvent e) {
@@ -60,8 +67,6 @@ class SwingHtmlTimerView implements TimerView {
                 }
             }
         });
-        timerFrame.getContentPane().add(timerPane);
-        timerFrame.setVisible(true);
     }
 
     @Override
