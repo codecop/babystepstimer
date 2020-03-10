@@ -52,11 +52,10 @@ public class BabystepsTimer {
         
     };
     static JTextPane timerPane;
-    private static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
-
+    
     private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
 
-    private static TimerModel model = new TimerModel();
+    private static TimerModel model = new TimerModel(BACKGROUND_COLOR_NEUTRAL);
     
     public static void main(final String[] args) throws InterruptedException {
         timerFrame = new JFrame("Babysteps Timer");
@@ -104,7 +103,7 @@ public class BabystepsTimer {
                         timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
                     } else if ("command://reset".equals(e.getDescription())) {
                         model.currentCycleStartTime = System.currentTimeMillis();
-                        bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+                        model.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
                     } else if ("command://quit".equals(e.getDescription())) {
                         System.exit(0);
                     }
@@ -170,8 +169,8 @@ public class BabystepsTimer {
                     model.currentCycleStartTime = System.currentTimeMillis();
                     elapsedTime = System.currentTimeMillis() - model.currentCycleStartTime;
                 }
-                if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
-                    bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+                if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(model.bodyBackgroundColor)) {
+                    model.bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
                 }
 
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
@@ -180,10 +179,10 @@ public class BabystepsTimer {
                         playSound("2166__suburban-grilla__bowl-struck.wav");
                     } else if (remainingTime.equals("00:00")) {
                         playSound("32304__acclivity__shipsbell.wav");
-                        bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
+                        model.bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                     }
 
-                    timerView.showRunning(remainingTime, bodyBackgroundColor); // TODO color -> enum
+                    timerView.showRunning(remainingTime, model.bodyBackgroundColor); // TODO color -> enum
                     model.lastRemainingTime = remainingTime;
                 }
                 try {
