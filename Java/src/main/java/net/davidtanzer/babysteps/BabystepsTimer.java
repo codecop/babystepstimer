@@ -18,53 +18,52 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class BabystepsTimer {
+public class BabystepsTimer implements TimerListener, Runnable {
     private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
     private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
 
-    static long SECONDS_IN_CYCLE = 120;
+    /* for test */ static long SECONDS_IN_CYCLE = 120;
+    private final DecimalFormat twoDigitsFormat = new DecimalFormat("00");
+    /* for test */ static TimerView timerView = new SwingHtmlTimerView();
+    private final TimerModel timerModel;
 
-    static TimerListener timerListener = new TimerListener() {
-
-        @Override
-        public void start() {
-            timerView.setAlwaysOnTop(true);
-            timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
-            new TimerThread(timerView, timerModel).start();
-        }
-
-        @Override
-        public void stop() {
-            timerModel.timerRunning = false;
-            timerView.setAlwaysOnTop(false);
-            timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
-        }
-
-        @Override
-        public void reset() {
-            timerModel.currentCycleStartTime = System.currentTimeMillis();
-            timerModel.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
-        }
-
-        @Override
-        public void quit() {
-            System.exit(0);
-        }
-        
-    };
-    static TimerView timerView = new SwingHtmlTimerView();
-    
-    private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
-
-    private static TimerModel timerModel = new TimerModel(BACKGROUND_COLOR_NEUTRAL);
-    
     public static void main(final String[] args) throws InterruptedException {
-        timerView.register(timerListener);
-        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
-   }
+        new BabystepsTimer(timerView);
+    }
 
-    private static String getRemainingTimeCaption(final long elapsedTime) {
+    public BabystepsTimer(TimerView timerView) {
+        timerModel = new TimerModel(BACKGROUND_COLOR_NEUTRAL);
+        timerView.register(this);
+        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+    }
+
+    @Override
+    public void start() {
+        timerView.setAlwaysOnTop(true);
+        timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
+        new Thread(this).start();
+    }
+
+    @Override
+    public void stop() {
+        timerModel.timerRunning = false;
+        timerView.setAlwaysOnTop(false);
+        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+    }
+
+    @Override
+    public void reset() {
+        timerModel.currentCycleStartTime = System.currentTimeMillis();
+        timerModel.bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
+    }
+
+    @Override
+    public void quit() {
+        System.exit(0);
+    }
+
+    private String getRemainingTimeCaption(final long elapsedTime) {
         long elapsedSeconds = elapsedTime / 1000;
         long remainingSeconds = SECONDS_IN_CYCLE - elapsedSeconds;
 
@@ -89,48 +88,38 @@ public class BabystepsTimer {
         }).start();
     }
 
-    private static final class TimerThread extends Thread {
-        private TimerView timerView;
-        private TimerModel timerModel;
+    @Override
+    public void run() {
+        timerModel.timerRunning = true;
+        timerModel.currentCycleStartTime = System.currentTimeMillis();
 
-        public TimerThread(TimerView timerView, TimerModel timerModel) {
-            this.timerView = timerView;
-            this.timerModel = timerModel;
-        }
+        while (timerModel.timerRunning) {
+            long elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
 
-        @Override
-        public void run() {
-            timerModel.timerRunning = true;
-            timerModel.currentCycleStartTime = System.currentTimeMillis();
+            if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
+                timerModel.currentCycleStartTime = System.currentTimeMillis();
+                elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
+            }
+            if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(timerModel.bodyBackgroundColor)) {
+                timerModel.bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
+            }
 
-            while (timerModel.timerRunning) {
-                long elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
-
-                if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    timerModel.currentCycleStartTime = System.currentTimeMillis();
-                    elapsedTime = System.currentTimeMillis() - timerModel.currentCycleStartTime;
+            String remainingTime = getRemainingTimeCaption(elapsedTime);
+            if (!remainingTime.equals(timerModel.lastRemainingTime)) {
+                if (remainingTime.equals("00:10")) {
+                    playSound("2166__suburban-grilla__bowl-struck.wav");
+                } else if (remainingTime.equals("00:00")) {
+                    playSound("32304__acclivity__shipsbell.wav");
+                    timerModel.bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                 }
-                if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(timerModel.bodyBackgroundColor)) {
-                    timerModel.bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
-                }
 
-                String remainingTime = getRemainingTimeCaption(elapsedTime);
-                if (!remainingTime.equals(timerModel.lastRemainingTime)) {
-                    if (remainingTime.equals("00:10")) {
-                        playSound("2166__suburban-grilla__bowl-struck.wav");
-                    } else if (remainingTime.equals("00:00")) {
-                        playSound("32304__acclivity__shipsbell.wav");
-                        timerModel.bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
-                    }
-
-                    timerView.showRunning(remainingTime, timerModel.bodyBackgroundColor); // TODO color -> enum
-                    timerModel.lastRemainingTime = remainingTime;
-                }
-                try {
-                    sleep(10);
-                } catch (InterruptedException e) {
-                    //We don't really care about this one...
-                }
+                timerView.showRunning(remainingTime, timerModel.bodyBackgroundColor); // TODO color -> enum
+                timerModel.lastRemainingTime = remainingTime;
+            }
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                //We don't really care about this one...
             }
         }
     }
