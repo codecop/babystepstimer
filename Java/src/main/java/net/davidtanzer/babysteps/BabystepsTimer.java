@@ -46,6 +46,11 @@ public class BabystepsTimer {
             timerPane.setText(createTimerHtml(time, bodyBackgroundColor, false));
             timerFrame.repaint();
         }
+
+        @Override
+        public void setAlwaysOnTop(boolean b) {
+            timerFrame.setAlwaysOnTop(b);
+        }
         
     };
     static TimerListener listener = new TimerListener() {
@@ -94,12 +99,12 @@ public class BabystepsTimer {
             public void hyperlinkUpdate(final HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if ("command://start".equals(e.getDescription())) {
-                        timerFrame.setAlwaysOnTop(true);
+                        timerView.setAlwaysOnTop(true);
                         timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
                         new TimerThread().start();
                     } else if ("command://stop".equals(e.getDescription())) {
                         model.timerRunning = false;
-                        timerFrame.setAlwaysOnTop(false);
+                        timerView.setAlwaysOnTop(false);
                         timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
                     } else if ("command://reset".equals(e.getDescription())) {
                         model.currentCycleStartTime = System.currentTimeMillis();
