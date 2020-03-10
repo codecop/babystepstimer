@@ -18,7 +18,8 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class BabystepsTimer implements TimerListener, Runnable {
+public class BabystepsTimer implements TimerActionListener, Runnable {
+
     private static final String BACKGROUND_COLOR_NEUTRAL = "#ffffff";
     private static final String BACKGROUND_COLOR_FAILED = "#ffcccc";
     private static final String BACKGROUND_COLOR_PASSED = "#ccffcc";
@@ -37,22 +38,22 @@ public class BabystepsTimer implements TimerListener, Runnable {
     }
 
     public BabystepsTimer(TimerView timerView) {
-        timerView.register(this);
-        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+        timerView.registerActionListener(this);
+        timerView.showTimeStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
     }
 
     @Override
     public void start() {
-        timerView.setAlwaysOnTop(true);
-        timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
+        timerView.setBeOnTop(true);
+        timerView.showTimeRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
         new Thread(this).start();
     }
 
     @Override
     public void stop() {
         timerRunning = false;
-        timerView.setAlwaysOnTop(false);
-        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
+        timerView.setBeOnTop(false);
+        timerView.showTimeStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
     }
 
     @Override
@@ -116,7 +117,7 @@ public class BabystepsTimer implements TimerListener, Runnable {
                     bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                 }
 
-                timerView.showRunning(remainingTime, bodyBackgroundColor); // TODO color -> enum
+                timerView.showTimeRunning(remainingTime, bodyBackgroundColor); // TODO color -> enum
                 lastRemainingTime = remainingTime;
             }
             try {

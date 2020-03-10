@@ -2,12 +2,15 @@ package net.davidtanzer.babysteps;
 
 public interface TimerView {
 
-    void showRunning(String time, String bodyBackgroundColor);
+    void registerActionListener(TimerActionListener listener);
 
-    void showStopped(String time, String bodyBackgroundColor);
+    void showTimeRunning(String time, String bodyBackgroundColor);
+    // should not use colour here, use enum for states
 
-    void setAlwaysOnTop(boolean b);
+    void showTimeStopped(String time, String bodyBackgroundColor);
+    // colour is always neutral, could drop argument
 
-    void register(TimerListener timerListener);
+    void setBeOnTop(boolean onTop);
+
 
 }

@@ -10,20 +10,19 @@ import javax.swing.event.HyperlinkListener;
 
 class SwingHtmlTimerView implements TimerView {
 
-    final JFrame timerFrame;
-    final JTextPane timerPane;
+    /* for test */ final JFrame frame;
+    /* for test */ final JTextPane textPane;
 
     public SwingHtmlTimerView() {
-        timerFrame = new JFrame("Babysteps Timer");
-        timerFrame.setUndecorated(true);
-
-        timerFrame.setSize(250, 120);
-        timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JFrame("Babysteps Timer");
+        frame.setUndecorated(true);
+        frame.setSize(250, 120);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
-        timerPane = new JTextPane();
-        timerPane.setContentType("text/html");
-        timerPane.setEditable(false);
-        timerPane.addMouseMotionListener(new MouseMotionListener() {
+        textPane = new JTextPane();
+        textPane.setContentType("text/html");
+        textPane.setEditable(false);
+        textPane.addMouseMotionListener(new MouseMotionListener() {
             private int lastX;
             private int lastY;
 
@@ -38,31 +37,31 @@ class SwingHtmlTimerView implements TimerView {
                 int x = e.getXOnScreen();
                 int y = e.getYOnScreen();
 
-                timerFrame.setLocation(timerFrame.getLocation().x + (x - lastX), timerFrame.getLocation().y + (y - lastY));
+                frame.setLocation(frame.getLocation().x + (x - lastX), frame.getLocation().y + (y - lastY));
 
                 lastX = x;
                 lastY = y;
             }
         });
-        timerFrame.getContentPane().add(timerPane);
-        timerFrame.setVisible(true);
+        frame.getContentPane().add(textPane);
+        frame.setVisible(true);
     }
     
     @Override
-    public void register(TimerListener timerListener) 
+    public void registerActionListener(TimerActionListener listener) 
     {
-        timerPane.addHyperlinkListener(new HyperlinkListener() {
+        textPane.addHyperlinkListener(new HyperlinkListener() {
             @Override
             public void hyperlinkUpdate(final HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if ("command://start".equals(e.getDescription())) {
-                        timerListener.start();
+                        listener.start();
                     } else if ("command://stop".equals(e.getDescription())) {
-                        timerListener.stop();
+                        listener.stop();
                     } else if ("command://reset".equals(e.getDescription())) {
-                        timerListener.reset();
+                        listener.reset();
                     } else if ("command://quit".equals(e.getDescription())) {
-                        timerListener.quit();
+                        listener.quit();
                     }
                 }
             }
@@ -70,20 +69,15 @@ class SwingHtmlTimerView implements TimerView {
     }
 
     @Override
-    public void showRunning(String time, String bodyBackgroundColor) {
-        timerPane.setText(createTimerHtml(time, bodyBackgroundColor, true));
-        timerFrame.repaint();
+    public void showTimeRunning(String time, String bodyBackgroundColor) {
+        textPane.setText(createTimerHtml(time, bodyBackgroundColor, true));
+        frame.repaint();
     }
 
     @Override
-    public void showStopped(String time, String bodyBackgroundColor) {
-        timerPane.setText(createTimerHtml(time, bodyBackgroundColor, false));
-        timerFrame.repaint();
-    }
-
-    @Override
-    public void setAlwaysOnTop(boolean b) {
-        timerFrame.setAlwaysOnTop(b);
+    public void showTimeStopped(String time, String bodyBackgroundColor) {
+        textPane.setText(createTimerHtml(time, bodyBackgroundColor, false));
+        frame.repaint();
     }
 
     private String createTimerHtml(final String timerText, final String bodyColor, final boolean running) {
@@ -100,5 +94,10 @@ class SwingHtmlTimerView implements TimerView {
         timerHtml += "</div>" +
                 "</body></html>";
         return timerHtml;
+    }
+
+    @Override
+    public void setBeOnTop(boolean onTop) {
+        frame.setAlwaysOnTop(onTop);
     }
 }

@@ -1,6 +1,6 @@
 package net.davidtanzer.babysteps;
 
-public interface TimerListener {
+public interface TimerActionListener {
 
     void start();
 
