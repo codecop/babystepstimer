@@ -48,8 +48,8 @@ public class BabystepsTimerTest {
     private void showTimer() throws InterruptedException {
         BabystepsTimer.SECONDS_IN_CYCLE = 120;
         BabystepsTimer.main(new String[0]);
-        timerFrame = BabystepsTimer.timerFrame;
-        timerPane = BabystepsTimer.timerPane;
+        timerFrame = BabystepsTimer.timerView.timerFrame;
+        timerPane = BabystepsTimer.timerView.timerPane;
         sleep(100);
         clickStop();
     }

@@ -32,10 +32,14 @@ public class BabystepsTimer {
 
     static long SECONDS_IN_CYCLE = 120;
 
-    static JFrame timerFrame;
-    static TimerView timerView = new TimerView() {
+    static TimerViewImplementation timerView = new TimerViewImplementation();
+    
+    static class TimerViewImplementation implements TimerView {
 
-        {
+        final JFrame timerFrame;
+        final JTextPane timerPane;
+
+        TimerViewImplementation() {
             timerFrame = new JFrame("Babysteps Timer");
             timerFrame.setUndecorated(true);
 
@@ -83,8 +87,9 @@ public class BabystepsTimer {
                 }
             });
             timerFrame.getContentPane().add(timerPane);
+            timerFrame.setVisible(true);
         }
-        
+
         @Override
         public void showRunning(String time, String bodyBackgroundColor) {
             timerPane.setText(createTimerHtml(time, bodyBackgroundColor, true));
@@ -117,9 +122,8 @@ public class BabystepsTimer {
                     "</body></html>";
             return timerHtml;
         }
-
-
-    };
+    }
+    
     static TimerListener timerListener = new TimerListener() {
 
         @Override
@@ -148,7 +152,6 @@ public class BabystepsTimer {
         }
         
     };
-    static JTextPane timerPane;
     
     private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
 
@@ -156,7 +159,6 @@ public class BabystepsTimer {
     
     public static void main(final String[] args) throws InterruptedException {
         timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
-        timerFrame.setVisible(true);
    }
 
     private static String getRemainingTimeCaption(final long elapsedTime) {
