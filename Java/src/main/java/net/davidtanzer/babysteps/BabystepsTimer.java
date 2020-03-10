@@ -34,13 +34,12 @@ public class BabystepsTimer {
 
     static JFrame timerFrame;
     static JTextPane timerPane;
-    static boolean timerRunning;
-    private static long currentCycleStartTime;
-    private static String lastRemainingTime;
     private static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
 
     private static DecimalFormat twoDigitsFormat = new DecimalFormat("00");
 
+    private static TimerModel model = new TimerModel();
+    
     public static void main(final String[] args) throws InterruptedException {
         timerFrame = new JFrame("Babysteps Timer");
         timerFrame.setUndecorated(true);
@@ -82,12 +81,12 @@ public class BabystepsTimer {
                         timerFrame.repaint();
                         new TimerThread().start();
                     } else if ("command://stop".equals(e.getDescription())) {
-                        timerRunning = false;
+                        model.timerRunning = false;
                         timerFrame.setAlwaysOnTop(false);
                         timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
                         timerFrame.repaint();
                     } else if ("command://reset".equals(e.getDescription())) {
-                        currentCycleStartTime = System.currentTimeMillis();
+                        model.currentCycleStartTime = System.currentTimeMillis();
                         bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
                     } else if ("command://quit".equals(e.getDescription())) {
                         System.exit(0);
@@ -144,22 +143,22 @@ public class BabystepsTimer {
     private static final class TimerThread extends Thread {
         @Override
         public void run() {
-            timerRunning = true;
-            currentCycleStartTime = System.currentTimeMillis();
+            model.timerRunning = true;
+            model.currentCycleStartTime = System.currentTimeMillis();
 
-            while (timerRunning) {
-                long elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+            while (model.timerRunning) {
+                long elapsedTime = System.currentTimeMillis() - model.currentCycleStartTime;
 
                 if (elapsedTime >= SECONDS_IN_CYCLE * 1000 + 980) {
-                    currentCycleStartTime = System.currentTimeMillis();
-                    elapsedTime = System.currentTimeMillis() - currentCycleStartTime;
+                    model.currentCycleStartTime = System.currentTimeMillis();
+                    elapsedTime = System.currentTimeMillis() - model.currentCycleStartTime;
                 }
                 if (elapsedTime >= 5000 && elapsedTime < 6000 && !BACKGROUND_COLOR_NEUTRAL.equals(bodyBackgroundColor)) {
                     bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
                 }
 
                 String remainingTime = getRemainingTimeCaption(elapsedTime);
-                if (!remainingTime.equals(lastRemainingTime)) {
+                if (!remainingTime.equals(model.lastRemainingTime)) {
                     if (remainingTime.equals("00:10")) {
                         playSound("2166__suburban-grilla__bowl-struck.wav");
                     } else if (remainingTime.equals("00:00")) {
@@ -169,7 +168,7 @@ public class BabystepsTimer {
 
                     timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
                     timerFrame.repaint();
-                    lastRemainingTime = remainingTime;
+                    model.lastRemainingTime = remainingTime;
                 }
                 try {
                     sleep(10);
