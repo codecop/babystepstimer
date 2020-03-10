@@ -33,6 +33,24 @@ public class BabystepsTimer {
     static long SECONDS_IN_CYCLE = 120;
 
     static JFrame timerFrame;
+    static TimerView timerView = new TimerView() {
+
+        @Override
+        public void showRunning(String time, String bodyBackgroundColor) {
+            timerPane.setText(createTimerHtml(time, bodyBackgroundColor, true));
+            timerFrame.repaint();
+        }
+
+        @Override
+        public void showStopped(String time, String bodyBackgroundColor) {
+            timerPane.setText(createTimerHtml(time, bodyBackgroundColor, false));
+            timerFrame.repaint();
+        }
+        
+    };
+    static TimerListener listener = new TimerListener() {
+        
+    };
     static JTextPane timerPane;
     private static String bodyBackgroundColor = BACKGROUND_COLOR_NEUTRAL;
 
@@ -46,6 +64,7 @@ public class BabystepsTimer {
 
         timerFrame.setSize(250, 120);
         timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
         timerPane = new JTextPane();
         timerPane.setContentType("text/html");
         timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
@@ -77,14 +96,12 @@ public class BabystepsTimer {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if ("command://start".equals(e.getDescription())) {
                         timerFrame.setAlwaysOnTop(true);
-                        timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, true));
-                        timerFrame.repaint();
+                        timerView.showRunning(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL); 
                         new TimerThread().start();
                     } else if ("command://stop".equals(e.getDescription())) {
                         model.timerRunning = false;
                         timerFrame.setAlwaysOnTop(false);
-                        timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
-                        timerFrame.repaint();
+                        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
                     } else if ("command://reset".equals(e.getDescription())) {
                         model.currentCycleStartTime = System.currentTimeMillis();
                         bodyBackgroundColor = BACKGROUND_COLOR_PASSED;
@@ -166,8 +183,7 @@ public class BabystepsTimer {
                         bodyBackgroundColor = BACKGROUND_COLOR_FAILED;
                     }
 
-                    timerPane.setText(createTimerHtml(remainingTime, bodyBackgroundColor, true));
-                    timerFrame.repaint();
+                    timerView.showRunning(remainingTime, bodyBackgroundColor); // TODO color -> enum
                     model.lastRemainingTime = remainingTime;
                 }
                 try {
