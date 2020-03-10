@@ -35,6 +35,56 @@ public class BabystepsTimer {
     static JFrame timerFrame;
     static TimerView timerView = new TimerView() {
 
+        {
+            timerFrame = new JFrame("Babysteps Timer");
+            timerFrame.setUndecorated(true);
+
+            timerFrame.setSize(250, 120);
+            timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           
+            timerPane = new JTextPane();
+            timerPane.setContentType("text/html");
+            timerPane.setEditable(false);
+            timerPane.addMouseMotionListener(new MouseMotionListener() {
+                private int lastX;
+                private int lastY;
+
+                @Override
+                public void mouseMoved(final MouseEvent e) {
+                    lastX = e.getXOnScreen();
+                    lastY = e.getYOnScreen();
+                }
+
+                @Override
+                public void mouseDragged(final MouseEvent e) {
+                    int x = e.getXOnScreen();
+                    int y = e.getYOnScreen();
+
+                    timerFrame.setLocation(timerFrame.getLocation().x + (x - lastX), timerFrame.getLocation().y + (y - lastY));
+
+                    lastX = x;
+                    lastY = y;
+                }
+            });
+            timerPane.addHyperlinkListener(new HyperlinkListener() {
+                @Override
+                public void hyperlinkUpdate(final HyperlinkEvent e) {
+                    if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                        if ("command://start".equals(e.getDescription())) {
+                            timerListener.start();
+                        } else if ("command://stop".equals(e.getDescription())) {
+                            timerListener.stop();
+                        } else if ("command://reset".equals(e.getDescription())) {
+                            timerListener.reset();
+                        } else if ("command://quit".equals(e.getDescription())) {
+                            timerListener.quit();
+                        }
+                    }
+                }
+            });
+            timerFrame.getContentPane().add(timerPane);
+        }
+        
         @Override
         public void showRunning(String time, String bodyBackgroundColor) {
             timerPane.setText(createTimerHtml(time, bodyBackgroundColor, true));
@@ -51,7 +101,24 @@ public class BabystepsTimer {
         public void setAlwaysOnTop(boolean b) {
             timerFrame.setAlwaysOnTop(b);
         }
-        
+
+        private String createTimerHtml(final String timerText, final String bodyColor, final boolean running) {
+            String timerHtml = "<html><body style=\"border: 3px solid #555555; background: " + bodyColor + "; margin: 0; padding: 0;\">" +
+                    "<h1 style=\"text-align: center; font-size: 30px; color: #333333;\">" + timerText + "</h1>" +
+                    "<div style=\"text-align: center\">";
+            if (running) {
+                timerHtml += "<a style=\"color: #555555;\" href=\"command://stop\">Stop</a> " +
+                        "<a style=\"color: #555555;\" href=\"command://reset\">Reset</a> ";
+            } else {
+                timerHtml += "<a style=\"color: #555555;\" href=\"command://start\">Start</a> ";
+            }
+            timerHtml += "<a style=\"color: #555555;\" href=\"command://quit\">Quit</a> ";
+            timerHtml += "</div>" +
+                    "</body></html>";
+            return timerHtml;
+        }
+
+
     };
     static TimerListener timerListener = new TimerListener() {
 
@@ -88,57 +155,9 @@ public class BabystepsTimer {
     private static TimerModel model = new TimerModel(BACKGROUND_COLOR_NEUTRAL);
     
     public static void main(final String[] args) throws InterruptedException {
-        timerFrame = new JFrame("Babysteps Timer");
-        timerFrame.setUndecorated(true);
-
-        timerFrame.setSize(250, 120);
-        timerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
-        timerPane = new JTextPane();
-        timerPane.setContentType("text/html");
-        timerPane.setText(createTimerHtml(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL, false));
-        timerPane.setEditable(false);
-        timerPane.addMouseMotionListener(new MouseMotionListener() {
-            private int lastX;
-            private int lastY;
-
-            @Override
-            public void mouseMoved(final MouseEvent e) {
-                lastX = e.getXOnScreen();
-                lastY = e.getYOnScreen();
-            }
-
-            @Override
-            public void mouseDragged(final MouseEvent e) {
-                int x = e.getXOnScreen();
-                int y = e.getYOnScreen();
-
-                timerFrame.setLocation(timerFrame.getLocation().x + (x - lastX), timerFrame.getLocation().y + (y - lastY));
-
-                lastX = x;
-                lastY = y;
-            }
-        });
-        timerPane.addHyperlinkListener(new HyperlinkListener() {
-            @Override
-            public void hyperlinkUpdate(final HyperlinkEvent e) {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if ("command://start".equals(e.getDescription())) {
-                        timerListener.start();
-                    } else if ("command://stop".equals(e.getDescription())) {
-                        timerListener.stop();
-                    } else if ("command://reset".equals(e.getDescription())) {
-                        timerListener.reset();
-                    } else if ("command://quit".equals(e.getDescription())) {
-                        timerListener.quit();
-                    }
-                }
-            }
-        });
-        timerFrame.getContentPane().add(timerPane);
-
+        timerView.showStopped(getRemainingTimeCaption(0L), BACKGROUND_COLOR_NEUTRAL);
         timerFrame.setVisible(true);
-    }
+   }
 
     private static String getRemainingTimeCaption(final long elapsedTime) {
         long elapsedSeconds = elapsedTime / 1000;
@@ -146,22 +165,6 @@ public class BabystepsTimer {
 
         long remainingMinutes = remainingSeconds / 60;
         return twoDigitsFormat.format(remainingMinutes) + ":" + twoDigitsFormat.format(remainingSeconds - remainingMinutes * 60);
-    }
-
-    private static String createTimerHtml(final String timerText, final String bodyColor, final boolean running) {
-        String timerHtml = "<html><body style=\"border: 3px solid #555555; background: " + bodyColor + "; margin: 0; padding: 0;\">" +
-                "<h1 style=\"text-align: center; font-size: 30px; color: #333333;\">" + timerText + "</h1>" +
-                "<div style=\"text-align: center\">";
-        if (running) {
-            timerHtml += "<a style=\"color: #555555;\" href=\"command://stop\">Stop</a> " +
-                    "<a style=\"color: #555555;\" href=\"command://reset\">Reset</a> ";
-        } else {
-            timerHtml += "<a style=\"color: #555555;\" href=\"command://start\">Start</a> ";
-        }
-        timerHtml += "<a style=\"color: #555555;\" href=\"command://quit\">Quit</a> ";
-        timerHtml += "</div>" +
-                "</body></html>";
-        return timerHtml;
     }
 
     public static synchronized void playSound(final String url) {
